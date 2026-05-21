@@ -3,27 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Career coaching for college students & recent grads. Free job board + paid 1:1 coaching to decode your path.">
-    <title>0xdecodeyourself | Career Clarity for Recent Grads</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Sohne:wght@400;500;600&display=swap" rel="stylesheet">
+    <meta name="description" content="Career coaching for college students & recent grads who want to build something real.">
+    <title>0xdecodeyourself</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        html, body {
+            height: 100%;
+            background: #fafaf8;
+            color: #1a1a1a;
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+        }
+        
         :root {
             --gold: #D4860F;
             --crimson: #C84A32;
-            --black: #000;
-            --white: #fff;
-            --gray-light: #f5f5f5;
-            --gray-dark: #333;
+            --black: #1a1a1a;
+            --cream: #fafaf8;
         }
         
-        html, body { height: 100%; }
-        body {
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(250, 250, 248, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .logo {
+            font-size: 18px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        
+        nav a {
+            color: var(--black);
+            text-decoration: none;
+            font-size: 14px;
+            margin: 0 1.5rem;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: var(--gold);
+        }
+        
+        .nav-cta {
+            padding: 0.75rem 1.5rem;
             background: var(--black);
-            color: var(--white);
-            font-family: 'Sohne', system-ui, -apple-system, sans-serif;
-            line-height: 1.6;
-            overflow-x: hidden;
+            color: white;
+            border-radius: 2px;
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .nav-cta:hover {
+            background: var(--gold);
         }
         
         /* Hero Section */
@@ -31,233 +77,165 @@
             min-height: 100vh;
             display: flex;
             flex-direction: column;
-            align-items: center;
+            align-items: flex-start;
             justify-content: center;
-            padding: 3rem 2rem;
-            text-align: center;
-            background: linear-gradient(135deg, rgba(0,0,0,1) 0%, rgba(20,20,20,0.8) 100%);
+            padding: 8rem 4rem 4rem;
+            margin-top: 80px;
             position: relative;
-            overflow: hidden;
-        }
-        
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -10%;
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(212, 134, 15, 0.1) 0%, transparent 70%);
-            pointer-events: none;
+            background: linear-gradient(to bottom right, #fafaf8 0%, #f5f3f0 100%);
         }
         
         .hero-content {
-            position: relative;
-            z-index: 2;
             max-width: 800px;
-            animation: fadeInUp 1s ease-out;
-        }
-        
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
         }
         
         .hero h1 {
             font-family: 'Playfair Display', serif;
-            font-size: clamp(48px, 10vw, 80px);
+            font-size: 96px;
             font-weight: 700;
-            margin-bottom: 1rem;
-            line-height: 1.1;
-        }
-        
-        .hero h1 .highlight { color: var(--gold); }
-        
-        .hero p {
-            font-size: clamp(16px, 4vw, 20px);
-            color: #ccc;
-            margin-bottom: 2.5rem;
-            line-height: 1.8;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .cta-group {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-            justify-content: center;
+            line-height: 0.95;
             margin-bottom: 3rem;
+            color: var(--black);
+            letter-spacing: -2px;
         }
         
-        .btn {
-            padding: 1rem 2.5rem;
-            border: 2px solid var(--gold);
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 15px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
+        .hero h1 .highlight {
+            color: var(--gold);
+            display: inline;
+        }
+        
+        .hero-subtitle {
+            font-size: 20px;
+            color: #666;
+            font-weight: 400;
+            max-width: 500px;
+            line-height: 1.8;
+        }
+        
+        .hero-action {
+            margin-top: 3rem;
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 4rem;
+            font-size: 12px;
+            color: #999;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        
+        /* Section */
+        .section {
+            padding: 8rem 4rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .section.light {
+            background: #fafaf8;
+        }
+        
+        .section.dark {
+            background: var(--black);
+            color: white;
+        }
+        
+        .section-intro {
+            font-size: 14px;
+            color: var(--gold);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+        
+        .section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 72px;
+            line-height: 1.1;
+            margin-bottom: 2rem;
+            color: inherit;
+            max-width: 700px;
+        }
+        
+        .section p {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #666;
+            max-width: 600px;
+            margin-bottom: 1.5rem;
+        }
+        
+        .section.dark p {
+            color: #aaa;
+        }
+        
+        /* CTA */
+        .cta-link {
             display: inline-block;
+            color: var(--gold);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            border-bottom: 1px solid var(--gold);
+            padding-bottom: 4px;
+            transition: all 0.3s;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
         
-        .btn-primary {
-            background: linear-gradient(135deg, var(--gold) 0%, var(--crimson) 100%);
-            color: var(--white);
-            border-color: transparent;
+        .cta-link:hover {
+            color: var(--crimson);
+            border-bottom-color: var(--crimson);
         }
         
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 12px 40px rgba(212, 134, 15, 0.3);
-        }
-        
-        .btn-secondary {
-            background: transparent;
-            color: var(--gold);
-        }
-        
-        .btn-secondary:hover {
-            background: rgba(212, 134, 15, 0.1);
-            border-color: var(--crimson);
-        }
-        
-        /* Job Board Section */
-        .jobs-section {
-            padding: 4rem 2rem;
-            background: var(--black);
-            min-height: 100vh;
-        }
-        
-        .section-header {
-            max-width: 900px;
-            margin: 0 auto 3rem;
-            text-align: center;
-        }
-        
-        .section-header h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(40px, 8vw, 60px);
-            margin-bottom: 1rem;
-        }
-        
-        .section-header p {
-            font-size: 18px;
-            color: #aaa;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        
-        /* Filters */
-        .filters-container {
-            max-width: 1200px;
-            margin: 0 auto 2.5rem;
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-        
-        .filter-btn {
-            padding: 0.75rem 1.5rem;
-            background: rgba(212, 134, 15, 0.1);
-            border: 1px solid var(--gold);
-            color: var(--gold);
-            border-radius: 25px;
-            cursor: pointer;
-            font-size: 14px;
-            transition: all 0.3s;
-            text-transform: capitalize;
-        }
-        
-        .filter-btn.active {
-            background: var(--gold);
-            color: var(--black);
-        }
-        
-        .filter-btn:hover {
-            background: var(--gold);
-            color: var(--black);
-        }
-        
-        /* Job Board */
-        .job-board {
-            max-width: 1200px;
-            margin: 0 auto;
+        /* Job Board Grid */
+        .job-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 2rem;
+            margin-top: 4rem;
+            max-width: 1400px;
         }
         
-        .job-card {
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(212, 134, 15, 0.3);
-            border-radius: 12px;
+        .job-item {
             padding: 2rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .job-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, var(--gold) 0%, var(--crimson) 100%);
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.3s ease;
-        }
-        
-        .job-card:hover {
-            border-color: var(--gold);
             background: rgba(212, 134, 15, 0.05);
-            transform: translateY(-4px);
-            box-shadow: 0 12px 40px rgba(212, 134, 15, 0.2);
+            border: 1px solid rgba(212, 134, 15, 0.1);
+            border-radius: 4px;
+            transition: all 0.3s;
+            cursor: pointer;
         }
         
-        .job-card:hover::before {
-            transform: scaleX(1);
+        .job-item:hover {
+            border-color: var(--gold);
+            background: rgba(212, 134, 15, 0.1);
         }
         
-        .job-card h3 {
-            font-size: 20px;
-            margin-bottom: 0.5rem;
+        .job-title {
+            font-size: 18px;
             font-weight: 600;
+            margin-bottom: 0.5rem;
         }
         
         .job-company {
             color: var(--gold);
-            font-size: 14px;
-            margin-bottom: 1rem;
+            font-size: 12px;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
         }
         
-        .job-details {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-            margin: 1rem 0;
+        .job-meta {
             font-size: 14px;
-            color: #aaa;
-        }
-        
-        .job-detail-item {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
+            color: #999;
+            line-height: 2;
         }
         
         .job-values {
@@ -268,398 +246,256 @@
         }
         
         .value-tag {
-            background: rgba(200, 74, 50, 0.2);
+            background: rgba(200, 74, 50, 0.1);
             color: var(--crimson);
             padding: 0.25rem 0.75rem;
-            border-radius: 20px;
-            font-size: 12px;
+            font-size: 11px;
+            border-radius: 2px;
             text-transform: capitalize;
         }
         
-        .job-cta {
-            margin-top: 1.5rem;
-            display: flex;
-            gap: 0.5rem;
-        }
-        
-        .job-link {
-            flex: 1;
-            padding: 0.75rem 1rem;
-            background: rgba(212, 134, 15, 0.15);
-            border: 1px solid var(--gold);
-            color: var(--gold);
-            text-align: center;
-            border-radius: 6px;
-            text-decoration: none;
-            font-size: 13px;
-            font-weight: 600;
-            transition: all 0.3s;
-            cursor: pointer;
-        }
-        
-        .job-link:hover {
-            background: var(--gold);
-            color: var(--black);
-        }
-        
-        .loading {
-            text-align: center;
-            padding: 3rem;
-            color: var(--gold);
-            font-size: 18px;
-        }
-        
-        /* Values Quiz Section */
-        .quiz-section {
-            padding: 4rem 2rem;
-            background: linear-gradient(135deg, rgba(0,0,0,1) 0%, rgba(20,20,20,0.9) 100%);
-            border-top: 1px solid rgba(212, 134, 15, 0.2);
-        }
-        
-        .quiz-container {
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        
-        .quiz-container h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 40px;
-            margin-bottom: 1.5rem;
-        }
-        
-        .quiz-desc {
-            color: #aaa;
-            margin-bottom: 2rem;
-            font-size: 16px;
-        }
-        
-        .quiz-btn {
-            width: 100%;
-            padding: 1rem;
-            background: linear-gradient(135deg, var(--gold) 0%, var(--crimson) 100%);
-            color: white;
-            border: none;
-            border-radius: 8px;
-            font-weight: 600;
-            font-size: 16px;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-        
-        .quiz-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 12px 40px rgba(212, 134, 15, 0.3);
-        }
-        
-        /* Coaching Section */
-        .coaching-section {
-            padding: 4rem 2rem;
-            background: var(--black);
-        }
-        
-        .coaching-content {
-            max-width: 1100px;
-            margin: 0 auto;
+        /* Image Grid */
+        .image-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: flex-start;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 4rem;
+            max-width: 1400px;
         }
         
-        .coaching-left h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(40px, 6vw, 56px);
-            margin-bottom: 1.5rem;
-            line-height: 1.2;
+        .image-card {
+            aspect-ratio: 1;
+            background: #e0e0e0;
+            border-radius: 4px;
+            overflow: hidden;
         }
         
-        .coaching-left p {
-            color: #aaa;
-            margin-bottom: 1.5rem;
-            font-size: 16px;
-            line-height: 1.8;
-        }
-        
-        .pricing-box {
-            background: rgba(212, 134, 15, 0.05);
-            border: 2px solid rgba(212, 134, 15, 0.3);
-            border-radius: 12px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-        }
-        
-        .pricing-box h3 {
-            color: var(--gold);
-            margin-bottom: 1rem;
-            font-size: 18px;
-        }
-        
-        .contact-box {
-            background: linear-gradient(135deg, rgba(212, 134, 15, 0.1) 0%, rgba(200, 74, 50, 0.05) 100%);
-            border: 1px solid rgba(212, 134, 15, 0.3);
-            border-radius: 12px;
-            padding: 2.5rem;
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-        
-        .contact-box h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 28px;
-            margin-bottom: 1rem;
-        }
-        
-        .contact-box p {
-            color: #aaa;
-            margin-bottom: 1.5rem;
-        }
-        
-        .contact-email {
-            display: inline-block;
-            color: var(--gold);
-            font-weight: 600;
-            text-decoration: none;
-            border-bottom: 2px solid var(--gold);
-            transition: all 0.3s;
-        }
-        
-        .contact-email:hover {
-            color: var(--crimson);
-            border-bottom-color: var(--crimson);
-        }
-        
-        .contact-box .btn {
-            margin-top: 1rem;
+        .image-card img {
             width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        /* Team Grid */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+            max-width: 1400px;
+        }
+        
+        .team-member {
+            text-align: center;
+        }
+        
+        .team-member-image {
+            width: 100%;
+            aspect-ratio: 1;
+            background: #e0e0e0;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+        
+        .team-member-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .team-name {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+        
+        .team-role {
+            font-size: 13px;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
         
         /* Footer */
         footer {
-            padding: 2rem;
+            padding: 4rem;
+            background: var(--black);
+            color: white;
             text-align: center;
-            color: #666;
             font-size: 12px;
-            border-top: 1px solid rgba(212, 134, 15, 0.1);
+        }
+        
+        footer a {
+            color: var(--gold);
+            text-decoration: none;
         }
         
         /* Responsive */
         @media (max-width: 768px) {
-            .job-board {
-                grid-template-columns: 1fr;
-            }
-            
-            .coaching-content {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-            
-            .cta-group {
-                flex-direction: column;
-            }
-            
-            .btn {
-                width: 100%;
+            .hero {
+                padding: 6rem 2rem 4rem;
+                margin-top: 60px;
             }
             
             .hero h1 {
                 font-size: 48px;
             }
+            
+            .section {
+                padding: 4rem 2rem;
+            }
+            
+            .section h2 {
+                font-size: 42px;
+            }
+            
+            nav {
+                padding: 1rem;
+            }
+            
+            nav a {
+                display: none;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- HERO SECTION -->
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">0xDECODE</div>
+        <div style="display: flex; gap: 2rem; align-items: center;">
+            <a href="#jobs">Jobs</a>
+            <a href="#coaching">Coaching</a>
+            <a href="#contact">Contact</a>
+            <button class="nav-cta" onclick="document.querySelector('.contact-cta').scrollIntoView({behavior: 'smooth'})">Schedule Call</button>
+        </div>
+    </nav>
+    
+    <!-- Hero -->
     <section class="hero">
         <div class="hero-content">
-            <h1>Decode <span class="highlight">Yourself</span></h1>
-            <p>Career coaching for college students & recent grads who want to build something real.</p>
-            <div class="cta-group">
-                <button class="btn btn-primary" onclick="document.querySelector('.jobs-section').scrollIntoView({ behavior: 'smooth' })">Browse Jobs Free</button>
-                <button class="btn btn-secondary" onclick="document.querySelector('.coaching-section').scrollIntoView({ behavior: 'smooth' })">See What's Next</button>
+            <h1>Decode <span class="highlight">yourself</span>.</h1>
+            <p class="hero-subtitle">Career coaching for college students and recent grads who want to build something real.</p>
+            <div class="hero-action">
+                <a href="#jobs" class="cta-link">Browse Jobs →</a>
             </div>
-            <p style="font-size: 13px; color: #666;">Find entry-level roles curated by values. Get 1:1 clarity on your path.</p>
         </div>
+        <div class="scroll-indicator">Scroll</div>
     </section>
     
-    <!-- JOB BOARD SECTION -->
-    <section class="jobs-section">
-        <div class="section-header">
-            <h2>Entry-Level Opportunities</h2>
-            <p>Curated roles at companies where you can actually learn, grow, and figure out what you want to build next.</p>
+    <!-- Job Board Section -->
+    <section class="section light" id="jobs">
+        <div class="section-intro">Entry-Level Roles</div>
+        <h2>Opportunities curated by values, not just salary.</h2>
+        <p>Find roles at companies where you can actually learn, grow, and figure out what matters to you.</p>
+        
+        <div class="job-grid" id="jobGrid">
+            <!-- Jobs will load here -->
         </div>
         
-        <div class="filters-container" id="filters">
-            <!-- Filters will be generated here -->
+        <div style="margin-top: 3rem;">
+            <a href="#coaching" class="cta-link">See our coaching approach →</a>
+        </div>
+    </section>
+    
+    <!-- Coaching Section -->
+    <section class="section dark" id="coaching">
+        <div class="section-intro" style="color: var(--gold);">1:1 Coaching</div>
+        <h2>The job board shows you where. Coaching shows you who and what.</h2>
+        <p>Start with a free 15-minute call. We'll talk about the roles you're exploring, what confuses you, and whether coaching is right for you.</p>
+        
+        <div style="margin-top: 3rem; max-width: 600px;">
+            <div style="margin-bottom: 3rem;">
+                <h3 style="font-size: 20px; margin-bottom: 0.75rem;">Decode Yourself</h3>
+                <p style="color: #aaa; margin-bottom: 1rem;">1:1 sessions where we dive into who you are, what you want, and which roles fit your values. We map out your path together.</p>
+                <p style="color: var(--gold); font-size: 14px;">4 sessions per month + ongoing support</p>
+            </div>
+            
+            <div style="margin-bottom: 3rem;">
+                <h3 style="font-size: 20px; margin-bottom: 0.75rem;">Build Something Real</h3>
+                <p style="color: #aaa; margin-bottom: 1rem;">Group cohort with peers going through the same decisions. Monthly sessions, accountability, and a community that gets it.</p>
+                <p style="color: var(--crimson); font-size: 14px;">Monthly cohort + lifetime community</p>
+            </div>
         </div>
         
-        <div class="job-board" id="jobBoard">
-            <div class="loading">Loading opportunities...</div>
+        <div class="contact-cta" style="margin-top: 4rem; padding: 3rem; background: rgba(212, 134, 15, 0.1); border-radius: 4px; max-width: 600px;">
+            <h3 style="margin-bottom: 1rem;">Ready to explore?</h3>
+            <p style="color: #aaa; margin-bottom: 1.5rem;">Start with a free 15-minute call.</p>
+            <a href="mailto:hiangeloddo@gmail.com" style="color: var(--gold); text-decoration: none; font-weight: 600;">hiangeloddo@gmail.com</a>
         </div>
     </section>
     
-    <!-- QUIZ SECTION -->
-    <section class="quiz-section">
-        <div class="quiz-container">
-            <h3>What Matters to You?</h3>
-            <p class="quiz-desc">Take a 2-minute values quiz to discover which roles actually fit YOUR priorities — not just salary.</p>
-            <button class="quiz-btn" onclick="alert('Values quiz coming soon. Email hiangeloddo@gmail.com to get early access!')">Take the Quiz</button>
-        </div>
-    </section>
-    
-    <!-- COACHING SECTION -->
-    <section class="coaching-section">
-        <div class="coaching-content">
-            <div class="coaching-left">
-                <h2>1:1 Coaching for Clarity</h2>
-                <p>The job board shows you WHERE to look. Coaching shows you WHO you are and WHAT you want.</p>
-                <p>Start with a free 15-minute exploration call. We'll talk about the roles you're considering, what confuses you, and whether coaching is right for you.</p>
-                <div class="contact-box">
-                    <h3>Ready to Go Deeper?</h3>
-                    <p>Book a free call or email us:</p>
-                    <a href="mailto:hiangeloddo@gmail.com" class="contact-email">hiangeloddo@gmail.com</a>
-                    <button class="btn btn-primary" onclick="alert('Calendly link coming soon. Email to book.')">Schedule Call</button>
-                </div>
-            </div>
-            <div class="coaching-right">
-                <div class="pricing-box" style="border-color: rgba(212, 134, 15, 0.5); background: rgba(212, 134, 15, 0.08);">
-                    <h3 style="font-size: 20px; margin-bottom: 1rem;">Decode Yourself</h3>
-                    <p style="color: #ccc; margin-bottom: 1rem; line-height: 1.8;">1:1 coaching sessions where we dive deep into who you are, what you actually want, and which roles fit your values. We'll map out your path together.</p>
-                    <p style="color: var(--gold); font-weight: 600;">4 sessions per month + ongoing support</p>
-                </div>
-                <div class="pricing-box" style="border-color: rgba(200, 74, 50, 0.5); background: rgba(200, 74, 50, 0.08); margin-bottom: 2rem;">
-                    <h3 style="font-size: 20px; margin-bottom: 1rem;">Build Something Real</h3>
-                    <p style="color: #ccc; margin-bottom: 1rem; line-height: 1.8;">Group cohort with 8-10 peers going through the same decisions. Monthly sessions, accountability partners, and a community that gets it.</p>
-                    <p style="color: var(--crimson); font-weight: 600;">Monthly cohort + lifetime community access</p>
-                </div>
-                <p style="text-align: center; color: #999; font-size: 14px;">Both start with a free call. We'll figure out what's right for you.</p>
-            </div>
-        </div>
-    </section>
-    
-    <!-- FOOTER -->
-    <footer>
-        <p>© 2026 0xdecodeyourself | Built with intention for people who care about values, not just salary</p>
-        <p style="margin-top: 0.5rem;"><a href="mailto:hiangeloddo@gmail.com" style="color: var(--gold); text-decoration: none;">hiangeloddo@gmail.com</a></p>
+    <!-- Footer -->
+    <footer id="contact">
+        <p>© 2026 0xdecodeyourself</p>
+        <p style="margin-top: 1rem;"><a href="mailto:hiangeloddo@gmail.com">hiangeloddo@gmail.com</a></p>
     </footer>
     
     <script>
-        // Sample entry-level jobs (will be replaced with JSearch API)
         const jobsData = [
             {
-                id: 1,
                 title: "Junior Product Manager",
                 company: "Figma",
                 location: "San Francisco, CA",
                 salary: "$120k - $140k",
-                values: ["learning", "innovation", "impact"],
-                applyUrl: "https://www.figma.com/careers",
-                description: "Help design the future of collaborative design tools"
+                values: ["learning", "innovation", "impact"]
             },
             {
-                id: 2,
                 title: "Associate Software Engineer",
                 company: "Stripe",
                 location: "Remote",
                 salary: "$140k - $160k",
-                values: ["learning", "startup", "mentorship"],
-                applyUrl: "https://stripe.com/jobs",
-                description: "Build payment infrastructure trusted by millions"
+                values: ["learning", "startup", "mentorship"]
             },
             {
-                id: 3,
                 title: "Marketing Coordinator",
                 company: "Notion",
                 location: "San Francisco, CA",
                 salary: "$70k - $85k",
-                values: ["creativity", "culture", "impact"],
-                applyUrl: "https://www.notion.so/careers",
-                description: "Tell the story of the all-in-one workspace"
+                values: ["creativity", "culture", "impact"]
             },
             {
-                id: 4,
                 title: "Business Operations Analyst",
                 company: "Ramp",
                 location: "New York, NY",
                 salary: "$85k - $100k",
-                values: ["stability", "learning", "fintech"],
-                applyUrl: "https://ramp.com/careers",
-                description: "Streamline financial operations for growing companies"
+                values: ["stability", "learning", "fintech"]
             },
             {
-                id: 5,
                 title: "UX/UI Designer",
                 company: "Discord",
                 location: "Remote",
                 salary: "$110k - $130k",
-                values: ["creativity", "culture", "community"],
-                applyUrl: "https://discord.com/careers",
-                description: "Design products used by millions daily"
+                values: ["creativity", "culture", "community"]
             },
             {
-                id: 6,
                 title: "Junior Data Analyst",
                 company: "Amplitude",
                 location: "Remote",
                 salary: "$90k - $110k",
-                values: ["learning", "analytics", "startup"],
-                applyUrl: "https://amplitude.com/careers",
-                description: "Help companies understand user behavior"
+                values: ["learning", "analytics", "startup"]
             }
         ];
         
-        const allValues = ["learning", "startup", "mentorship", "creativity", "impact", "stability", "culture", "community", "fintech", "analytics"];
-        
-        function renderFilters() {
-            const filtersContainer = document.getElementById('filters');
-            filtersContainer.innerHTML = '<button class="filter-btn active" onclick="filterJobs(null)">All Roles</button>';
-            allValues.forEach(value => {
-                filtersContainer.innerHTML += `<button class="filter-btn" onclick="filterJobs('${value}')">${value}</button>`;
-            });
-        }
-        
-        function renderJobs(jobs) {
-            const jobBoard = document.getElementById('jobBoard');
-            if (jobs.length === 0) {
-                jobBoard.innerHTML = '<p class="loading">No jobs match your filters.</p>';
-                return;
-            }
-            jobBoard.innerHTML = jobs.map(job => `
-                <div class="job-card">
-                    <div>
-                        <h3>${job.title}</h3>
-                        <div class="job-company">${job.company}</div>
-                        <div class="job-details">
-                            <div class="job-detail-item">📍 ${job.location}</div>
-                            <div class="job-detail-item">💰 ${job.salary}</div>
-                        </div>
-                        <p style="color: #999; font-size: 14px; margin: 1rem 0;">${job.description}</p>
-                        <div class="job-values">
-                            ${job.values.map(v => `<span class="value-tag">${v}</span>`).join('')}
-                        </div>
+        function renderJobs() {
+            const grid = document.getElementById('jobGrid');
+            grid.innerHTML = jobsData.map(job => `
+                <div class="job-item">
+                    <div class="job-title">${job.title}</div>
+                    <div class="job-company">${job.company}</div>
+                    <div class="job-meta">
+                        <div>${job.location}</div>
+                        <div>${job.salary}</div>
                     </div>
-                    <div class="job-cta">
-                        <a href="${job.applyUrl}" target="_blank" class="job-link">Apply</a>
-                        <button class="job-link" onclick="alert('Book a free call with Angel to talk through this role!')">Ask Angel</button>
+                    <div class="job-values">
+                        ${job.values.map(v => `<span class="value-tag">${v}</span>`).join('')}
                     </div>
                 </div>
             `).join('');
         }
         
-        function filterJobs(value) {
-            // Update active filter button
-            document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
-            
-            let filtered = jobsData;
-            if (value) {
-                filtered = jobsData.filter(job => job.values.includes(value));
-            }
-            renderJobs(filtered);
-        }
-        
-        // Initialize
-        renderFilters();
-        renderJobs(jobsData);
+        renderJobs();
     </script>
 </body>
 </html>
