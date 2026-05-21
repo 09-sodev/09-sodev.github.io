@@ -245,66 +245,62 @@
             line-height: 1.7;
         }
         
-        /* Job Grid */
+        /* Job Grid - 4 Squares */
         .job-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(2, 1fr);
             gap: 2rem;
             margin-top: 3rem;
         }
         
         .job-card {
-            padding: 2rem;
+            padding: 2.5rem;
             background: var(--white);
             border: 1px solid #e0e0e0;
             border-radius: 2px;
             transition: all 0.3s;
+            text-align: center;
+            cursor: pointer;
         }
         
         .job-card:hover, .job-card:focus-within {
             border-color: var(--gold);
-            box-shadow: 0 8px 24px rgba(244, 184, 96, 0.1);
+            box-shadow: 0 12px 40px rgba(244, 184, 96, 0.1);
+            transform: translateY(-4px);
         }
         
         .job-card h3 {
             font-size: 18px;
             font-weight: 700;
-            margin-bottom: 0.5rem;
-            text-transform: uppercase;
-        }
-        
-        .job-company {
-            color: var(--gold);
-            font-size: 12px;
-            font-weight: 800;
-            letter-spacing: 1px;
-            text-transform: uppercase;
             margin-bottom: 1rem;
+            text-transform: uppercase;
         }
         
-        .job-meta {
+        .job-card p {
             font-size: 14px;
-            color: #888;
-            line-height: 1.8;
-            margin-bottom: 1rem;
-        }
-        
-        .job-values {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-top: 1rem;
-        }
-        
-        .value-tag {
-            background: #f0f0f0;
             color: #666;
-            padding: 0.4rem 0.75rem;
-            font-size: 11px;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        
+        .job-link {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--black);
+            text-decoration: none;
+            padding: 0.75rem 2rem;
             border-radius: 2px;
-            text-transform: uppercase;
-            font-weight: 600;
+            font-weight: 700;
+            font-size: 12px;
             letter-spacing: 0.5px;
+            text-transform: uppercase;
+            transition: all 0.3s;
+            border: 2px solid var(--gold);
+        }
+        
+        .job-link:hover, .job-link:focus {
+            background: var(--black);
+            color: var(--gold);
         }
         
         /* Coaching Section */
@@ -343,8 +339,8 @@
         
         /* Let's Connect Section */
         .connect-section {
-            background: var(--white);
-            border-top: 1px solid #e0e0e0;
+            background: var(--black);
+            color: var(--white);
             padding: 4rem 3rem;
             text-align: center;
             margin-top: 4rem;
@@ -359,9 +355,29 @@
         
         .connect-section p {
             font-size: 20px;
-            color: var(--gold);
+            color: var(--white);
             font-weight: 700;
             margin: 0 auto;
+        }
+        
+        .connect-section a {
+            display: inline-block;
+            background: var(--black);
+            color: var(--white);
+            text-decoration: none;
+            padding: 1rem 2.5rem;
+            border-radius: 2px;
+            font-weight: 700;
+            font-size: 16px;
+            letter-spacing: 0.5px;
+            transition: all 0.3s;
+            border: 2px solid var(--white);
+        }
+        
+        .connect-section a:hover, .connect-section a:focus {
+            background: var(--white);
+            color: var(--black);
+            outline: none;
         }
         
         /* Footer */
@@ -403,6 +419,10 @@
                 font-size: 42px;
             }
             
+            .hero p {
+                max-width: 100%;
+            }
+            
             section {
                 padding: 3rem 1.5rem;
             }
@@ -411,15 +431,8 @@
                 font-size: 36px;
             }
             
-            .offerings-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-            
-            .job-grid {
-                grid-template-columns: 1fr;
-            }
-            
+            .offerings-grid,
+            .job-grid,
             .coaching-section {
                 grid-template-columns: 1fr;
                 gap: 2rem;
@@ -488,94 +501,34 @@
             </div>
         </section>
         
-        <!-- Jobs Section -->
+        <!-- Jobs Section - 4 Squares with Links -->
         <section id="jobs">
             <h2>Entry-Level Opportunities</h2>
-            <p>Curated roles at companies where you can actually learn, grow, and figure out what you want to build next.</p>
+            <p>Access trusted platforms where companies are actively hiring for entry-level roles.</p>
             
             <div class="job-grid">
                 <article class="job-card">
-                    <h3>Junior Product Manager</h3>
-                    <div class="job-company">Figma</div>
-                    <div class="job-meta">
-                        📍 San Francisco, CA<br>
-                        💰 $120k - $140k
-                    </div>
-                    <div class="job-values">
-                        <span class="value-tag">Learning</span>
-                        <span class="value-tag">Innovation</span>
-                        <span class="value-tag">Impact</span>
-                    </div>
+                    <h3>Handshake</h3>
+                    <p>The largest dedicated career network for students and recent graduates, focusing exclusively on entry-level jobs and internships.</p>
+                    <a href="https://www.handshake.com/" target="_blank" class="job-link">Explore →</a>
                 </article>
                 
                 <article class="job-card">
-                    <h3>Associate Software Engineer</h3>
-                    <div class="job-company">Stripe</div>
-                    <div class="job-meta">
-                        📍 Remote<br>
-                        💰 $140k - $160k
-                    </div>
-                    <div class="job-values">
-                        <span class="value-tag">Learning</span>
-                        <span class="value-tag">Startup</span>
-                        <span class="value-tag">Mentorship</span>
-                    </div>
+                    <h3>LinkedIn</h3>
+                    <p>The premier networking platform with millions of entry-level listings and direct connections to recruiters and alumni.</p>
+                    <a href="https://www.linkedin.com/jobs/" target="_blank" class="job-link">Explore →</a>
                 </article>
                 
                 <article class="job-card">
-                    <h3>Marketing Coordinator</h3>
-                    <div class="job-company">Notion</div>
-                    <div class="job-meta">
-                        📍 San Francisco, CA<br>
-                        💰 $70k - $85k
-                    </div>
-                    <div class="job-values">
-                        <span class="value-tag">Creativity</span>
-                        <span class="value-tag">Culture</span>
-                        <span class="value-tag">Impact</span>
-                    </div>
+                    <h3>CollegeGrad</h3>
+                    <p>A specialized job board dedicated directly to entry-level candidates, recent alumni, and campus recruiting.</p>
+                    <a href="https://collegegrad.com/" target="_blank" class="job-link">Explore →</a>
                 </article>
                 
                 <article class="job-card">
-                    <h3>Business Operations Analyst</h3>
-                    <div class="job-company">Ramp</div>
-                    <div class="job-meta">
-                        📍 New York, NY<br>
-                        💰 $85k - $100k
-                    </div>
-                    <div class="job-values">
-                        <span class="value-tag">Stability</span>
-                        <span class="value-tag">Learning</span>
-                        <span class="value-tag">Fintech</span>
-                    </div>
-                </article>
-                
-                <article class="job-card">
-                    <h3>UX/UI Designer</h3>
-                    <div class="job-company">Discord</div>
-                    <div class="job-meta">
-                        📍 Remote<br>
-                        💰 $110k - $130k
-                    </div>
-                    <div class="job-values">
-                        <span class="value-tag">Creativity</span>
-                        <span class="value-tag">Culture</span>
-                        <span class="value-tag">Community</span>
-                    </div>
-                </article>
-                
-                <article class="job-card">
-                    <h3>Junior Data Analyst</h3>
-                    <div class="job-company">Amplitude</div>
-                    <div class="job-meta">
-                        📍 Remote<br>
-                        💰 $90k - $110k
-                    </div>
-                    <div class="job-values">
-                        <span class="value-tag">Learning</span>
-                        <span class="value-tag">Analytics</span>
-                        <span class="value-tag">Startup</span>
-                    </div>
+                    <h3>Indeed</h3>
+                    <p>The world's largest general job aggregator with massive volume and specific filters for entry-level opportunities.</p>
+                    <a href="https://www.indeed.com/" target="_blank" class="job-link">Explore →</a>
                 </article>
             </div>
         </section>
