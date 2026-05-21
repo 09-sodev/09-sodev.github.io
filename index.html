@@ -294,6 +294,7 @@
             font-size: 13px;
             font-weight: 600;
             transition: all 0.3s;
+            cursor: pointer;
         }
         
         .job-link:hover {
@@ -357,50 +358,40 @@
         }
         
         .coaching-content {
-            max-width: 900px;
+            max-width: 1100px;
             margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: flex-start;
         }
         
-        .coaching-intro h2 {
+        .coaching-left h2 {
             font-family: 'Playfair Display', serif;
             font-size: clamp(40px, 6vw, 56px);
             margin-bottom: 1.5rem;
             line-height: 1.2;
         }
         
-        .coaching-intro p {
+        .coaching-left p {
             color: #aaa;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
             font-size: 16px;
             line-height: 1.8;
-            max-width: 700px;
         }
         
-        .offerings-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            margin-bottom: 3rem;
-        }
-        
-        .offering-card {
+        .pricing-box {
             background: rgba(212, 134, 15, 0.05);
-            border: 1px solid rgba(212, 134, 15, 0.3);
+            border: 2px solid rgba(212, 134, 15, 0.3);
             border-radius: 12px;
             padding: 2rem;
+            margin-bottom: 2rem;
         }
         
-        .offering-card h3 {
+        .pricing-box h3 {
             color: var(--gold);
             margin-bottom: 1rem;
             font-size: 18px;
-            font-weight: 600;
-        }
-        
-        .offering-card p {
-            color: #aaa;
-            font-size: 14px;
-            line-height: 1.8;
         }
         
         .contact-box {
@@ -409,6 +400,7 @@
             border-radius: 12px;
             padding: 2.5rem;
             text-align: center;
+            margin-bottom: 2rem;
         }
         
         .contact-box h3 {
@@ -483,7 +475,7 @@
             <p>Career coaching for college students & recent grads who want to build something real.</p>
             <div class="cta-group">
                 <button class="btn btn-primary" onclick="document.querySelector('.jobs-section').scrollIntoView({ behavior: 'smooth' })">Browse Jobs Free</button>
-                <button class="btn btn-secondary" onclick="document.querySelector('.coaching-section').scrollIntoView({ behavior: 'smooth' })">See Coaching</button>
+                <button class="btn btn-secondary" onclick="document.querySelector('.coaching-section').scrollIntoView({ behavior: 'smooth' })">See What's Next</button>
             </div>
             <p style="font-size: 13px; color: #666;">Find entry-level roles curated by values. Get 1:1 clarity on your path.</p>
         </div>
@@ -517,27 +509,29 @@
     <!-- COACHING SECTION -->
     <section class="coaching-section">
         <div class="coaching-content">
-            <div class="coaching-intro">
-                <h2>Let's Talk</h2>
-                <p>The job board shows you WHERE to look. Coaching shows you WHO you are and WHAT you want. It's a conversation, not a transaction. Start with a free 15-minute call. We'll talk about the roles you're considering, what confuses you, and whether coaching is right for you.</p>
-            </div>
-            
-            <div class="offerings-grid">
-                <div class="offering-card">
-                    <h3>1:1 Coaching</h3>
-                    <p>Personalized sessions focused on YOU. We'll dive deep into your values, explore career paths, and build clarity around what you actually want. Perfect if you're ready for focused, one-on-one mentorship.</p>
-                </div>
-                <div class="offering-card">
-                    <h3>Group Cohorts</h3>
-                    <p>Learn alongside 8-10 other students and grads navigating the same confusion. Monthly sessions, peer accountability, and a community that gets it. Great if you prefer learning together.</p>
+            <div class="coaching-left">
+                <h2>1:1 Coaching for Clarity</h2>
+                <p>The job board shows you WHERE to look. Coaching shows you WHO you are and WHAT you want.</p>
+                <p>Start with a free 15-minute exploration call. We'll talk about the roles you're considering, what confuses you, and whether coaching is right for you.</p>
+                <div class="contact-box">
+                    <h3>Ready to Go Deeper?</h3>
+                    <p>Book a free call or email us:</p>
+                    <a href="mailto:hiangeloddo@gmail.com" class="contact-email">hiangeloddo@gmail.com</a>
+                    <button class="btn btn-primary" onclick="alert('Calendly link coming soon. Email to book.')">Schedule Call</button>
                 </div>
             </div>
-            
-            <div class="contact-box">
-                <h3>Ready to Start?</h3>
-                <p>Book a free call. No pressure. Just a real conversation about your next move.</p>
-                <a href="mailto:hiangeloddo@gmail.com" class="contact-email">hiangeloddo@gmail.com</a>
-                <button class="btn btn-primary" onclick="alert('Calendly link coming soon. Email to book.')">Schedule Free Call</button>
+            <div class="coaching-right">
+                <div class="pricing-box" style="border-color: rgba(212, 134, 15, 0.5); background: rgba(212, 134, 15, 0.08);">
+                    <h3 style="font-size: 20px; margin-bottom: 1rem;">Decode Yourself</h3>
+                    <p style="color: #ccc; margin-bottom: 1rem; line-height: 1.8;">1:1 coaching sessions where we dive deep into who you are, what you actually want, and which roles fit your values. We'll map out your path together.</p>
+                    <p style="color: var(--gold); font-weight: 600;">4 sessions per month + ongoing support</p>
+                </div>
+                <div class="pricing-box" style="border-color: rgba(200, 74, 50, 0.5); background: rgba(200, 74, 50, 0.08); margin-bottom: 2rem;">
+                    <h3 style="font-size: 20px; margin-bottom: 1rem;">Build Something Real</h3>
+                    <p style="color: #ccc; margin-bottom: 1rem; line-height: 1.8;">Group cohort with 8-10 peers going through the same decisions. Monthly sessions, accountability partners, and a community that gets it.</p>
+                    <p style="color: var(--crimson); font-weight: 600;">Monthly cohort + lifetime community access</p>
+                </div>
+                <p style="text-align: center; color: #999; font-size: 14px;">Both start with a free call. We'll figure out what's right for you.</p>
             </div>
         </div>
     </section>
