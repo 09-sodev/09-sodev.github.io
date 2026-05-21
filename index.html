@@ -3,156 +3,614 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Career coaching for college students & recent grads. Coming soon.">
-    <title>0xdecodeyourself | Coming Soon</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <meta name="description" content="Career coaching for college students & recent grads who want to build something real.">
+    <title>0xdecodeyourself | Career Clarity</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
         html, body {
-            height: 100%;
-            background: linear-gradient(135deg, #faf9f7 0%, #f5f3f0 100%);
-            color: #2a2a2a;
-            font-family: 'Inter', sans-serif;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
+            background: #ffffff;
+            color: #1a1a1a;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.5;
+            overflow-x: hidden;
         }
         
         :root {
             --gold: #F4B860;
+            --black: #1a1a1a;
+            --white: #ffffff;
         }
         
-        .container {
-            max-width: 700px;
-            text-align: center;
-            padding: 2rem;
+        /* Skip to main */
+        .skip-to-main {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--gold);
+            color: var(--black);
+            padding: 8px 16px;
+            text-decoration: none;
+            z-index: 100;
+            font-weight: 600;
         }
         
-        h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 96px;
-            line-height: 0.9;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            letter-spacing: -2px;
+        .skip-to-main:focus {
+            top: 0;
         }
         
-        h1 .accent {
-            color: var(--gold);
+        /* Navigation - Fixed Header */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: var(--white);
+            padding: 2rem 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 999;
+            border-bottom: 1px solid #f0f0f0;
         }
         
-        .subtitle {
-            font-size: 20px;
-            color: #666;
-            line-height: 1.8;
-            margin-bottom: 2rem;
-            max-width: 500px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .email-section {
-            margin-top: 3rem;
-            padding-top: 2rem;
-            border-top: 1px solid #ddd;
-        }
-        
-        .email-label {
-            font-size: 12px;
-            color: #999;
+        .logo {
+            font-size: 16px;
+            font-weight: 800;
             letter-spacing: 2px;
             text-transform: uppercase;
-            margin-bottom: 0.75rem;
         }
         
-        .email-link {
-            display: inline-block;
-            color: var(--gold);
-            text-decoration: none;
-            font-size: 18px;
-            font-weight: 600;
-            transition: all 0.3s;
-            border-bottom: 2px solid var(--gold);
-            padding-bottom: 4px;
-        }
-        
-        .email-link:hover {
-            color: #2a2a2a;
-            border-bottom-color: #2a2a2a;
-        }
-        
-        .dot {
-            display: inline-block;
-            width: 8px;
-            height: 8px;
-            background: var(--gold);
-            border-radius: 50%;
-            margin: 2rem 0;
-            animation: pulse 2s infinite;
-        }
-        
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.5; }
-        }
-        
-        .status {
-            font-size: 12px;
+        .tagline {
+            font-size: 11px;
             color: #999;
-            margin-top: 2rem;
             letter-spacing: 1px;
             text-transform: uppercase;
+            font-weight: 600;
+            margin-top: 4px;
         }
         
-        .nav-links {
-            margin-top: 3rem;
+        nav {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        nav a {
             font-size: 13px;
-        }
-        
-        .nav-links a {
-            color: var(--gold);
+            color: var(--black);
             text-decoration: none;
             font-weight: 600;
-            margin: 0 1rem;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
             transition: color 0.3s;
             border-bottom: 2px solid transparent;
         }
         
-        .nav-links a:hover {
-            color: #2a2a2a;
+        nav a:hover, nav a:focus {
+            color: var(--gold);
             border-bottom-color: var(--gold);
+            outline: none;
         }
         
+        nav a:focus-visible {
+            outline: 3px solid var(--gold);
+            outline-offset: 2px;
+        }
+        
+        .cta-nav {
+            padding: 0.75rem 1.5rem;
+            background: var(--black);
+            color: var(--white);
+            border: 2px solid var(--black);
+            border-radius: 2px;
+            font-size: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .cta-nav:hover, .cta-nav:focus {
+            background: var(--gold);
+            border-color: var(--gold);
+            color: var(--black);
+            outline: none;
+        }
+        
+        /* Hero */
+        .hero {
+            margin-top: 140px;
+            padding: 8rem 3rem;
+            min-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: var(--white);
+        }
+        
+        .hero h1 {
+            font-size: 80px;
+            font-weight: 800;
+            line-height: 1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -2px;
+            text-transform: uppercase;
+        }
+        
+        .hero h1 .accent {
+            color: var(--gold);
+        }
+        
+        .hero p {
+            font-size: 18px;
+            color: #555;
+            line-height: 1.8;
+            max-width: 600px;
+            margin-bottom: 3rem;
+            font-weight: 500;
+        }
+        
+        .cta-primary {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--black);
+            text-decoration: none;
+            padding: 1.25rem 3rem;
+            border-radius: 2px;
+            font-weight: 700;
+            font-size: 13px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: all 0.3s;
+            border: 2px solid var(--gold);
+            cursor: pointer;
+        }
+        
+        .cta-primary:hover, .cta-primary:focus {
+            background: var(--black);
+            color: var(--gold);
+            outline: none;
+        }
+        
+        /* Section */
+        section {
+            padding: 8rem 3rem;
+            background: var(--white);
+        }
+        
+        section.light-bg {
+            background: #fafaf9;
+        }
+        
+        section h2 {
+            font-size: 56px;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 2rem;
+            letter-spacing: -1px;
+            text-transform: uppercase;
+        }
+        
+        section p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #666;
+            max-width: 650px;
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+        
+        /* Offerings Grid */
+        .offerings-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+        
+        .offering {
+            padding: 2.5rem;
+            background: var(--white);
+            border: 1px solid #e0e0e0;
+            border-radius: 2px;
+            transition: all 0.3s;
+        }
+        
+        .offering:hover, .offering:focus-within {
+            border-color: var(--gold);
+            box-shadow: 0 12px 40px rgba(244, 184, 96, 0.12);
+        }
+        
+        .offering-number {
+            font-size: 14px;
+            color: var(--gold);
+            font-weight: 800;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+        
+        .offering h3 {
+            font-size: 22px;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+        
+        .offering p {
+            font-size: 15px;
+            color: #666;
+            line-height: 1.7;
+        }
+        
+        /* Job Grid */
+        .job-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .job-card {
+            padding: 2rem;
+            background: var(--white);
+            border: 1px solid #e0e0e0;
+            border-radius: 2px;
+            transition: all 0.3s;
+        }
+        
+        .job-card:hover, .job-card:focus-within {
+            border-color: var(--gold);
+            box-shadow: 0 8px 24px rgba(244, 184, 96, 0.1);
+        }
+        
+        .job-card h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+        }
+        
+        .job-company {
+            color: var(--gold);
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+        
+        .job-meta {
+            font-size: 14px;
+            color: #888;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+        
+        .job-values {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+        
+        .value-tag {
+            background: #f0f0f0;
+            color: #666;
+            padding: 0.4rem 0.75rem;
+            font-size: 11px;
+            border-radius: 2px;
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+        
+        /* Coaching Section */
+        .coaching-section {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+        
+        .coaching-item {
+            padding: 2.5rem;
+            background: var(--white);
+            border: 1px solid #e0e0e0;
+            border-radius: 2px;
+            transition: all 0.3s;
+        }
+        
+        .coaching-item:hover {
+            border-color: var(--gold);
+            box-shadow: 0 12px 40px rgba(244, 184, 96, 0.12);
+        }
+        
+        .coaching-item h3 {
+            font-size: 22px;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+        
+        .coaching-item p {
+            font-size: 15px;
+            color: #666;
+            line-height: 1.7;
+        }
+        
+        /* Let's Connect Section */
+        .connect-section {
+            background: var(--white);
+            border-top: 1px solid #e0e0e0;
+            padding: 4rem 3rem;
+            text-align: center;
+            margin-top: 4rem;
+        }
+        
+        .connect-section h2 {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+        }
+        
+        .connect-section p {
+            font-size: 20px;
+            color: var(--gold);
+            font-weight: 700;
+            margin: 0 auto;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--black);
+            color: var(--white);
+            padding: 4rem 3rem;
+            text-align: center;
+        }
+        
+        footer a {
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: 700;
+        }
+        
+        footer a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Responsive */
         @media (max-width: 768px) {
-            h1 {
-                font-size: 52px;
+            header {
+                padding: 1.5rem;
+                flex-direction: column;
+                gap: 1rem;
             }
             
-            .subtitle {
-                font-size: 16px;
+            nav {
+                display: none;
+            }
+            
+            .hero {
+                padding: 3rem 1.5rem;
+                margin-top: 120px;
+            }
+            
+            .hero h1 {
+                font-size: 42px;
+            }
+            
+            section {
+                padding: 3rem 1.5rem;
+            }
+            
+            section h2 {
+                font-size: 36px;
+            }
+            
+            .offerings-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .job-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .coaching-section {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .connect-section h2 {
+                font-size: 32px;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Decode <span class="accent">yourself</span>.</h1>
-        <p class="subtitle">Career coaching for college students and recent grads who want to build something real.</p>
-        
-        <div class="dot"></div>
-        
-        <div class="email-section">
-            <p class="email-label">Making Updates</p>
-            <a href="mailto:hiangeloddo@gmail.com" class="email-link">hiangeloddo@gmail.com</a>
-            <p class="status">Launching soon. Stay tuned.</p>
+    <a href="#main" class="skip-to-main">Skip to main content</a>
+    
+    <!-- Header -->
+    <header role="banner">
+        <div>
+            <div class="logo">0xDECODE</div>
+            <div class="tagline">Career Clarity</div>
         </div>
-        
-        <div class="nav-links">
-            <a href="/beta">Platform</a>
+        <nav role="navigation" aria-label="Main navigation">
+            <a href="#offerings">What We Do</a>
+            <a href="#coaching">Coaching</a>
             <a href="/about">About</a>
-        </div>
-    </div>
+            <button class="cta-nav" onclick="document.querySelector('.connect-section').scrollIntoView({behavior:'smooth'})">Let's Connect</button>
+        </nav>
+    </header>
+    
+    <!-- Hero -->
+    <main id="main">
+        <section class="hero" role="banner">
+            <h1>Decode <span class="accent">yourself</span>.</h1>
+            <p>Career coaching for college students and recent grads who want to build something real. Find opportunities curated by values, not just salary.</p>
+            <a href="#offerings" class="cta-primary">Explore Now</a>
+        </section>
+        
+        <!-- What We Do -->
+        <section id="offerings" class="light-bg">
+            <h2>What We Do</h2>
+            <p>We combine job discovery with 1:1 coaching to help you find roles that align with your values and build a career you actually want.</p>
+            
+            <div class="offerings-grid">
+                <article class="offering">
+                    <div class="offering-number">01 — Discover</div>
+                    <h3>Find Your Values</h3>
+                    <p>A 2-minute quiz reveals what actually matters to you — learning, stability, impact, creativity, or something else entirely.</p>
+                </article>
+                
+                <article class="offering">
+                    <div class="offering-number">02 — Explore</div>
+                    <h3>Browse Curated Roles</h3>
+                    <p>Access entry-level jobs filtered by your values. No algorithm guessing. Real opportunities at companies where you can grow.</p>
+                </article>
+                
+                <article class="offering">
+                    <div class="offering-number">03 — Clarify</div>
+                    <h3>1:1 Coaching Sessions</h3>
+                    <p>Talk through which roles fit you best. Get clarity on your path. Build a career strategy that's actually yours.</p>
+                </article>
+                
+                <article class="offering">
+                    <div class="offering-number">04 — Launch</div>
+                    <h3>Move Forward</h3>
+                    <p>Ongoing support as you apply, interview, and start. We're with you from "what do I want" to "here's where I'm going."</p>
+                </article>
+            </div>
+        </section>
+        
+        <!-- Jobs Section -->
+        <section id="jobs">
+            <h2>Entry-Level Opportunities</h2>
+            <p>Curated roles at companies where you can actually learn, grow, and figure out what you want to build next.</p>
+            
+            <div class="job-grid">
+                <article class="job-card">
+                    <h3>Junior Product Manager</h3>
+                    <div class="job-company">Figma</div>
+                    <div class="job-meta">
+                        📍 San Francisco, CA<br>
+                        💰 $120k - $140k
+                    </div>
+                    <div class="job-values">
+                        <span class="value-tag">Learning</span>
+                        <span class="value-tag">Innovation</span>
+                        <span class="value-tag">Impact</span>
+                    </div>
+                </article>
+                
+                <article class="job-card">
+                    <h3>Associate Software Engineer</h3>
+                    <div class="job-company">Stripe</div>
+                    <div class="job-meta">
+                        📍 Remote<br>
+                        💰 $140k - $160k
+                    </div>
+                    <div class="job-values">
+                        <span class="value-tag">Learning</span>
+                        <span class="value-tag">Startup</span>
+                        <span class="value-tag">Mentorship</span>
+                    </div>
+                </article>
+                
+                <article class="job-card">
+                    <h3>Marketing Coordinator</h3>
+                    <div class="job-company">Notion</div>
+                    <div class="job-meta">
+                        📍 San Francisco, CA<br>
+                        💰 $70k - $85k
+                    </div>
+                    <div class="job-values">
+                        <span class="value-tag">Creativity</span>
+                        <span class="value-tag">Culture</span>
+                        <span class="value-tag">Impact</span>
+                    </div>
+                </article>
+                
+                <article class="job-card">
+                    <h3>Business Operations Analyst</h3>
+                    <div class="job-company">Ramp</div>
+                    <div class="job-meta">
+                        📍 New York, NY<br>
+                        💰 $85k - $100k
+                    </div>
+                    <div class="job-values">
+                        <span class="value-tag">Stability</span>
+                        <span class="value-tag">Learning</span>
+                        <span class="value-tag">Fintech</span>
+                    </div>
+                </article>
+                
+                <article class="job-card">
+                    <h3>UX/UI Designer</h3>
+                    <div class="job-company">Discord</div>
+                    <div class="job-meta">
+                        📍 Remote<br>
+                        💰 $110k - $130k
+                    </div>
+                    <div class="job-values">
+                        <span class="value-tag">Creativity</span>
+                        <span class="value-tag">Culture</span>
+                        <span class="value-tag">Community</span>
+                    </div>
+                </article>
+                
+                <article class="job-card">
+                    <h3>Junior Data Analyst</h3>
+                    <div class="job-company">Amplitude</div>
+                    <div class="job-meta">
+                        📍 Remote<br>
+                        💰 $90k - $110k
+                    </div>
+                    <div class="job-values">
+                        <span class="value-tag">Learning</span>
+                        <span class="value-tag">Analytics</span>
+                        <span class="value-tag">Startup</span>
+                    </div>
+                </article>
+            </div>
+        </section>
+        
+        <!-- Coaching Section -->
+        <section id="coaching" class="light-bg">
+            <h2>1:1 Coaching</h2>
+            <p>Beyond job boards. Real clarity on who you are and what you want. Start with a free 15-minute call.</p>
+            
+            <div class="coaching-section">
+                <article class="coaching-item">
+                    <h3>Individual Coaching</h3>
+                    <p>4 sessions per month where we dive deep into your values, strengths, and career path. One-on-one clarity and accountability.</p>
+                </article>
+                
+                <article class="coaching-item">
+                    <h3>Group Cohort</h3>
+                    <p>8-10 peers going through the same decisions. Monthly group sessions, accountability partners, and a community that gets it.</p>
+                </article>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Let's Connect -->
+    <section class="connect-section" role="region" aria-labelledby="connect-heading">
+        <h2 id="connect-heading">Let's Connect</h2>
+        <p><a href="mailto:hiangeloddo@gmail.com">hiangeloddo@gmail.com</a></p>
+    </section>
+    
+    <!-- Footer -->
+    <footer role="contentinfo">
+        <p>© 2026 0xdecodeyourself</p>
+        <p style="margin-top: 1rem; font-size: 14px; color: #999;">
+            Career clarity for recent grads who want to build something real.
+        </p>
+    </footer>
 </body>
 </html>
