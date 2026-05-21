@@ -5,23 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Career coaching for college students & recent grads who want to build something real.">
     <title>0xdecodeyourself</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
         html, body {
-            height: 100%;
-            background: #fafaf8;
-            color: #1a1a1a;
+            background: #faf9f7;
+            color: #2a2a2a;
             font-family: 'Inter', sans-serif;
             line-height: 1.6;
         }
         
         :root {
-            --gold: #D4860F;
-            --crimson: #C84A32;
-            --black: #1a1a1a;
-            --cream: #fafaf8;
+            --red: #D32F2F;
+            --black: #2a2a2a;
+            --cream: #faf9f7;
         }
         
         /* Navigation */
@@ -29,213 +27,207 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(250, 250, 248, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 1.5rem 2rem;
+            background: var(--cream);
+            padding: 2rem 3rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
             z-index: 1000;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            border-bottom: 1px solid #efefef;
         }
         
         .logo {
-            font-size: 18px;
-            font-weight: 600;
-            letter-spacing: 2px;
+            font-family: 'Playfair Display', serif;
+            font-size: 16px;
+            font-weight: 700;
+            letter-spacing: 3px;
             text-transform: uppercase;
+        }
+        
+        nav .nav-links {
+            display: flex;
+            gap: 3rem;
+            align-items: center;
         }
         
         nav a {
             color: var(--black);
             text-decoration: none;
             font-size: 14px;
-            margin: 0 1.5rem;
             transition: color 0.3s;
         }
         
         nav a:hover {
-            color: var(--gold);
+            color: var(--red);
         }
         
-        .nav-cta {
-            padding: 0.75rem 1.5rem;
+        .nav-button {
+            padding: 0.75rem 1.75rem;
             background: var(--black);
             color: white;
+            border: none;
             border-radius: 2px;
-            font-size: 13px;
+            font-size: 12px;
+            font-weight: 600;
             cursor: pointer;
             transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
         
-        .nav-cta:hover {
-            background: var(--gold);
+        .nav-button:hover {
+            background: var(--red);
         }
         
-        /* Hero Section */
-        .hero {
+        /* Full Height Sections */
+        section {
             min-height: 100vh;
             display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            justify-content: center;
-            padding: 8rem 4rem 4rem;
-            margin-top: 80px;
-            position: relative;
-            background: linear-gradient(to bottom right, #fafaf8 0%, #f5f3f0 100%);
+            align-items: center;
+            padding: 8rem 4rem;
+            scroll-behavior: smooth;
+        }
+        
+        section.dark {
+            background: var(--black);
+            color: white;
+        }
+        
+        section.light {
+            background: var(--cream);
+        }
+        
+        /* Hero */
+        .hero {
+            margin-top: 100px;
         }
         
         .hero-content {
-            max-width: 800px;
+            max-width: 700px;
         }
         
         .hero h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 96px;
+            font-size: 120px;
+            line-height: 0.9;
             font-weight: 700;
-            line-height: 0.95;
-            margin-bottom: 3rem;
-            color: var(--black);
+            margin-bottom: 2rem;
             letter-spacing: -2px;
         }
         
-        .hero h1 .highlight {
-            color: var(--gold);
-            display: inline;
+        .hero h1 .accent {
+            color: var(--red);
         }
         
-        .hero-subtitle {
-            font-size: 20px;
+        .hero p {
+            font-size: 18px;
             color: #666;
-            font-weight: 400;
-            max-width: 500px;
             line-height: 1.8;
+            max-width: 500px;
         }
         
         .hero-action {
             margin-top: 3rem;
-            display: flex;
-            gap: 2rem;
-            align-items: center;
         }
         
-        .scroll-indicator {
-            position: absolute;
-            bottom: 2rem;
-            left: 4rem;
+        .underline-link {
+            display: inline-block;
+            color: var(--black);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            border-bottom: 2px solid var(--black);
+            padding-bottom: 4px;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .underline-link:hover {
+            color: var(--red);
+            border-bottom-color: var(--red);
+        }
+        
+        /* Section Headers */
+        .section-label {
             font-size: 12px;
             color: #999;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-        
-        /* Section */
-        .section {
-            padding: 8rem 4rem;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-        
-        .section.light {
-            background: #fafaf8;
-        }
-        
-        .section.dark {
-            background: var(--black);
-            color: white;
-        }
-        
-        .section-intro {
-            font-size: 14px;
-            color: var(--gold);
-            letter-spacing: 1px;
+            letter-spacing: 2px;
             text-transform: uppercase;
             margin-bottom: 1rem;
         }
         
-        .section h2 {
+        section h2 {
             font-family: 'Playfair Display', serif;
-            font-size: 72px;
-            line-height: 1.1;
-            margin-bottom: 2rem;
-            color: inherit;
-            max-width: 700px;
+            font-size: 80px;
+            line-height: 1;
+            margin-bottom: 2.5rem;
+            font-weight: 700;
+            letter-spacing: -1px;
         }
         
-        .section p {
+        section.dark h2 {
+            color: white;
+        }
+        
+        section p {
             font-size: 18px;
             line-height: 1.8;
-            color: #666;
             max-width: 600px;
             margin-bottom: 1.5rem;
         }
         
-        .section.dark p {
-            color: #aaa;
+        section.dark p {
+            color: #bbb;
         }
         
-        /* CTA */
-        .cta-link {
-            display: inline-block;
-            color: var(--gold);
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: 600;
-            border-bottom: 1px solid var(--gold);
-            padding-bottom: 4px;
-            transition: all 0.3s;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        
-        .cta-link:hover {
-            color: var(--crimson);
-            border-bottom-color: var(--crimson);
-        }
-        
-        /* Job Board Grid */
+        /* Job Grid */
         .job-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
-            margin-top: 4rem;
-            max-width: 1400px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+            max-width: 100%;
         }
         
-        .job-item {
+        .job-card {
             padding: 2rem;
-            background: rgba(212, 134, 15, 0.05);
-            border: 1px solid rgba(212, 134, 15, 0.1);
-            border-radius: 4px;
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 2px;
             transition: all 0.3s;
             cursor: pointer;
         }
         
-        .job-item:hover {
-            border-color: var(--gold);
-            background: rgba(212, 134, 15, 0.1);
+        .job-card:hover {
+            border-color: var(--red);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.08);
         }
         
-        .job-title {
+        .job-card h3 {
             font-size: 18px;
             font-weight: 600;
             margin-bottom: 0.5rem;
         }
         
         .job-company {
-            color: var(--gold);
+            color: var(--red);
             font-size: 12px;
-            text-transform: uppercase;
+            font-weight: 600;
             letter-spacing: 1px;
-            margin-bottom: 1rem;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
         }
         
         .job-meta {
             font-size: 14px;
-            color: #999;
-            line-height: 2;
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+        
+        .job-meta div {
+            margin-bottom: 0.5rem;
         }
         
         .job-values {
@@ -246,75 +238,76 @@
         }
         
         .value-tag {
-            background: rgba(200, 74, 50, 0.1);
-            color: var(--crimson);
-            padding: 0.25rem 0.75rem;
+            background: #f5f5f5;
+            color: #666;
+            padding: 0.35rem 0.75rem;
             font-size: 11px;
             border-radius: 2px;
             text-transform: capitalize;
         }
         
-        /* Image Grid */
-        .image-grid {
+        /* Stats Section */
+        .stats-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin-top: 4rem;
-            max-width: 1400px;
+            gap: 3rem;
+            margin-top: 3rem;
+            max-width: 100%;
+            padding-top: 3rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
         }
         
-        .image-card {
-            aspect-ratio: 1;
-            background: #e0e0e0;
-            border-radius: 4px;
-            overflow: hidden;
+        .stat {
+            text-align: left;
         }
         
-        .image-card img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            color: var(--red);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            letter-spacing: -1px;
         }
         
-        /* Team Grid */
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 4rem;
-            max-width: 1400px;
-        }
-        
-        .team-member {
-            text-align: center;
-        }
-        
-        .team-member-image {
-            width: 100%;
-            aspect-ratio: 1;
-            background: #e0e0e0;
-            border-radius: 4px;
-            margin-bottom: 1rem;
-            overflow: hidden;
-        }
-        
-        .team-member-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        .team-name {
-            font-size: 16px;
-            font-weight: 600;
-            margin-bottom: 0.25rem;
-        }
-        
-        .team-role {
-            font-size: 13px;
+        .stat-label {
+            font-size: 12px;
             color: #999;
+            letter-spacing: 1px;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+        }
+        
+        /* Coaching Section */
+        .coaching-box {
+            max-width: 700px;
+            background: rgba(255,255,255,0.05);
+            padding: 3rem;
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 2px;
+            margin-top: 2rem;
+        }
+        
+        .coaching-box h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .coaching-box p {
+            font-size: 16px;
+            color: #aaa;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+        
+        .coaching-box a {
+            color: var(--red);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .coaching-box a:hover {
+            text-decoration: underline;
         }
         
         /* Footer */
@@ -324,38 +317,49 @@
             color: white;
             text-align: center;
             font-size: 12px;
+            border-top: 1px solid rgba(255,255,255,0.1);
         }
         
         footer a {
-            color: var(--gold);
+            color: var(--red);
             text-decoration: none;
+        }
+        
+        footer a:hover {
+            text-decoration: underline;
         }
         
         /* Responsive */
         @media (max-width: 768px) {
-            .hero {
-                padding: 6rem 2rem 4rem;
-                margin-top: 60px;
-            }
-            
-            .hero h1 {
-                font-size: 48px;
-            }
-            
-            .section {
+            section {
                 padding: 4rem 2rem;
-            }
-            
-            .section h2 {
-                font-size: 42px;
+                min-height: auto;
             }
             
             nav {
-                padding: 1rem;
+                padding: 1.5rem 1.5rem;
+                flex-direction: column;
+                gap: 1rem;
             }
             
-            nav a {
+            .nav-links {
                 display: none;
+            }
+            
+            .hero h1 {
+                font-size: 56px;
+            }
+            
+            section h2 {
+                font-size: 42px;
+            }
+            
+            .job-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -363,73 +367,104 @@
 <body>
     <!-- Navigation -->
     <nav>
-        <div class="logo">0xDECODE</div>
-        <div style="display: flex; gap: 2rem; align-items: center;">
+        <div class="logo">0xDecode</div>
+        <div class="nav-links">
             <a href="#jobs">Jobs</a>
             <a href="#coaching">Coaching</a>
             <a href="#contact">Contact</a>
-            <button class="nav-cta" onclick="document.querySelector('.contact-cta').scrollIntoView({behavior: 'smooth'})">Schedule Call</button>
+            <button class="nav-button" onclick="document.getElementById('coaching').scrollIntoView({behavior:'smooth'})">Schedule Call</button>
         </div>
     </nav>
     
-    <!-- Hero -->
-    <section class="hero">
+    <!-- Hero Section -->
+    <section class="hero light">
         <div class="hero-content">
-            <h1>Decode <span class="highlight">yourself</span>.</h1>
-            <p class="hero-subtitle">Career coaching for college students and recent grads who want to build something real.</p>
+            <h1>Decode <span class="accent">yourself</span>.</h1>
+            <p>Career coaching for college students and recent grads who want to build something real. Start with a free job board curated by values, not just salary.</p>
             <div class="hero-action">
-                <a href="#jobs" class="cta-link">Browse Jobs →</a>
+                <a href="#jobs" class="underline-link">Browse Jobs →</a>
             </div>
         </div>
-        <div class="scroll-indicator">Scroll</div>
     </section>
     
     <!-- Job Board Section -->
-    <section class="section light" id="jobs">
-        <div class="section-intro">Entry-Level Roles</div>
-        <h2>Opportunities curated by values, not just salary.</h2>
-        <p>Find roles at companies where you can actually learn, grow, and figure out what matters to you.</p>
-        
-        <div class="job-grid" id="jobGrid">
-            <!-- Jobs will load here -->
+    <section id="jobs" class="light">
+        <div style="width: 100%;">
+            <div class="section-label">Entry-Level Roles</div>
+            <h2>Opportunities curated by values.</h2>
+            <p>Find roles at companies where you can actually learn, grow, and figure out what matters to you.</p>
+            
+            <div class="job-grid" id="jobGrid">
+                <!-- Jobs will render here -->
+            </div>
+            
+            <div style="margin-top: 4rem;">
+                <a href="#coaching" class="underline-link">See Our Approach →</a>
+            </div>
         </div>
-        
-        <div style="margin-top: 3rem;">
-            <a href="#coaching" class="cta-link">See our coaching approach →</a>
+    </section>
+    
+    <!-- Stats Section -->
+    <section id="stats" class="dark">
+        <div style="width: 100%;">
+            <div class="section-label" style="color: #666;">About Us</div>
+            <h2>Building clarity from day one.</h2>
+            <p>We believe in values-first career guidance. Since 2025, we've helped recent grads move beyond job titles to find roles that actually fit who they are.</p>
+            
+            <div class="stats-grid">
+                <div class="stat">
+                    <div class="stat-number">500+</div>
+                    <div class="stat-label">Students Exploring</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Curated Roles</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">15+</div>
+                    <div class="stat-label">Values to Discover</div>
+                </div>
+            </div>
         </div>
     </section>
     
     <!-- Coaching Section -->
-    <section class="section dark" id="coaching">
-        <div class="section-intro" style="color: var(--gold);">1:1 Coaching</div>
-        <h2>The job board shows you where. Coaching shows you who and what.</h2>
-        <p>Start with a free 15-minute call. We'll talk about the roles you're exploring, what confuses you, and whether coaching is right for you.</p>
-        
-        <div style="margin-top: 3rem; max-width: 600px;">
-            <div style="margin-bottom: 3rem;">
-                <h3 style="font-size: 20px; margin-bottom: 0.75rem;">Decode Yourself</h3>
-                <p style="color: #aaa; margin-bottom: 1rem;">1:1 sessions where we dive into who you are, what you want, and which roles fit your values. We map out your path together.</p>
-                <p style="color: var(--gold); font-size: 14px;">4 sessions per month + ongoing support</p>
-            </div>
+    <section id="coaching" class="dark">
+        <div style="width: 100%;">
+            <div class="section-label" style="color: #666;">1:1 Coaching</div>
+            <h2>The clarity you need to move forward.</h2>
+            <p>The job board shows you where to look. Coaching shows you who you are and what actually matters. Start with a free 15-minute call.</p>
             
-            <div style="margin-bottom: 3rem;">
-                <h3 style="font-size: 20px; margin-bottom: 0.75rem;">Build Something Real</h3>
-                <p style="color: #aaa; margin-bottom: 1rem;">Group cohort with peers going through the same decisions. Monthly sessions, accountability, and a community that gets it.</p>
-                <p style="color: var(--crimson); font-size: 14px;">Monthly cohort + lifetime community</p>
+            <div class="coaching-box">
+                <h3>Two Ways to Work Together</h3>
+                
+                <div style="margin: 2rem 0;">
+                    <h4 style="font-size: 18px; margin-bottom: 0.5rem;">Decode Yourself</h4>
+                    <p style="margin-bottom: 0.5rem;">1:1 sessions where we dive into who you are, what you want, and which roles fit your values.</p>
+                    <p style="color: var(--red); font-size: 13px;">4 sessions per month + ongoing support</p>
+                </div>
+                
+                <div style="margin: 2rem 0; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1);">
+                    <h4 style="font-size: 18px; margin-bottom: 0.5rem;">Build Something Real</h4>
+                    <p style="margin-bottom: 0.5rem;">Group cohort with peers going through the same decisions. Monthly sessions, accountability, and a community.</p>
+                    <p style="color: var(--red); font-size: 13px;">Monthly cohort + lifetime community</p>
+                </div>
+                
+                <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1);">
+                    <p style="margin-bottom: 1rem;">Ready to explore?</p>
+                    <a href="mailto:hiangeloddo@gmail.com">hiangeloddo@gmail.com</a>
+                </div>
             </div>
-        </div>
-        
-        <div class="contact-cta" style="margin-top: 4rem; padding: 3rem; background: rgba(212, 134, 15, 0.1); border-radius: 4px; max-width: 600px;">
-            <h3 style="margin-bottom: 1rem;">Ready to explore?</h3>
-            <p style="color: #aaa; margin-bottom: 1.5rem;">Start with a free 15-minute call.</p>
-            <a href="mailto:hiangeloddo@gmail.com" style="color: var(--gold); text-decoration: none; font-weight: 600;">hiangeloddo@gmail.com</a>
         </div>
     </section>
     
     <!-- Footer -->
     <footer id="contact">
         <p>© 2026 0xdecodeyourself</p>
-        <p style="margin-top: 1rem;"><a href="mailto:hiangeloddo@gmail.com">hiangeloddo@gmail.com</a></p>
+        <p style="margin-top: 1rem;">
+            <a href="mailto:hiangeloddo@gmail.com">hiangeloddo@gmail.com</a>
+        </p>
+        <p style="margin-top: 1rem; color: #666;">The opportunity to create, grow, and look ahead.</p>
     </footer>
     
     <script>
@@ -481,12 +516,12 @@
         function renderJobs() {
             const grid = document.getElementById('jobGrid');
             grid.innerHTML = jobsData.map(job => `
-                <div class="job-item">
-                    <div class="job-title">${job.title}</div>
+                <div class="job-card">
+                    <h3>${job.title}</h3>
                     <div class="job-company">${job.company}</div>
                     <div class="job-meta">
-                        <div>${job.location}</div>
-                        <div>${job.salary}</div>
+                        <div>📍 ${job.location}</div>
+                        <div>💰 ${job.salary}</div>
                     </div>
                     <div class="job-values">
                         ${job.values.map(v => `<span class="value-tag">${v}</span>`).join('')}
