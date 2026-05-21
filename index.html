@@ -71,7 +71,7 @@
         }
         
         .logo .accent {
-            color: #FF8C42;
+            color: var(--gold);
         }
         
         .logo-link {
@@ -138,7 +138,35 @@
             outline: none;
         }
         
-        /* Hero */
+        /* Ticker */
+        .ticker {
+            background: var(--black);
+            color: var(--gold);
+            padding: 1rem 0;
+            overflow: hidden;
+            border-bottom: 1px solid var(--gold);
+            position: relative;
+            margin-top: 70px;
+        }
+        
+        .ticker-content {
+            display: flex;
+            animation: scroll-left 30s linear infinite;
+            white-space: nowrap;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+        
+        .ticker-item {
+            padding: 0 3rem;
+            display: inline-block;
+        }
+        
+        @keyframes scroll-left {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
         .hero {
             margin-top: 140px;
             padding: 8rem 3rem;
@@ -651,15 +679,31 @@
     <!-- Header -->
     <header role="banner">
         <div>
-            <div class="logo">0xDECODE<span class="accent">YOURSELF</span></div>
+            <div class="logo">DECODE<span class="accent">YOURSELF</span></div>
             <div class="tagline">Career Clarity</div>
         </div>
         <nav role="navigation" aria-label="Main navigation">
             <a onclick="document.getElementById('offerings').scrollIntoView({behavior:'smooth'})">What We Do</a>
+            <a onclick="document.getElementById('team').scrollIntoView({behavior:'smooth'})">Founders</a>
             <a onclick="document.getElementById('coaching').scrollIntoView({behavior:'smooth'})">Coaching</a>
             <button class="cta-nav" onclick="document.querySelector('.connect-section').scrollIntoView({behavior:'smooth'})">Let's Connect</button>
         </nav>
     </header>
+    
+    <!-- Ticker -->
+    <div class="ticker">
+        <div class="ticker-content">
+            <span class="ticker-item">✨ Start your values-first career journey</span>
+            <span class="ticker-item">🎯 Find roles that align with who you are</span>
+            <span class="ticker-item">💡 Get clarity on your path forward</span>
+            <span class="ticker-item">🚀 Build a career you actually want</span>
+            <span class="ticker-item">🌟 Connect with mentors who get it</span>
+            <span class="ticker-item">📈 Grow with purpose and intention</span>
+            <span class="ticker-item">✨ Start your values-first career journey</span>
+            <span class="ticker-item">🎯 Find roles that align with who you are</span>
+            <span class="ticker-item">💡 Get clarity on your path forward</span>
+        </div>
+    </div>
     
     <!-- Hero -->
     <main id="main">
