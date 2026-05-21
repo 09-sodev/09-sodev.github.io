@@ -6,13 +6,20 @@
     <title>0xdecodeyourself</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { background: #000; color: #fff; font-family: system-ui, -apple-system, sans-serif; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+        body { background: #000; color: #fff; font-family: system-ui, -apple-system, sans-serif; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 2rem; }
         .badge { border: 1px solid #D4860F; border-radius: 20px; padding: 8px 16px; margin-bottom: 40px; font-size: 12px; color: #D4860F; display: inline-block; }
-        h1 { font-size: 100px; font-weight: 700; margin-bottom: 20px; }
+        h1 { font-size: clamp(48px, 12vw, 100px); font-weight: 700; margin-bottom: 20px; line-height: 1; }
         .gold { color: #D4860F; }
-        p { font-size: 16px; color: #999; margin-bottom: 10px; }
-        .email { color: #D4860F; margin-top: 60px; font-size: 14px; }
+        p { font-size: clamp(14px, 4vw, 16px); color: #999; margin-bottom: 10px; max-width: 500px; }
+        .email { color: #D4860F; margin-top: 60px; font-size: clamp(13px, 3vw, 14px); }
         footer { position: fixed; bottom: 20px; font-size: 12px; color: #666; }
+        
+        @media (max-width: 480px) {
+            body { padding: 1.5rem; }
+            .badge { margin-bottom: 30px; }
+            h1 { margin-bottom: 15px; }
+            .email { margin-top: 40px; }
+        }
     </style>
 </head>
 <body>
