@@ -357,21 +357,22 @@
         .people-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 4rem;
-            margin: 4rem 0;
+            gap: 3rem;
+            margin-top: 3rem;
         }
         
         .person-card {
             padding: 0;
+            background: transparent;
         }
         
         .person-image {
             width: 100%;
-            aspect-ratio: 1;
+            aspect-ratio: 3/4;
             background: #f0f0f0;
             border-radius: 4px;
             overflow: hidden;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
         }
         
         .person-image img {
@@ -382,7 +383,7 @@
         }
         
         .person-card h3 {
-            font-size: 28px;
+            font-size: 18px;
             font-weight: 800;
             margin-bottom: 0.5rem;
             text-transform: uppercase;
@@ -394,26 +395,27 @@
             font-weight: 700;
             letter-spacing: 1px;
             text-transform: uppercase;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
         }
         
         .person-bio {
             font-size: 15px;
             color: #666;
             line-height: 1.8;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
         }
         
         .person-highlights {
             list-style: none;
-            font-size: 14px;
+            font-size: 13px;
             color: #555;
-            margin-bottom: 1.5rem;
+            margin: 0;
+            padding: 0;
         }
         
         .person-highlights li {
-            margin-bottom: 0.75rem;
-            padding-left: 1.5rem;
+            margin-bottom: 0.5rem;
+            padding-left: 1rem;
             position: relative;
         }
         
@@ -422,12 +424,14 @@
             position: absolute;
             left: 0;
             color: var(--gold);
+            font-size: 6px;
         }
         
         .person-links {
             display: flex;
             gap: 1rem;
             align-items: center;
+            margin-top: 1rem;
         }
         
         .person-links a {
