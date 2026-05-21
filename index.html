@@ -6,40 +6,40 @@
     <title>0xdecodeyourself</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { background: #000; color: #fff; font-family: system-ui, -apple-system, sans-serif; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 2rem; text-align: center; }
-        .badge { border: 1px solid #D4860F; border-radius: 20px; padding: 8px 16px; margin-bottom: 40px; font-size: 12px; color: #D4860F; display: inline-block; }
-        h1 { font-size: 100px; font-weight: 700; margin-bottom: 20px; line-height: 1; word-break: break-word; }
+        html, body { height: 100%; }
+        body { background: #000; color: #fff; font-family: system-ui, -apple-system, sans-serif; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 2rem 1rem; text-align: center; }
+        .content { width: 100%; max-width: 100%; }
+        .badge { border: 1px solid #D4860F; border-radius: 20px; padding: 8px 16px; margin-bottom: 40px; font-size: 12px; color: #D4860F; display: inline-block; white-space: nowrap; }
+        h1 { font-size: 80px; font-weight: 700; margin-bottom: 20px; line-height: 0.95; word-wrap: break-word; overflow-wrap: break-word; }
         .gold { color: #D4860F; }
-        p { font-size: 16px; color: #999; margin-bottom: 10px; max-width: 600px; line-height: 1.6; }
-        .email { color: #D4860F; margin-top: 60px; font-size: 14px; }
-        footer { position: fixed; bottom: 20px; font-size: 12px; color: #666; }
+        p { font-size: 15px; color: #999; margin-bottom: 10px; line-height: 1.5; }
+        .email { color: #D4860F; margin-top: 50px; font-size: 14px; text-decoration: none; }
+        footer { position: fixed; bottom: 15px; font-size: 11px; color: #666; }
         
-        @media (max-width: 768px) {
-            h1 { font-size: 60px; }
+        @media (max-width: 600px) {
+            body { padding: 1.5rem 1rem; }
+            h1 { font-size: 50px; margin-bottom: 15px; }
             p { font-size: 14px; }
-            .email { font-size: 13px; }
+            .badge { margin-bottom: 25px; font-size: 11px; }
+            .email { margin-top: 40px; font-size: 13px; }
         }
         
-        @media (max-width: 480px) {
-            body { padding: 1.5rem; }
-            h1 { font-size: 45px; margin-bottom: 15px; }
-            p { font-size: 13px; max-width: 100%; }
-            .badge { margin-bottom: 30px; padding: 6px 12px; font-size: 11px; }
-            .email { margin-top: 40px; font-size: 12px; }
-        }
-        
-        @media (max-width: 320px) {
-            h1 { font-size: 36px; }
-            p { font-size: 12px; }
-            .badge { font-size: 10px; }
+        @media (max-width: 400px) {
+            body { padding: 1rem; }
+            h1 { font-size: 40px; margin-bottom: 12px; }
+            p { font-size: 13px; }
+            .badge { margin-bottom: 20px; font-size: 10px; padding: 6px 12px; }
+            .email { margin-top: 30px; font-size: 12px; }
         }
     </style>
 </head>
 <body>
-    <div class="badge">⬥ coming soon</div>
-    <h1><span class="gold">0x</span>decodeyourself</h1>
-    <p>Career coaching for college students & recent grads who want to build something real.</p>
-    <p class="email">hiangeloddo@gmail.com</p>
+    <div class="content">
+        <div class="badge">⬥ coming soon</div>
+        <h1><span class="gold">0x</span>decodeyourself</h1>
+        <p>Career coaching for college students & recent grads who want to build something real.</p>
+        <a href="mailto:hiangeloddo@gmail.com" class="email">hiangeloddo@gmail.com</a>
+    </div>
     <footer>© 2026 - All Rights Reserved</footer>
 </body>
 </html>
