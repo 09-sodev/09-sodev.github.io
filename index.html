@@ -6,19 +6,32 @@
     <title>0xdecodeyourself</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { background: #000; color: #fff; font-family: system-ui, -apple-system, sans-serif; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 2rem; }
+        body { background: #000; color: #fff; font-family: system-ui, -apple-system, sans-serif; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 2rem; text-align: center; }
         .badge { border: 1px solid #D4860F; border-radius: 20px; padding: 8px 16px; margin-bottom: 40px; font-size: 12px; color: #D4860F; display: inline-block; }
-        h1 { font-size: clamp(48px, 12vw, 100px); font-weight: 700; margin-bottom: 20px; line-height: 1; }
+        h1 { font-size: 100px; font-weight: 700; margin-bottom: 20px; line-height: 1; word-break: break-word; }
         .gold { color: #D4860F; }
-        p { font-size: clamp(14px, 4vw, 16px); color: #999; margin-bottom: 10px; max-width: 500px; }
-        .email { color: #D4860F; margin-top: 60px; font-size: clamp(13px, 3vw, 14px); }
+        p { font-size: 16px; color: #999; margin-bottom: 10px; max-width: 600px; line-height: 1.6; }
+        .email { color: #D4860F; margin-top: 60px; font-size: 14px; }
         footer { position: fixed; bottom: 20px; font-size: 12px; color: #666; }
+        
+        @media (max-width: 768px) {
+            h1 { font-size: 60px; }
+            p { font-size: 14px; }
+            .email { font-size: 13px; }
+        }
         
         @media (max-width: 480px) {
             body { padding: 1.5rem; }
-            .badge { margin-bottom: 30px; }
-            h1 { margin-bottom: 15px; }
-            .email { margin-top: 40px; }
+            h1 { font-size: 45px; margin-bottom: 15px; }
+            p { font-size: 13px; max-width: 100%; }
+            .badge { margin-bottom: 30px; padding: 6px 12px; font-size: 11px; }
+            .email { margin-top: 40px; font-size: 12px; }
+        }
+        
+        @media (max-width: 320px) {
+            h1 { font-size: 36px; }
+            p { font-size: 12px; }
+            .badge { font-size: 10px; }
         }
     </style>
 </head>
