@@ -63,6 +63,22 @@
             text-transform: uppercase;
         }
         
+        .logo a {
+            text-decoration: none;
+            color: var(--black);
+            display: inline;
+            cursor: pointer;
+        }
+        
+        .logo .accent {
+            color: #FF8C42;
+        }
+        
+        .logo-link {
+            text-decoration: none;
+            cursor: pointer;
+        }
+        
         .tagline {
             font-size: 11px;
             color: #999;
@@ -624,10 +640,10 @@
     
     <!-- Header -->
     <header role="banner">
-        <div>
-            <div class="logo">0xDECODEYOURSELF</div>
+        <a href="#" class="logo-link" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">
+            <div class="logo">0xDECODEY<span class="accent">OURSELF</span></div>
             <div class="tagline">Career Clarity</div>
-        </div>
+        </a>
         <nav role="navigation" aria-label="Main navigation">
             <a onclick="document.getElementById('offerings').scrollIntoView({behavior:'smooth'})">What We Do</a>
             <a onclick="document.getElementById('coaching').scrollIntoView({behavior:'smooth'})">Coaching</a>
