@@ -357,60 +357,50 @@
         }
         
         .coaching-content {
-            max-width: 1100px;
+            max-width: 900px;
             margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
         }
         
-        .coaching-left h2 {
+        .coaching-intro h2 {
             font-family: 'Playfair Display', serif;
             font-size: clamp(40px, 6vw, 56px);
             margin-bottom: 1.5rem;
             line-height: 1.2;
         }
         
-        .coaching-left p {
+        .coaching-intro p {
             color: #aaa;
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
             font-size: 16px;
             line-height: 1.8;
+            max-width: 700px;
         }
         
-        .pricing-box {
+        .offerings-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .offering-card {
             background: rgba(212, 134, 15, 0.05);
-            border: 2px solid var(--gold);
+            border: 1px solid rgba(212, 134, 15, 0.3);
             border-radius: 12px;
             padding: 2rem;
-            margin-bottom: 2rem;
         }
         
-        .pricing-box h3 {
+        .offering-card h3 {
             color: var(--gold);
             margin-bottom: 1rem;
             font-size: 18px;
+            font-weight: 600;
         }
         
-        .price {
-            font-family: 'Playfair Display', serif;
-            font-size: 36px;
-            color: var(--gold);
-            margin-bottom: 0.5rem;
-        }
-        
-        .pricing-box ul {
-            list-style: none;
+        .offering-card p {
             color: #aaa;
             font-size: 14px;
-            line-height: 2;
-        }
-        
-        .pricing-box ul li::before {
-            content: '✓ ';
-            color: var(--gold);
-            margin-right: 0.5rem;
+            line-height: 1.8;
         }
         
         .contact-box {
@@ -527,41 +517,27 @@
     <!-- COACHING SECTION -->
     <section class="coaching-section">
         <div class="coaching-content">
-            <div class="coaching-left">
-                <h2>1:1 Coaching for Clarity</h2>
-                <p>The job board shows you WHERE to look. Coaching shows you WHO you are and WHAT you want.</p>
-                <p>Start with a free 15-minute exploration call. We'll talk about the roles you're considering, what confuses you, and whether coaching is right for you.</p>
-                <div class="contact-box">
-                    <h3>Ready to Go Deeper?</h3>
-                    <p>Book a free call or email us:</p>
-                    <a href="mailto:hiangeloddo@gmail.com" class="contact-email">hiangeloddo@gmail.com</a>
-                    <button class="btn btn-primary" onclick="alert('Calendly link coming soon. Email to book.')">Schedule Call</button>
+            <div class="coaching-intro">
+                <h2>Let's Talk</h2>
+                <p>The job board shows you WHERE to look. Coaching shows you WHO you are and WHAT you want. It's a conversation, not a transaction. Start with a free 15-minute call. We'll talk about the roles you're considering, what confuses you, and whether coaching is right for you.</p>
+            </div>
+            
+            <div class="offerings-grid">
+                <div class="offering-card">
+                    <h3>1:1 Coaching</h3>
+                    <p>Personalized sessions focused on YOU. We'll dive deep into your values, explore career paths, and build clarity around what you actually want. Perfect if you're ready for focused, one-on-one mentorship.</p>
+                </div>
+                <div class="offering-card">
+                    <h3>Group Cohorts</h3>
+                    <p>Learn alongside 8-10 other students and grads navigating the same confusion. Monthly sessions, peer accountability, and a community that gets it. Great if you prefer learning together.</p>
                 </div>
             </div>
-            <div class="coaching-right">
-                <div class="pricing-box">
-                    <h3>DECODE YOURSELF (Individual)</h3>
-                    <div class="price">$349<span style="font-size: 16px;">/month</span></div>
-                    <ul>
-                        <li>4 x 1:1 Coaching Sessions</li>
-                        <li>Values Clarity Framework</li>
-                        <li>Career Path Exploration</li>
-                        <li>Async Email Support</li>
-                        <li>Job Board Access</li>
-                    </ul>
-                </div>
-                <div class="pricing-box">
-                    <h3>BUILD SOMETHING REAL (Cohort)</h3>
-                    <div class="price">$199<span style="font-size: 16px;">/month</span></div>
-                    <ul>
-                        <li>Group Cohort Program</li>
-                        <li>Community of 8-10 Peers</li>
-                        <li>Monthly Group Sessions</li>
-                        <li>Accountability Partners</li>
-                        <li>Job Board Access</li>
-                    </ul>
-                </div>
-                <p style="text-align: center; color: #666; font-size: 13px;">Flexible plans. Cancel anytime. First call is always free.</p>
+            
+            <div class="contact-box">
+                <h3>Ready to Start?</h3>
+                <p>Book a free call. No pressure. Just a real conversation about your next move.</p>
+                <a href="mailto:hiangeloddo@gmail.com" class="contact-email">hiangeloddo@gmail.com</a>
+                <button class="btn btn-primary" onclick="alert('Calendly link coming soon. Email to book.')">Schedule Free Call</button>
             </div>
         </div>
     </section>
