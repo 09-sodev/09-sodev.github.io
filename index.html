@@ -90,6 +90,20 @@
             background: var(--red);
             border-radius: 50%;
             margin: 2rem 0;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        
+        .status {
+            font-size: 12px;
+            color: #999;
+            margin-top: 2rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
         
         @media (max-width: 768px) {
@@ -111,9 +125,9 @@
         <div class="dot"></div>
         
         <div class="email-section">
-            <p class="email-label">Coming Soon</p>
+            <p class="email-label">Making Updates</p>
             <a href="mailto:hiangeloddo@gmail.com" class="email-link">hiangeloddo@gmail.com</a>
-            <p style="margin-top: 1rem; font-size: 14px; color: #999;">Drop a line if you want early access.</p>
+            <p class="status">Launching soon. Stay tuned.</p>
         </div>
     </div>
 </body>
