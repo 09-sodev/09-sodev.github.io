@@ -3,43 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>0xdecodeyourself</title>
+    <title>0xdecodeyourself - Career Coaching</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html, body { height: 100%; }
-        body { background: #000; color: #fff; font-family: system-ui, -apple-system, sans-serif; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 2rem 1rem; text-align: center; }
-        .content { width: 100%; max-width: 100%; }
-        .badge { border: 1px solid #D4860F; border-radius: 20px; padding: 8px 16px; margin-bottom: 40px; font-size: 12px; color: #D4860F; display: inline-block; white-space: nowrap; }
-        h1 { font-size: 80px; font-weight: 700; margin-bottom: 20px; line-height: 0.95; word-wrap: break-word; overflow-wrap: break-word; }
+        body { background: #000; color: #fff; font-family: system-ui, -apple-system, sans-serif; min-height: 100vh; display: flex; flex-direction: column; }
+        
+        .ticker-container { background: #000; overflow: hidden; border-bottom: 1px solid #D4860F; padding: 12px 0; }
+        .ticker { display: flex; animation: scroll 30s linear infinite; white-space: nowrap; }
+        .ticker-item { display: inline-flex; align-items: center; margin-right: 40px; font-size: 13px; }
+        .ticker-item a { color: #D4860F; text-decoration: none; cursor: pointer; transition: color 0.3s; }
+        .ticker-item a:hover { color: #fff; }
+        .ticker-item span { margin: 0 20px; color: #666; }
+        @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-100%); } }
+        .ticker:hover { animation-play-state: paused; }
+        
+        .main { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 2rem 1rem; text-align: center; }
+        
+        h1 { font-size: 60px; font-weight: 700; margin-bottom: 25px; line-height: 0.95; word-wrap: break-word; }
         .gold { color: #D4860F; }
-        p { font-size: 15px; color: #999; margin-bottom: 10px; line-height: 1.5; }
-        .email { color: #D4860F; margin-top: 50px; font-size: 14px; text-decoration: none; }
-        footer { position: fixed; bottom: 15px; font-size: 11px; color: #666; }
+        p { font-size: 16px; color: #999; margin-bottom: 15px; line-height: 1.6; max-width: 600px; margin-left: auto; margin-right: auto; }
+        
+        footer { padding: 2rem 1rem; text-align: center; font-size: 12px; color: #666; border-top: 1px solid #333; }
         
         @media (max-width: 600px) {
-            body { padding: 1.5rem 1rem; }
-            h1 { font-size: 50px; margin-bottom: 15px; }
+            h1 { font-size: 40px; margin-bottom: 20px; }
             p { font-size: 14px; }
-            .badge { margin-bottom: 25px; font-size: 11px; }
-            .email { margin-top: 40px; font-size: 13px; }
+            .ticker-item { margin-right: 30px; font-size: 12px; }
+            .ticker { animation: scroll 25s linear infinite; }
         }
         
         @media (max-width: 400px) {
-            body { padding: 1rem; }
-            h1 { font-size: 40px; margin-bottom: 12px; }
+            h1 { font-size: 32px; margin-bottom: 15px; }
             p { font-size: 13px; }
-            .badge { margin-bottom: 20px; font-size: 10px; padding: 6px 12px; }
-            .email { margin-top: 30px; font-size: 12px; }
+            .ticker-item { margin-right: 20px; font-size: 11px; }
         }
     </style>
 </head>
 <body>
-    <div class="content">
-        <div class="badge">⬥ coming soon</div>
+    <div class="ticker-container">
+        <div class="ticker" id="ticker">
+            <!-- Jobs will be populated here -->
+        </div>
+    </div>
+    
+    <div class="main">
         <h1><span class="gold">0x</span>decodeyourself</h1>
         <p>Career coaching for college students & recent grads who want to build something real.</p>
-        <a href="mailto:hiangeloddo@gmail.com" class="email">hiangeloddo@gmail.com</a>
+        <p style="color: #D4860F; margin-top: 40px; font-size: 14px;">
+            <a href="mailto:hiangeloddo@gmail.com" style="color: #D4860F; text-decoration: none;">hiangeloddo@gmail.com</a>
+        </p>
     </div>
-    <footer>© 2026 - All Rights Reserved</footer>
+    
+    <footer>
+        © 2026 - All Rights Reserved
+    </footer>
+    
+    <script>
+        // Sample entry-level jobs with links
+        const jobs = [
+            { title: "Junior Product Manager", url: "https://www.linkedin.com/jobs/search/?keywords=junior%20product%20manager&f_E=1%2C2" },
+            { title: "Associate Software Engineer", url: "https://www.linkedin.com/jobs/search/?keywords=associate%20software%20engineer&f_E=1%2C2" },
+            { title: "Marketing Coordinator", url: "https://www.linkedin.com/jobs/search/?keywords=marketing%20coordinator&f_E=1%2C2" },
+            { title: "Business Analyst", url: "https://www.linkedin.com/jobs/search/?keywords=business%20analyst%20entry%20level&f_E=1%2C2" },
+            { title: "UX/UI Designer", url: "https://www.linkedin.com/jobs/search/?keywords=junior%20ux%20designer&f_E=1%2C2" },
+            { title: "Data Analyst", url: "https://www.linkedin.com/jobs/search/?keywords=junior%20data%20analyst&f_E=1%2C2" },
+            { title: "Sales Development Rep", url: "https://www.linkedin.com/jobs/search/?keywords=sales%20development%20representative&f_E=1%2C2" },
+            { title: "Strategy & Operations", url: "https://www.linkedin.com/jobs/search/?keywords=strategy%20operations%20analyst&f_E=1%2C2" },
+        ];
+        
+        const ticker = document.getElementById('ticker');
+        
+        // Create ticker items
+        function populateTicker() {
+            let html = '';
+            jobs.forEach((job, index) => {
+                html += `<div class="ticker-item"><a href="${job.url}" target="_blank">${job.title}</a>`;
+                if (index < jobs.length - 1) html += `<span>▲</span>`;
+                html += `</div>`;
+            });
+            // Duplicate for seamless loop
+            ticker.innerHTML = html + html;
+        }
+        
+        populateTicker();
+    </script>
 </body>
 </html>
