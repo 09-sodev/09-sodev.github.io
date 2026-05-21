@@ -15,12 +15,14 @@
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             line-height: 1.5;
             overflow-x: hidden;
+            scroll-behavior: smooth;
         }
         
         :root {
             --gold: #F4B860;
             --black: #1a1a1a;
             --white: #ffffff;
+            --light-bg: #fafaf9;
         }
         
         /* Skip to main */
@@ -61,10 +63,6 @@
             text-transform: uppercase;
         }
         
-        .logo .accent {
-            color: var(--gold);
-        }
-        
         .tagline {
             font-size: 11px;
             color: #999;
@@ -89,6 +87,7 @@
             text-transform: uppercase;
             transition: color 0.3s;
             border-bottom: 2px solid transparent;
+            cursor: pointer;
         }
         
         nav a:hover, nav a:focus {
@@ -185,7 +184,7 @@
         }
         
         section.light-bg {
-            background: #fafaf9;
+            background: var(--light-bg);
         }
         
         section h2 {
@@ -341,6 +340,173 @@
             line-height: 1.7;
         }
         
+        /* About Section */
+        #about {
+            background: var(--white);
+            padding: 8rem 3rem;
+        }
+        
+        #about h2 {
+            font-size: 56px;
+            font-weight: 800;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+        }
+        
+        /* People Grid */
+        .people-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 4rem;
+            margin: 4rem 0;
+        }
+        
+        .person-card {
+            padding: 0;
+        }
+        
+        .person-image {
+            width: 100%;
+            aspect-ratio: 1;
+            background: #f0f0f0;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 2rem;
+        }
+        
+        .person-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .person-card h3 {
+            font-size: 28px;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+        }
+        
+        .person-role {
+            font-size: 13px;
+            color: var(--gold);
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+        
+        .person-bio {
+            font-size: 15px;
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+        
+        .person-highlights {
+            list-style: none;
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 1.5rem;
+        }
+        
+        .person-highlights li {
+            margin-bottom: 0.75rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .person-highlights li::before {
+            content: "◆";
+            position: absolute;
+            left: 0;
+            color: var(--gold);
+        }
+        
+        .person-links {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+        
+        .person-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: #f0f0f0;
+            border-radius: 50%;
+            text-decoration: none;
+            color: var(--black);
+            transition: all 0.3s;
+            font-size: 18px;
+        }
+        
+        .person-links a:hover {
+            background: var(--gold);
+            color: var(--black);
+        }
+        
+        /* Story Section */
+        .story-section {
+            max-width: 900px;
+            margin: 6rem auto;
+            padding: 3rem;
+            background: var(--light-bg);
+            border-radius: 2px;
+        }
+        
+        .story-section h3 {
+            font-size: 36px;
+            font-weight: 800;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+        }
+        
+        .story-section p {
+            font-size: 16px;
+            color: #666;
+            line-height: 1.9;
+            margin-bottom: 1.5rem;
+        }
+        
+        .story-section p:last-child {
+            margin-bottom: 0;
+        }
+        
+        /* Mission Section */
+        .mission-section {
+            max-width: 900px;
+            margin: 6rem auto;
+            padding: 3rem;
+            background: var(--black);
+            color: var(--white);
+            border-radius: 2px;
+            text-align: center;
+        }
+        
+        .mission-section h3 {
+            font-size: 42px;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            line-height: 1.2;
+        }
+        
+        .mission-section h3 .accent {
+            color: var(--gold);
+        }
+        
+        .mission-section p {
+            font-size: 18px;
+            color: #ccc;
+            line-height: 1.8;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
         /* Let's Connect Section */
         .connect-section {
             background: var(--black);
@@ -437,7 +603,8 @@
             
             .offerings-grid,
             .job-grid,
-            .coaching-section {
+            .coaching-section,
+            .people-grid {
                 grid-template-columns: 1fr;
                 gap: 2rem;
             }
@@ -458,9 +625,9 @@
             <div class="tagline">Career Clarity</div>
         </div>
         <nav role="navigation" aria-label="Main navigation">
-            <a href="#offerings">What We Do</a>
-            <a href="#coaching">Coaching</a>
-            <a href="/about">About</a>
+            <a onclick="document.getElementById('offerings').scrollIntoView({behavior:'smooth'})">What We Do</a>
+            <a onclick="document.getElementById('coaching').scrollIntoView({behavior:'smooth'})">Coaching</a>
+            <a onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">About</a>
             <button class="cta-nav" onclick="document.querySelector('.connect-section').scrollIntoView({behavior:'smooth'})">Let's Connect</button>
         </nav>
     </header>
@@ -470,7 +637,7 @@
         <section class="hero" role="banner">
             <h1>Decode <span class="accent">yourself</span>.</h1>
             <p>Career coaching for college students and recent grads who want to build something real. Find opportunities curated by values, not just salary.</p>
-            <a href="#offerings" class="cta-primary">Explore Now</a>
+            <a onclick="document.getElementById('offerings').scrollIntoView({behavior:'smooth'})" class="cta-primary">Explore Now</a>
         </section>
         
         <!-- What We Do -->
@@ -552,6 +719,89 @@
                     <h3>Group Cohort</h3>
                     <p>8-10 peers going through the same decisions. Monthly group sessions, accountability partners, and a community that gets it.</p>
                 </article>
+            </div>
+        </section>
+        
+        <!-- About Section -->
+        <section id="about">
+            <h2>Meet the Founders</h2>
+            <p>A mentor and an innovator building career clarity for the next generation.</p>
+            
+            <!-- People Grid -->
+            <div class="people-grid">
+                <!-- Sebastian -->
+                <article class="person-card">
+                    <div class="person-image">
+                        <img src="sebastian.jpg" alt="Sebastian Oddo - Mentor" loading="lazy">
+                    </div>
+                    <h3>Sebastian Oddo</h3>
+                    <div class="person-role">Mentor & Strategic Guide</div>
+                    <p class="person-bio">
+                        VP of Innovation at Mastercard with 20+ years of experience in digital innovation and brand strategy. A recognized leader in creativity and emerging technologies.
+                    </p>
+                    <ul class="person-highlights">
+                        <li>Brand Innovators 40 Under 40 Honoree</li>
+                        <li>TEDx Speaker & Published Author</li>
+                        <li>Adjunct Professor at Manhattanville University</li>
+                        <li>Mentor with Girls Who Code & My Brother's Keeper</li>
+                        <li>Top LinkedIn voice on Creativity & Innovation</li>
+                    </ul>
+                    <div class="person-links">
+                        <a href="https://www.linkedin.com/in/sebastianoddo/" target="_blank" title="LinkedIn" aria-label="Sebastian's LinkedIn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.sebastianoddo.com/" target="_blank" title="Website" aria-label="Sebastian's Website">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                                <path d="M2 12h20"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </article>
+                
+                <!-- Angel -->
+                <article class="person-card">
+                    <div class="person-image">
+                        <img src="angel.png" alt="Angel Oddo - CEO" loading="lazy">
+                    </div>
+                    <h3>Angel Oddo</h3>
+                    <div class="person-role">CEO & AI Innovation Lead</div>
+                    <p class="person-bio">
+                        Founder & CEO of 0xdecodeyourself. Hudson Valley-based innovator building career coaching platforms that prioritize values-first guidance for recent grads.
+                    </p>
+                    <ul class="person-highlights">
+                        <li>CEO of 0xdecodeyourself</li>
+                        <li>AI platform innovator & builder</li>
+                        <li>Dried flower arranger & creative experimentalist</li>
+                        <li>Hudson Valley entrepreneur</li>
+                        <li>Espresso freddo enthusiast ☕</li>
+                    </ul>
+                </article>
+            </div>
+            
+            <!-- Story Section -->
+            <div class="story-section">
+                <h3>Our Story</h3>
+                <p>
+                    0xdecodeyourself was born from a simple observation: most college students and recent grads feel lost when it comes to their careers. They're overwhelmed by job boards that prioritize salary over values, advice that doesn't fit them, and a lack of mentorship when they need it most.
+                </p>
+                <p>
+                    Sebastian's two decades of experience in innovation and mentorship paired with Angel's fresh perspective and tech-forward approach creates something unique — a platform that combines strategic guidance with technology, human connection with AI innovation, and career exploration with values clarity.
+                </p>
+                <p>
+                    Together, they're building a career coaching platform that treats recent grads as the thoughtful, values-driven people they are. Not just job seekers. Not just resumes. People who deserve to find work that matters.
+                </p>
+            </div>
+            
+            <!-- Mission Section -->
+            <div class="mission-section">
+                <h3>Our<br>Mission</h3>
+                <p>
+                    Help college students and recent grads decode themselves — and find careers that actually align with who they are, what they value, and what they want to build next.
+                </p>
             </div>
         </section>
     </main>
