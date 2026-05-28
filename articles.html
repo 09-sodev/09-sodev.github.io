@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Resources & Articles | DECODE YOURSELF</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f8f7f5;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            color: #1a1a1a;
+        }
+
+        /* Header */
+        header {
+            background: #ffffff;
+            border-bottom: 1px solid #e5e3e0;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+        }
+
+        .logo .accent {
+            color: #F4B860;
+        }
+
+        .back-link {
+            color: #F4B860;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            transition: opacity 0.2s;
+        }
+
+        .back-link:hover {
+            opacity: 0.8;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .hero {
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+        }
+
+        .hero h1 .gold {
+            color: #F4B860;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #555;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* Category Filters */
+        .category-filters {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .filter-btn {
+            padding: 10px 20px;
+            border: 2px solid #ddd;
+            background: #ffffff;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            transition: all 0.2s;
+        }
+
+        .filter-btn:hover {
+            border-color: #F4B860;
+            color: #F4B860;
+        }
+
+        .filter-btn.active {
+            background: #F4B860;
+            border-color: #F4B860;
+            color: #1a1a1a;
+        }
+
+        /* Articles Grid */
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+
+        .article-card {
+            background: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #e5e3e0;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .article-card:hover {
+            border-color: #F4B860;
+            box-shadow: 0 12px 24px rgba(0,0,0,0.08);
+            transform: translateY(-4px);
+        }
+
+        .article-image {
+            width: 100%;
+            height: 180px;
+            background: linear-gradient(135deg, #F4B860 0%, #f5a742 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            color: rgba(255,255,255,0.3);
+        }
+
+        .article-content {
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            flex: 1;
+        }
+
+        .article-category {
+            display: inline-block;
+            padding: 6px 12px;
+            background: #FFF3E0;
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #E65100;
+            letter-spacing: 0.3px;
+            width: fit-content;
+        }
+
+        .article-title {
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 1.4;
+            color: #1a1a1a;
+        }
+
+        .article-excerpt {
+            font-size: 13px;
+            color: #666;
+            line-height: 1.5;
+            flex: 1;
+        }
+
+        .article-source {
+            font-size: 12px;
+            color: #999;
+            font-weight: 500;
+            padding-top: 12px;
+            border-top: 1px solid #f0f0f0;
+        }
+
+        .article-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 12px;
+            border-top: 1px solid #f0f0f0;
+            margin-top: auto;
+        }
+
+        .read-link {
+            color: #F4B860;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 13px;
+            transition: opacity 0.2s;
+        }
+
+        .read-link:hover {
+            opacity: 0.8;
+        }
+
+        /* Stats Section */
+        .stats {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 40px 20px;
+            text-align: center;
+            margin-bottom: 40px;
+            border: 1px solid #e5e3e0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .stat-item h3 {
+            font-size: 32px;
+            color: #F4B860;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+
+        .stat-item p {
+            font-size: 14px;
+            color: #666;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: #ffffff;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 60px;
+        }
+
+        footer a {
+            color: #F4B860;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .articles-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .header-content {
+                flex-direction: column;
+                gap: 12px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <span>DECODE</span> <span class="accent">LEARN</span>
+            </div>
+            <a href="/" class="back-link">← Back to Home</a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Hero -->
+        <div class="hero">
+            <h1>Career <span class="gold">Resources</span></h1>
+            <p>Hand-picked articles and guides to help you land your first job, master your career, and build something real.</p>
+        </div>
+
+        <!-- Category Filters -->
+        <div class="category-filters">
+            <button class="filter-btn active" onclick="filterArticles('all')">All Articles</button>
+            <button class="filter-btn" onclick="filterArticles('job-search')">Job Search</button>
+            <button class="filter-btn" onclick="filterArticles('resume')">Resume & Cover Letter</button>
+            <button class="filter-btn" onclick="filterArticles('interview')">Interview Prep</button>
+            <button class="filter-btn" onclick="filterArticles('networking')">Networking</button>
+            <button class="filter-btn" onclick="filterArticles('career')">Career Development</button>
+        </div>
+
+        <!-- Articles Grid -->
+        <div class="articles-grid" id="articlesGrid">
+            <!-- Articles will be populated by JavaScript -->
+        </div>
+
+        <!-- Stats Section -->
+        <div class="stats">
+            <h2 style="font-size: 28px; margin-bottom: 10px;">Your Career Journey Starts Here</h2>
+            <p style="color: #666;">Resources from top universities and career experts</p>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>25+</h3>
+                    <p>Expert Articles</p>
+                </div>
+                <div class="stat-item">
+                    <h3>1000+</h3>
+                    <p>Grads Helped</p>
+                </div>
+                <div class="stat-item">
+                    <h3>100%</h3>
+                    <p>Free Resources</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>💡 <strong>Pro Tip:</strong> Bookmark these articles and return to them as you progress through your career</p>
+        <p style="margin-top: 16px; font-size: 14px;">
+            Career resources curated by <a href="/">DECODE YOURSELF</a> • 
+            <a href="mailto:hiangeloddo@gmail.com">Questions? Get coaching support</a>
+        </p>
+    </footer>
+
+    <script>
+        const articles = [
+            {
+                id: 1,
+                title: "How to Land Your First Job Even With No Experience",
+                excerpt: "Learn what it really means to have no experience and how to overcome the entry-level catch-22. Master the strategies that help recent grads break into competitive industries.",
+                category: "job-search",
+                source: "Harvard Summer School",
+                icon: "🎓",
+                url: "https://summer.harvard.edu/blog/how-to-land-your-first-job-even-with-no-experience/"
+            },
+            {
+                id: 2,
+                title: "24 Best Jobs for College Grads With No Experience",
+                excerpt: "Discover entry-level positions specifically designed for recent graduates. Learn what skills employers value most and how to position yourself for success.",
+                category: "job-search",
+                source: "Indeed",
+                icon: "💼",
+                url: "https://www.indeed.com/career-advice/finding-a-job/best-jobs-for-college-grads-with-no-experience"
+            },
+            {
+                id: 3,
+                title: "How to Get a Job After College With No Experience",
+                excerpt: "Explore the practical details of landing a job after graduation. Learn about apprenticeships, mentorship, and how to overcome the confidence gap.",
+                category: "job-search",
+                source: "Acadium",
+                icon: "🚀",
+                url: "https://acadium.com/blog/how-to-get-a-job-after-college-with-no-experience/"
+            },
+            {
+                id: 4,
+                title: "Overcoming the Entry-Level Catch-22",
+                excerpt: "Strategies to reframe your experience and stand out. Learn how internships, projects, and volunteer work count toward your professional qualifications.",
+                category: "job-search",
+                source: "TopResume",
+                icon: "✨",
+                url: "https://topresume.com/career-advice/how-to-find-entry-level-job-with-no-work-experience"
+            },
+            {
+                id: 5,
+                title: "From Graduation to Career: Land Your First Job Before Competition Heats Up",
+                excerpt: "Timing matters. Learn when and how to start your job search strategically, including how seasonal hiring can work in your favor.",
+                category: "job-search",
+                source: "Salem Solutions",
+                icon: "⏰",
+                url: "https://www.salemsolutions.com/2025/05/07/from-graduation-to-career-how-to-land-your-first-job-before-the-competition-heats-up/"
+            },
+            {
+                id: 6,
+                title: "How to Find Entry-Level Jobs With No Experience",
+                excerpt: "A comprehensive guide to finding entry-level positions. Explore job boards, networks, and where companies actively recruit recent graduates.",
+                category: "job-search",
+                source: "CareerBuilder",
+                icon: "🔍",
+                url: "https://www.careerbuilder.com/advice/blog/how-to-find-entry-level-jobs-with-no-experience"
+            },
+            {
+                id: 7,
+                title: "College Graduate Resume Examples & Writing Tips",
+                excerpt: "Create a standout resume that highlights your academic achievements and transferable skills. Learn the format, structure, and keywords that get results.",
+                category: "resume",
+                source: "Resume Genius",
+                icon: "📄",
+                url: "https://resumegenius.com/blog/resume-help/college-graduate-resume"
+            },
+            {
+                id: 8,
+                title: "Resume Tips for Recent College Graduates",
+                excerpt: "Master the fundamentals of resume writing. Learn where to place your education, how to highlight coursework, and what recruiters look for in 15 seconds.",
+                category: "resume",
+                source: "UMBC Career Center",
+                icon: "✍️",
+                url: "https://professionalprograms.umbc.edu/blog/resume-tips-for-recent-college-graduates/"
+            },
+            {
+                id: 9,
+                title: "Perfect Resume Guide for Recent College Graduates",
+                excerpt: "Detailed guidance on creating a compelling resume without extensive work experience. Includes sample resume and expert tips from TopResume's Career Expert.",
+                category: "resume",
+                source: "TopResume",
+                icon: "🎯",
+                url: "https://topresume.com/career-advice/excellent-resume-for-recent-grad"
+            },
+            {
+                id: 10,
+                title: "Career Advice for Recent or Soon-To-Be College Graduates",
+                excerpt: "Direct advice from a renowned career coach. Learn how to structure your resume, translate academic experience into work skills, and start your career right.",
+                category: "career",
+                source: "RobinRyan.com",
+                icon: "🌟",
+                url: "https://robinryan.com/resources/articles/career-advice-for-recent-or-soon-to-be-college-graduates/"
+            },
+            {
+                id: 11,
+                title: "How To Write a College Graduate Resume",
+                excerpt: "Step-by-step guidance on prioritizing your education section and showcasing skills. Learn what to include when you lack traditional work experience.",
+                category: "resume",
+                source: "Indeed",
+                icon: "📋",
+                url: "https://www.indeed.com/career-advice/resumes-cover-letters/college-graduate-resume"
+            },
+            {
+                id: 12,
+                title: "College Grads: How Your Resume Should Look",
+                excerpt: "Begin with contact information and a strong objective. Learn how to structure your resume to catch the attention of hiring managers in seconds.",
+                category: "resume",
+                source: "Fastweb",
+                icon: "👁️",
+                url: "https://www.fastweb.com/career-planning/articles/college-grads-how-your-resume-should-look"
+            },
+            {
+                id: 13,
+                title: "13 LinkedIn Profile Tips for College Students",
+                excerpt: "Build a powerful LinkedIn presence. Learn how to showcase your leadership, activities, and achievements to unlock opportunities.",
+                category: "networking",
+                source: "Elmhurst University",
+                icon: "🔗",
+                url: "https://www.elmhurst.edu/blog/linkedin-profile-tips/"
+            },
+            {
+                id: 14,
+                title: "LinkedIn Tips for College Students and Recent Grads",
+                excerpt: "LinkedIn is more than a resume online. Master networking, connecting with professionals, and finding jobs through strategic LinkedIn use.",
+                category: "networking",
+                source: "OnlineU",
+                icon: "💬",
+                url: "https://www.onlineu.com/resources/going-to-college/linkedin-tips"
+            },
+            {
+                id: 15,
+                title: "Networking Tips for Recent College Grads: 8 Steps",
+                excerpt: "Shift your mindset about networking. Learn how to build genuine relationships, maintain connections, and create opportunities for your future career.",
+                category: "networking",
+                source: "UAGC",
+                icon: "🤝",
+                url: "https://www.uagc.edu/blog/networking-tips-recent-college-grads-8-steps-build-lasting-professional-connections"
+            },
+            {
+                id: 16,
+                title: "Six LinkedIn Networking Tips for University Students",
+                excerpt: "Common LinkedIn mistakes recent grads make and how to avoid them. Learn strategic networking that actually leads to job opportunities.",
+                category: "networking",
+                source: "Absolute Internship",
+                icon: "⭐",
+                url: "https://absoluteinternship.com/blog/six-linkedin-networking-tips-for-university-students/"
+            },
+            {
+                id: 17,
+                title: "6 Must-Do LinkedIn Tips for New Grads",
+                excerpt: "Update your profile to reflect your education and activities. Join alumni networks and position yourself as a professional from day one.",
+                category: "networking",
+                source: "UMass Global",
+                icon: "🎓",
+                url: "https://www.umassglobal.edu/blog-news/6-must-do-linkedin-tips-new-grads"
+            },
+            {
+                id: 18,
+                title: "LinkedIn 101 for Recent Graduates Looking for Work",
+                excerpt: "Learn the fundamentals of LinkedIn for job searching. Discover how to find companies, leverage connections, and get recommendations.",
+                category: "networking",
+                source: "LinkedIn",
+                icon: "101",
+                url: "https://www.linkedin.com/pulse/linkedin-101-college-students-recent-graduates-looking-wywrot"
+            },
+            {
+                id: 19,
+                title: "How to Improve Your LinkedIn Profile as a Recent College Grad",
+                excerpt: "Transform your LinkedIn profile into a networking tool. Understand why networking is your greatest competitive advantage after graduation.",
+                category: "networking",
+                source: "WordStream",
+                icon: "📈",
+                url: "https://www.wordstream.com/blog/ws/2014/09/09/improve-linkedin-profile"
+            },
+            {
+                id: 20,
+                title: "Getting Started on LinkedIn: Advice for Recent Grads",
+                excerpt: "Create a profile that pops. Learn how to avoid generic headlines and truly represent yourself to recruiters and hiring managers.",
+                category: "networking",
+                source: "Lindsey Pollak",
+                icon: "🎨",
+                url: "https://lindseypollak.com/getting-started-on-linkedin-advice-for-recent-grads/"
+            },
+            {
+                id: 21,
+                title: "Tips for a Successful Internship Interview",
+                excerpt: "Ace your interview preparation. Learn common questions, how to articulate your motivation, and how to make a lasting impression.",
+                category: "interview",
+                source: "U.S. News",
+                icon: "🎤",
+                url: "https://careers.usnews.com/advice/outside-voices-careers/articles/tips-for-a-successful-internship-interview"
+            },
+            {
+                id: 22,
+                title: "Ten Tips to Help You Ace Your Interview",
+                excerpt: "From preparation to execution. Learn the top practices that help recent graduates stand out and land their first job.",
+                category: "interview",
+                source: "Making Waves Education Foundation",
+                icon: "💪",
+                url: "https://making-waves.org/ten-tips-help-ace-career-job-internship-interview-tips/"
+            },
+            {
+                id: 23,
+                title: "How to Answer Common Internship Interview Questions",
+                excerpt: "Master your responses with real examples. Learn the past-present-future formula and how to showcase your growth potential.",
+                category: "interview",
+                source: "Monster",
+                icon: "❓",
+                url: "https://www.monster.com/career-advice/interviewing/interview-questions/internship-interview-questions"
+            },
+            {
+                id: 24,
+                title: "What To Expect During an Internship Interview",
+                excerpt: "Know what's coming. Learn the structure, types of questions, and how to prepare thoughtful responses that demonstrate your fit.",
+                category: "interview",
+                source: "Indeed",
+                icon: "🧠",
+                url: "https://www.indeed.com/career-advice/career-development/what-to-expect-during-an-internship-interview"
+            },
+            {
+                id: 25,
+                title: "10 Best Practices for Interviewing as a Recent Graduate",
+                excerpt: "Be clear, intentional, and genuine. Learn how to demonstrate soft skills and show you're ready to learn and contribute immediately.",
+                category: "interview",
+                source: "InterviewFocus",
+                icon: "✅",
+                url: "https://interviewfocus.com/best-practices-for-interviewing-as-a-recent-graduate/"
+            }
+        ];
+
+        function renderArticles(articlesToRender) {
+            const grid = document.getElementById('articlesGrid');
+            grid.innerHTML = articlesToRender.map(article => `
+                <div class="article-card" data-category="${article.category}">
+                    <div class="article-image">${article.icon}</div>
+                    <div class="article-content">
+                        <span class="article-category">${getCategoryLabel(article.category)}</span>
+                        <h3 class="article-title">${article.title}</h3>
+                        <p class="article-excerpt">${article.excerpt}</p>
+                        <div class="article-source">From ${article.source}</div>
+                    </div>
+                    <div class="article-footer">
+                        <a href="${article.url}" target="_blank" rel="noopener noreferrer" class="read-link">Read Article →</a>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function getCategoryLabel(category) {
+            const labels = {
+                'all': 'All',
+                'job-search': 'Job Search',
+                'resume': 'Resume',
+                'interview': 'Interview',
+                'networking': 'Networking',
+                'career': 'Career'
+            };
+            return labels[category] || category;
+        }
+
+        function filterArticles(category) {
+            // Update button styles
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+
+            // Filter and render articles
+            const filtered = category === 'all' 
+                ? articles 
+                : articles.filter(a => a.category === category);
+            
+            renderArticles(filtered);
+        }
+
+        // Initial render
+        renderArticles(articles);
+    </script>
+</body>
+</html>

@@ -521,7 +521,33 @@
     </footer>
 
     <script>
-        // Sample job data - In production, this would come from JSearch API
+        // FREE JOB SOURCES - No API key needed!
+        
+        // 1. GitHub Jobs API (100% free, no key needed)
+        async function fetchGitHubJobs() {
+            try {
+                const response = await fetch('https://jobs.github.com/positions.json?description=entry-level&full_time=true');
+                const jobs = await response.json();
+                return jobs.slice(0, 8).map((job, idx) => ({
+                    id: 100 + idx,
+                    title: job.title,
+                    company: job.company,
+                    category: 'technology',
+                    level: 'entry',
+                    type: 'remote',
+                    location: job.location || 'Remote',
+                    salary: 'Competitive',
+                    description: job.description.replace(/<[^>]*>/g, '').substring(0, 120) + '...',
+                    source: 'github',
+                    url: job.url
+                }));
+            } catch (error) {
+                console.log('GitHub Jobs API unavailable');
+                return [];
+            }
+        }
+
+        // Sample job data (fallback + examples)
         const sampleJobs = [
             {
                 id: 1,
@@ -629,9 +655,19 @@
             }
         ];
 
-        // Initialize
-        document.addEventListener('DOMContentLoaded', function() {
-            displayJobs(sampleJobs);
+        // Initialize - Load GitHub Jobs first, then show sample jobs as fallback
+        document.addEventListener('DOMContentLoaded', async function() {
+            const loadingState = document.getElementById('loadingState');
+            loadingState.style.display = 'block';
+            
+            // Try to fetch real jobs from GitHub Jobs API
+            const githubJobs = await fetchGitHubJobs();
+            
+            // Combine with sample jobs for more variety
+            const allJobs = [...githubJobs, ...sampleJobs];
+            
+            loadingState.style.display = 'none';
+            displayJobs(allJobs);
         });
 
         function displayJobs(jobs) {
