@@ -817,15 +817,16 @@
                     
                     <div class="job-meta">
                         <span class="job-badge ${job.level === 'entry' ? 'featured' : ''}">${
-                            job.level === 'entry' ? '🚀 Entry-Level' :
-                            job.level === 'internship' ? '📚 Internship' :
-                            '🎓 Recent Grad'
+                            job.level === 'entry' ? '🚀 Entry-Level (1-2 yrs)' :
+                            job.level === 'graduate' ? '🎓 Recent Grad' :
+                            '📚 Internship'
                         }</span>
                         <span class="job-badge">${
                             job.type === 'remote' ? '🌍 Remote' :
                             job.type === 'hybrid' ? '🏢 Hybrid' :
                             '📍 On-Site'
                         }</span>
+                        ${job.posted ? `<span class="job-badge" style="background: #E3F2FD; color: #1565C0;">📅 ${getJobAge(job.posted)}</span>` : ''}
                     </div>
 
                     <p class="job-location">📍 ${job.location}</p>
@@ -868,6 +869,19 @@
 
         // Real-time search as user types
         document.getElementById('searchInput').addEventListener('keyup', filterJobs);
+
+        // Utility: Calculate job age
+        function getJobAge(postedDate) {
+            const posted = new Date(postedDate);
+            const now = new Date();
+            const daysOld = Math.floor((now - posted) / (1000 * 60 * 60 * 24));
+            
+            if (daysOld === 0) return 'Today';
+            if (daysOld === 1) return 'Yesterday';
+            if (daysOld < 7) return `${daysOld} days ago`;
+            if (daysOld < 30) return `${Math.floor(daysOld / 7)} weeks ago`;
+            return `${Math.floor(daysOld / 30)} months ago`;
+        }
 
         // Guidance Modal Functions
         function showHowToApply(company, jobTitle) {

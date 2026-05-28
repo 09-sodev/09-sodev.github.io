@@ -4,6 +4,12 @@
  * DECODE YOURSELF - Job Aggregator
  * Pulls live, recent jobs from multiple FREE sources
  * Runs daily via GitHub Actions or cron
+ * 
+ * SMART DECISIONS:
+ * - Target: Recent grads (0-2 years) + Interns
+ * - Exclude: Mid-level, Senior, Lead roles
+ * - Remove: Jobs older than 14 days (30 days for internships)
+ * - Result: Fresh, relevant opportunities only
  */
 
 const https = require('https');
@@ -17,7 +23,9 @@ const JOBS_FILE = path.join(__dirname, 'jobs-data.json');
 const CONFIG = {
   maxJobsPerSource: 50,
   cacheFile: JOBS_FILE,
-  minJobs: 100 // Ensure we have minimum jobs
+  minJobs: 20,
+  maxJobAge: 14, // days
+  maxInternshipAge: 30 // days
 };
 
 // Job sources
@@ -57,54 +65,129 @@ function fetchUrl(url) {
 }
 
 /**
+ * Smart job level detection
+ * TARGET: Recent grads (0-2 years) + Interns
+ * EXCLUDE: Mid-level, Senior, Lead roles
+ */
+function detectJobLevel(title, description) {
+  const titleLower = title.toLowerCase();
+  const descLower = (description || '').toLowerCase();
+  
+  // Recent Grad (0-6 months, no experience required)
+  if (titleLower.includes('graduate') || 
+      descLower.includes('recent graduate') ||
+      descLower.includes('no experience necessary') ||
+      descLower.includes('first job')) {
+    return 'graduate';
+  }
+  
+  // Internship/Apprenticeship (students)
+  if (titleLower.includes('intern') || 
+      titleLower.includes('apprentice') ||
+      descLower.includes('student')) {
+    return 'internship';
+  }
+  
+  // Entry-Level (1-2 years, junior roles)
+  if (titleLower.includes('junior') ||
+      titleLower.includes('associate') ||
+      titleLower.includes('analyst') ||
+      titleLower.includes('coordinator') ||
+      titleLower.includes('specialist') ||
+      descLower.includes('1-2 years') ||
+      descLower.includes('entry-level')) {
+    return 'entry';
+  }
+  
+  // Mid-level or higher (2+ years) - EXCLUDE
+  if (titleLower.includes('senior') ||
+      titleLower.includes('lead') ||
+      titleLower.includes('manager') ||
+      titleLower.includes('principal') ||
+      descLower.includes('3+ years') ||
+      descLower.includes('mid-level')) {
+    return 'mid'; // Will be filtered out
+  }
+  
+  return 'entry'; // Default to entry
+}
+
+/**
+ * Check if job is too old
+ * DECISION: Remove jobs older than 14 days
+ * Exception: Keep internships for 30 days (they last longer)
+ */
+function isJobTooOld(postedDate, jobLevel) {
+  const now = new Date();
+  const postedTime = new Date(postedDate);
+  const daysOld = (now - postedTime) / (1000 * 60 * 60 * 24);
+  
+  // Keep internships longer (they fill slower)
+  if (jobLevel === 'internship') {
+    return daysOld > CONFIG.maxInternshipAge;
+  }
+  
+  // Remove other jobs after max age
+  return daysOld > CONFIG.maxJobAge;
+}
+
+/**
  * Transform GitHub Jobs API response
  */
 function transformGitHubJobs(jobs) {
-  return jobs.slice(0, CONFIG.maxJobsPerSource).map((job, idx) => ({
-    id: `github-${job.id}`,
-    title: job.title,
-    company: job.company,
-    category: categorizeByTitle(job.title),
-    level: 'entry',
-    type: job.type === 'Full Time' ? 'onsite' : 'remote',
-    location: job.location || 'Remote',
-    salary: 'Competitive',
-    description: stripHtml(job.description).substring(0, 150) + '...',
-    source: 'github',
-    sourceUrl: 'github.com/jobs',
-    url: job.url,
-    posted: new Date().toISOString(),
-    verified: true
-  }));
+  return jobs.slice(0, CONFIG.maxJobsPerSource).map((job, idx) => {
+    const level = detectJobLevel(job.title, job.description);
+    const posted = new Date().toISOString();
+    
+    return {
+      id: `github-${job.id}`,
+      title: job.title,
+      company: job.company,
+      category: categorizeByTitle(job.title),
+      level: level,
+      type: job.type === 'Full Time' ? 'onsite' : 'remote',
+      location: job.location || 'Remote',
+      salary: 'Competitive',
+      description: stripHtml(job.description).substring(0, 150) + '...',
+      source: 'github',
+      sourceUrl: 'github.com/jobs',
+      url: job.url,
+      posted: posted,
+      verified: true
+    };
+  });
 }
 
 /**
  * Transform RemoteOK API response
  */
 function transformRemoteOKJobs(jobs) {
-  // RemoteOK returns array, filter for entry-level
   return jobs
     .slice(0, CONFIG.maxJobsPerSource)
     .filter(job => {
       const title = (job.title || '').toLowerCase();
       return title.includes('junior') || title.includes('entry') || title.includes('graduate') || title.includes('intern');
     })
-    .map((job, idx) => ({
-      id: `remoteok-${idx}`,
-      title: job.title,
-      company: job.company_name || job.company,
-      category: categorizeByTitle(job.title),
-      level: 'entry',
-      type: 'remote',
-      location: job.location || 'Remote',
-      salary: job.salary_min && job.salary_max ? `$${job.salary_min/1000}K - $${job.salary_max/1000}K` : 'Competitive',
-      description: (job.description || '').substring(0, 150) + '...',
-      source: 'remoteok',
-      sourceUrl: 'remoteok.io',
-      url: job.url || `https://remoteok.io`,
-      posted: job.created_at || new Date().toISOString(),
-      verified: true
-    }));
+    .map((job, idx) => {
+      const level = detectJobLevel(job.title, job.description);
+      
+      return {
+        id: `remoteok-${idx}`,
+        title: job.title,
+        company: job.company_name || job.company,
+        category: categorizeByTitle(job.title),
+        level: level,
+        type: 'remote',
+        location: job.location || 'Remote',
+        salary: job.salary_min && job.salary_max ? `$${job.salary_min/1000}K - $${job.salary_max/1000}K` : 'Competitive',
+        description: (job.description || '').substring(0, 150) + '...',
+        source: 'remoteok',
+        sourceUrl: 'remoteok.io',
+        url: job.url || `https://remoteok.io`,
+        posted: job.created_at || new Date().toISOString(),
+        verified: true
+      };
+    });
 }
 
 /**
@@ -146,6 +229,19 @@ function deduplicateJobs(jobs) {
 }
 
 /**
+ * Filter jobs: remove stale and mid-level
+ */
+function filterAndRankJobs(jobs) {
+  return jobs
+    // Remove mid-level and above
+    .filter(job => job.level !== 'mid')
+    // Remove jobs that are too old
+    .filter(job => !isJobTooOld(job.posted, job.level))
+    // Sort by date (newest first)
+    .sort((a, b) => new Date(b.posted) - new Date(a.posted));
+}
+
+/**
  * Main aggregation function
  */
 async function aggregateJobs() {
@@ -171,9 +267,11 @@ async function aggregateJobs() {
   
   // Deduplicate
   allJobs = deduplicateJobs(allJobs);
+  console.log(`🔄 After deduplication: ${allJobs.length} jobs`);
   
-  // Sort by date (newest first)
-  allJobs.sort((a, b) => new Date(b.posted) - new Date(a.posted));
+  // Filter and rank
+  allJobs = filterAndRankJobs(allJobs);
+  console.log(`✨ After filtering: ${allJobs.length} jobs (removed stale & mid-level)`);
   
   // Add metadata
   const result = {
@@ -181,6 +279,12 @@ async function aggregateJobs() {
       totalJobs: allJobs.length,
       lastUpdated: new Date().toISOString(),
       sources: Object.keys(SOURCES).length,
+      filters: {
+        targetAudience: 'Recent grads (0-2 years) + Interns',
+        maxJobAge: `${CONFIG.maxJobAge} days`,
+        maxInternshipAge: `${CONFIG.maxInternshipAge} days`,
+        excludedLevels: 'mid, senior, lead'
+      },
       errors: errors
     },
     jobs: allJobs
@@ -190,7 +294,7 @@ async function aggregateJobs() {
   fs.writeFileSync(CONFIG.cacheFile, JSON.stringify(result, null, 2));
   
   const duration = ((Date.now() - startTime) / 1000).toFixed(2);
-  console.log(`\n✨ SUCCESS! ${allJobs.length} jobs aggregated in ${duration}s`);
+  console.log(`\n✨ SUCCESS! ${allJobs.length} relevant jobs aggregated in ${duration}s`);
   console.log(`📁 Saved to ${CONFIG.cacheFile}`);
   
   if (errors.length > 0) {
