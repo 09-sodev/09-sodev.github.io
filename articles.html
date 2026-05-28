@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Career Resources & Articles | DECODE YOURSELF</title>
+    <title>0xdecodeyourself | Learning Resources</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         * {
@@ -141,6 +141,9 @@
             transition: all 0.3s ease;
             display: flex;
             flex-direction: column;
+            text-decoration: none;
+            color: inherit;
+            cursor: pointer;
         }
 
         .article-card:hover {
@@ -608,7 +611,7 @@
         function renderArticles(articlesToRender) {
             const grid = document.getElementById('articlesGrid');
             grid.innerHTML = articlesToRender.map(article => `
-                <div class="article-card" data-category="${article.category}">
+                <a href="${article.url}" target="_blank" rel="noopener noreferrer" class="article-card" data-category="${article.category}">
                     <div class="article-image" data-cat="${article.category || 'default'}">${article.icon}</div>
                     <div class="article-content">
                         <span class="article-category">${getCategoryLabel(article.category)}</span>
@@ -617,9 +620,9 @@
                         <div class="article-source">From ${article.source}</div>
                     </div>
                     <div class="article-footer">
-                        <a href="${article.url}" target="_blank" rel="noopener noreferrer" class="read-link">Read Article →</a>
+                        <span class="read-link">Read Article →</span>
                     </div>
-                </div>
+                </a>
             `).join('');
         }
 
