@@ -430,6 +430,9 @@
         <div class="hero">
             <h1><span class="gold">ENTRY-LEVEL</span> Jobs</h1>
             <p>Real opportunities for college students and recent grads. Updated daily from LinkedIn, Indeed, WayUp, and CollegeGrad.</p>
+            <p style="font-size: 13px; color: #F4B860; font-weight: 600; margin-top: 12px;">
+                📡 Last Updated: <span id="lastUpdated">Loading...</span>
+            </p>
         </div>
 
         <!-- Filters -->
@@ -529,10 +532,27 @@
                 const response = await fetch('/jobs-data.json?v=' + Date.now());
                 const data = await response.json();
                 allJobsData = data.jobs || [];
+                
+                // Display last updated time
+                if (data.metadata && data.metadata.lastUpdated) {
+                    const lastUpdated = new Date(data.metadata.lastUpdated);
+                    const formattedTime = lastUpdated.toLocaleString('en-US', {
+                        month: 'short',
+                        day: 'numeric',
+                        year: 'numeric',
+                        hour: '2-digit',
+                        minute: '2-digit',
+                        timeZone: 'UTC',
+                        timeZoneName: 'short'
+                    });
+                    document.getElementById('lastUpdated').textContent = formattedTime;
+                }
+                
                 console.log(`✅ Loaded ${allJobsData.length} live jobs`);
                 return allJobsData;
             } catch (error) {
                 console.error('Error loading jobs data:', error);
+                document.getElementById('lastUpdated').textContent = 'Unable to load';
                 return fallbackJobs;
             }
         }
