@@ -319,6 +319,105 @@
             transform: translateX(2px);
         }
 
+        .help-btn {
+            padding: 10px 12px;
+            background: #f0f0f0;
+            color: #666;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-weight: 600;
+            font-family: 'Inter', sans-serif;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 12px;
+        }
+
+        .help-btn:hover {
+            background: #e5e3e0;
+            border-color: #F4B860;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+        }
+
+        .modal.show {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 600px;
+            max-height: 80vh;
+            overflow-y: auto;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        .modal-close {
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            color: #999;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .modal-close:hover {
+            color: #1a1a1a;
+        }
+
+        .modal h2 {
+            color: #1a1a1a;
+            margin-bottom: 20px;
+            margin-top: 0;
+        }
+
+        .modal h3 {
+            color: #F4B860;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        .modal ol, .modal ul {
+            margin-left: 20px;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .modal li {
+            margin-bottom: 8px;
+        }
+
+        .modal p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .tip-box {
+            background: #FFF3E0;
+            border-left: 4px solid #F4B860;
+            padding: 12px;
+            border-radius: 4px;
+            margin: 15px 0;
+            font-size: 13px;
+            color: #E65100;
+        }
+
         /* Loading & Empty States */
         .loading {
             text-align: center;
@@ -437,6 +536,10 @@
 
         <!-- Filters -->
         <div class="filters-section">
+            <div style="background: #FFF3E0; border-left: 4px solid #F4B860; padding: 12px; border-radius: 6px; margin-bottom: 20px;">
+                <p style="color: #E65100; font-size: 13px; margin: 0;"><strong>💡 First time applying?</strong> When you click "View & Apply", you'll land on the company's careers page. <strong>Search for the job title</strong> using their search bar. Can't find it? Click the "? How" button for step-by-step guidance.</p>
+            </div>
+            
             <div class="filters-title">Filter Your Search</div>
             
             <div class="search-bar">
@@ -511,6 +614,15 @@
         <div id="emptyState" class="empty-state" style="display: none;">
             <h2>No jobs found</h2>
             <p>Try adjusting your filters or search terms</p>
+        </div>
+    </div>
+
+    <!-- Guidance Modal -->
+    <div id="guidanceModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeGuidance()">&times;</span>
+            <h2>How to Apply to This Job 💼</h2>
+            <div id="guidanceContent"></div>
         </div>
     </div>
 
@@ -721,7 +833,10 @@
 
                     <div class="job-footer">
                         <span class="job-salary">${job.salary}</span>
-                        <a href="${job.url}" target="_blank" class="apply-btn">View & Apply</a>
+                        <div style="display: flex; gap: 8px; align-items: center;">
+                            <button class="help-btn" onclick="showHowToApply('${job.company}', '${job.title}')">? How</button>
+                            <a href="${job.url}" target="_blank" class="apply-btn">View & Apply →</a>
+                        </div>
                     </div>
                 </div>
             `).join('');
@@ -753,6 +868,70 @@
 
         // Real-time search as user types
         document.getElementById('searchInput').addEventListener('keyup', filterJobs);
+
+        // Guidance Modal Functions
+        function showHowToApply(company, jobTitle) {
+            const modal = document.getElementById('guidanceModal');
+            const content = document.getElementById('guidanceContent');
+            
+            let guidance = `
+                <p><strong>You're applying to:</strong> ${jobTitle} at ${company}</p>
+                
+                <h3>Step-by-Step Guide:</h3>
+                <ol>
+                    <li><strong>Click "View & Apply"</strong> - Opens the company's careers page</li>
+                    <li><strong>Search for the job</strong> - Use the job title or search bar to find this specific role</li>
+                    <li><strong>Read the full description</strong> - Make sure it matches what you want</li>
+                    <li><strong>Click "Apply"</strong> - This usually means creating an account or uploading your resume</li>
+                    <li><strong>Fill out the form carefully</strong> - Double-check spelling and grammar</li>
+                    <li><strong>Submit</strong> - You should get a confirmation email</li>
+                </ol>
+                
+                <h3>Pro Tips:</h3>
+                <div class="tip-box">
+                    💡 <strong>Tailor your resume:</strong> Highlight skills mentioned in the job description
+                </div>
+                <div class="tip-box">
+                    💡 <strong>Apply immediately:</strong> Fresh applications get seen first (apply within 24 hours)
+                </div>
+                <div class="tip-box">
+                    💡 <strong>Follow up:</strong> Wait 1 week, then check your email for status updates
+                </div>
+                <div class="tip-box">
+                    💡 <strong>Read requirements:</strong> You don't need 100% of the skills - if you have 70%+, apply anyway
+                </div>
+                
+                <h3>Common Issues:</h3>
+                <p><strong>Q: I don't see this job on their careers page?</strong></p>
+                <p>A: Jobs sometimes get filled fast. Try searching by job title or keywords. If you can't find it after 5 minutes, it may have closed. Check again tomorrow - they post new roles daily.</p>
+                
+                <p><strong>Q: The page asks for a cover letter. Do I need one?</strong></p>
+                <p>A: If it's optional, skip it for now (optional = not required). If required, write 2-3 sentences about why you're interested.</p>
+                
+                <p><strong>Q: I got an error message when submitting.</strong></p>
+                <p>A: Try a different browser (Chrome, Safari) or clear your browser cache and try again.</p>
+                
+                <h3>Need More Help?</h3>
+                <p><strong>✉️ Email us:</strong> hiangeloddo@gmail.com if you get stuck</p>
+                <p><strong>📚 Read our guide:</strong> Visit <a href="/articles" target="_blank">our articles page</a> for resume and interview tips</p>
+            `;
+            
+            content.innerHTML = guidance;
+            modal.classList.add('show');
+        }
+
+        function closeGuidance() {
+            const modal = document.getElementById('guidanceModal');
+            modal.classList.remove('show');
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('guidanceModal');
+            if (event.target == modal) {
+                modal.classList.remove('show');
+            }
+        }
     </script>
 </body>
 </html>
