@@ -1,0 +1,47 @@
+name: Update Live Jobs Daily
+
+on:
+  schedule:
+    # Run at 6 AM, 12 PM, and 6 PM UTC every day (3x daily for freshness)
+    - cron: '0 6,12,18 * * *'
+  workflow_dispatch: # Allow manual trigger
+
+jobs:
+  update-jobs:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      
+      - name: Run job aggregator
+        run: node aggregate-jobs.js
+      
+      - name: Check if jobs were updated
+        id: check-changes
+        run: |
+          if git diff --quiet jobs-data.json; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+          else
+            echo "changed=true" >> $GITHUB_OUTPUT
+          fi
+      
+      - name: Commit and push updated jobs
+        if: steps.check-changes.outputs.changed == 'true'
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "Job Aggregator Bot"
+          git add jobs-data.json
+          git commit -m "🤖 Update live jobs data - $(date +'%Y-%m-%d %H:%M:%S UTC')"
+          git push
+      
+      - name: No changes needed
+        if: steps.check-changes.outputs.changed == 'false'
+        run: echo "✅ Jobs data is already up to date"

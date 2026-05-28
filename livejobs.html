@@ -521,34 +521,24 @@
     </footer>
 
     <script>
-        // FREE JOB SOURCES - No API key needed!
-        
-        // 1. GitHub Jobs API (100% free, no key needed)
-        async function fetchGitHubJobs() {
+        // Load jobs from jobs-data.json (updated 3x daily by GitHub Actions)
+        let allJobsData = [];
+
+        async function loadJobsData() {
             try {
-                const response = await fetch('https://jobs.github.com/positions.json?description=entry-level&full_time=true');
-                const jobs = await response.json();
-                return jobs.slice(0, 8).map((job, idx) => ({
-                    id: 100 + idx,
-                    title: job.title,
-                    company: job.company,
-                    category: 'technology',
-                    level: 'entry',
-                    type: 'remote',
-                    location: job.location || 'Remote',
-                    salary: 'Competitive',
-                    description: job.description.replace(/<[^>]*>/g, '').substring(0, 120) + '...',
-                    source: 'github',
-                    url: job.url
-                }));
+                const response = await fetch('/jobs-data.json?v=' + Date.now());
+                const data = await response.json();
+                allJobsData = data.jobs || [];
+                console.log(`✅ Loaded ${allJobsData.length} live jobs`);
+                return allJobsData;
             } catch (error) {
-                console.log('GitHub Jobs API unavailable');
-                return [];
+                console.error('Error loading jobs data:', error);
+                return fallbackJobs;
             }
         }
 
-        // Sample job data (fallback + examples)
-        const sampleJobs = [
+        // Fallback jobs if API is unavailable
+        const fallbackJobs = [
             {
                 id: 1,
                 title: "Junior Software Engineer",
@@ -655,19 +645,16 @@
             }
         ];
 
-        // Initialize - Load GitHub Jobs first, then show sample jobs as fallback
+        // Initialize - Load live jobs from jobs-data.json (updated 3x daily)
         document.addEventListener('DOMContentLoaded', async function() {
             const loadingState = document.getElementById('loadingState');
             loadingState.style.display = 'block';
             
-            // Try to fetch real jobs from GitHub Jobs API
-            const githubJobs = await fetchGitHubJobs();
-            
-            // Combine with sample jobs for more variety
-            const allJobs = [...githubJobs, ...sampleJobs];
+            // Load jobs from JSON file
+            const jobs = await loadJobsData();
             
             loadingState.style.display = 'none';
-            displayJobs(allJobs);
+            displayJobs(jobs.length > 0 ? jobs : fallbackJobs);
         });
 
         function displayJobs(jobs) {
