@@ -717,6 +717,14 @@
     @media (max-width: 768px) {
       .three-col { grid-template-columns: 1fr; }
     }
+
+    .book-card-inner { display: flex; gap: 1.25rem; align-items: flex-start; margin-bottom: 1rem; }
+    .book-cover {
+      width: 72px; flex-shrink: 0; border-radius: 4px;
+      box-shadow: 4px 4px 12px rgba(0,0,0,0.5);
+      display: block;
+    }
+    .book-card-text { flex: 1; }
   </style>
 </head>
 <body>
@@ -991,14 +999,23 @@
           </article>
 
           <article class="three-card" role="listitem" itemscope itemtype="https://schema.org/Book">
-            <div class="three-card-icon" aria-hidden="true">
-              <i class="ti ti-bookmark" style="color:#b09060;font-size:20px"></i>
+            <div class="three-card-label" style="color:#b09060;margin-bottom:0.85rem">Sebastian&rsquo;s Book</div>
+            <div class="book-card-inner">
+              <img
+                src="https://cdn.shopify.com/s/files/1/0674/5433/7265/files/9781612831275_p0.jpg?v=1765872268"
+                alt="Excuse Me, College Is Now book cover"
+                class="book-cover"
+                loading="lazy"
+                width="72"
+                itemprop="image"
+              >
+              <div class="book-card-text">
+                <h3 class="three-card-title" itemprop="name" style="margin-bottom:0.4rem"><em>Excuse Me, College Is Now</em></h3>
+                <p class="three-card-desc" itemprop="description" style="margin-bottom:0">Follow-up to the NY Times bestseller &ldquo;Excuse Me, Your Life Is Waiting.&rdquo; A practical guide for college students on navigating school, life, and that first job.</p>
+              </div>
             </div>
-            <div class="three-card-label" style="color:#b09060">Sebastian&rsquo;s Book</div>
-            <h3 class="three-card-title" itemprop="name"><em>Excuse Me, College Is Now</em></h3>
-            <p class="three-card-desc" itemprop="description">Sebastian&rsquo;s follow-up to the NY Times bestseller &ldquo;Excuse Me, Your Life Is Waiting.&rdquo; A practical guide for college students on navigating school, life, and landing your first job.</p>
-            <div style="display:flex;flex-direction:column;gap:6px">
-              <a href="https://www.amazon.com/Excuse-Me-College-Now-Success/dp/1571745920" target="_blank" rel="noopener noreferrer" class="three-card-link" aria-label="Buy on Amazon">Buy on Amazon &rarr;</a>
+            <div style="display:flex;flex-direction:column;gap:6px;margin-top:auto;padding-top:1rem">
+              <a href="https://redwheelweiser.com/book/excuse-me-college-is-now-9781571745927/" target="_blank" rel="noopener noreferrer" class="three-card-link" aria-label="Buy from Red Wheel Weiser">Buy from Red Wheel Weiser &rarr;</a>
               <a href="https://www.barnesandnoble.com/w/excuse-me-college-is-now-doreen-banaszak/1112400605" target="_blank" rel="noopener noreferrer" class="three-card-link" aria-label="Buy on Barnes &amp; Noble">Buy on Barnes &amp; Noble &rarr;</a>
             </div>
           </article>
