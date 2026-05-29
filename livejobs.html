@@ -106,6 +106,18 @@
     }
     @media (max-width: 480px) { .header-inner, .container { padding-left: 1rem; padding-right: 1rem; } }
     @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+
+    .nav-email {
+      font-size: 12px; color: var(--gold); text-decoration: none;
+      letter-spacing: 0.03em; font-weight: 400;
+    }
+    .nav-email:hover { text-decoration: underline; }
+    .nav-email:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; border-radius: 2px; }
+    .cta-email-text {
+      font-size: 15px; color: var(--gold); text-decoration: none;
+      font-weight: 400; white-space: nowrap;
+    }
+    .cta-email-text:hover { text-decoration: underline; }
   </style>
 </head>
 <body>
@@ -122,14 +134,14 @@
         </ul>
       </nav>
       <div class="nav-actions">
-        <a href="mailto:hiangeloddo@gmail.com?subject=Coaching%20Inquiry%20%E2%80%94%200xdecodeyourself" class="btn-primary">Book a call</a>
+        <a href="mailto:hiangeloddo@gmail.com" class="nav-email" aria-label="Email hiangeloddo@gmail.com">hiangeloddo@gmail.com</a>
         <button class="hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-nav"
           onclick="const n=document.getElementById('mobile-nav');const o=n.classList.toggle('open');this.setAttribute('aria-expanded',o);this.setAttribute('aria-label',o?'Close navigation menu':'Open navigation menu');this.innerHTML=o?'&#x2715;':'&#9776;'">&#9776;</button>
       </div>
     </div>
     <nav id="mobile-nav" aria-label="Mobile navigation">
       <a href="/">Home</a><a href="/livejobs">Jobs</a><a href="/articles">Resources</a><a href="/#team">About</a>
-      <a href="mailto:hiangeloddo@gmail.com?subject=Coaching%20Inquiry%20%E2%80%94%200xdecodeyourself">Book a call &rarr;</a>
+      <a href="mailto:hiangeloddo@gmail.com">hiangeloddo@gmail.com</a>
     </nav>
   </header>
 

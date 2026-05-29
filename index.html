@@ -504,6 +504,34 @@
     @media (prefers-color-scheme: light) {
       /* site intentionally stays dark */
     }
+
+    .nav-email {
+      font-size: 12px; color: var(--gold); text-decoration: none;
+      letter-spacing: 0.03em; font-weight: 400;
+    }
+    .nav-email:hover { text-decoration: underline; }
+    .nav-email:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; border-radius: 2px; }
+
+    .hero-email-link {
+      font-size: 14px; color: var(--gold); text-decoration: none;
+      font-weight: 400; letter-spacing: 0.02em; align-self: center;
+    }
+    .hero-email-link:hover { text-decoration: underline; }
+    .hero-email-link:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+
+    .inline-email-link {
+      font-size: 13px; color: var(--gold); text-decoration: none;
+      white-space: nowrap; flex-shrink: 0; font-weight: 400;
+    }
+    .inline-email-link:hover { text-decoration: underline; }
+
+    .coaching-email-text {
+      display: block; text-align: center;
+      font-size: 15px; color: #8a6a30; text-decoration: none;
+      font-weight: 500; letter-spacing: 0.02em; padding: 4px 0;
+    }
+    .coaching-email-text:hover { text-decoration: underline; color: #6a4a18; }
+    .coaching-email-text:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
   </style>
 </head>
 <body>
@@ -522,7 +550,7 @@
         </ul>
       </nav>
       <div class="nav-actions">
-        <a href="mailto:hiangeloddo@gmail.com?subject=Coaching%20Inquiry%20%E2%80%94%200xdecodeyourself" class="btn-primary">Book a call</a>
+        <a href="mailto:hiangeloddo@gmail.com" class="nav-email" aria-label="Email hiangeloddo@gmail.com">hiangeloddo@gmail.com</a>
         <button class="hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-nav"
           onclick="const n=document.getElementById('mobile-nav');const o=n.classList.toggle('open');this.setAttribute('aria-expanded',o);this.setAttribute('aria-label',o?'Close navigation menu':'Open navigation menu');this.innerHTML=o?'&#x2715;':'&#9776;'">&#9776;</button>
       </div>
@@ -532,7 +560,7 @@
       <a href="/livejobs">Jobs</a>
       <a href="/articles">Resources</a>
       <a href="#team">About</a>
-      <a href="mailto:hiangeloddo@gmail.com?subject=Coaching%20Inquiry%20%E2%80%94%200xdecodeyourself">Book a call &rarr;</a>
+      <a href="mailto:hiangeloddo@gmail.com">hiangeloddo@gmail.com</a>
     </nav>
   </header>
 
@@ -551,7 +579,7 @@
         <p class="hero-sub">Career coaching and a live job board for college students and recent grads &mdash; guided by a Global VP of Brand Innovation at Mastercard with 19+ years at the top of the industry.</p>
         <div class="hero-btns">
           <a href="/livejobs" class="btn-primary">Browse open roles</a>
-          <a href="mailto:hiangeloddo@gmail.com?subject=Coaching%20Inquiry%20%E2%80%94%200xdecodeyourself" class="btn-ghost" role="button">Work with Sebastian</a>
+          <a href="mailto:hiangeloddo@gmail.com" class="hero-email-link">hiangeloddo@gmail.com</a>
         </div>
         <div class="stats" role="list" aria-label="Platform statistics">
           <div role="listitem"><div class="stat-num">300+</div><div class="stat-label">Live jobs</div></div>
@@ -585,7 +613,7 @@
               <h3>From first application to signed offer &mdash; guided by someone who&rsquo;s actually been in the room.</h3>
               <p style="font-size:13px;color:var(--text-muted);margin-top:0.5rem">Real strategy, built around you &mdash; informed by 19+ years leading global marketing campaigns at Mastercard.</p>
             </div>
-            <a href="mailto:hiangeloddo@gmail.com?subject=Coaching%20Inquiry%20%E2%80%94%200xdecodeyourself" class="btn-primary" style="white-space:nowrap;flex-shrink:0">Email for info &rarr;</a>
+            <a href="mailto:hiangeloddo@gmail.com" class="inline-email-link">hiangeloddo@gmail.com</a>
           </div>
           <div class="card">
             <div class="card-num" aria-hidden="true">03</div>
@@ -680,7 +708,7 @@
           </div>
           <div class="coaching-cta-box">
             <p>Resume review &middot; Interview prep &middot; Offer negotiation &middot; Async feedback &middot; Career clarity</p>
-            <a href="mailto:hiangeloddo@gmail.com?subject=Coaching%20Inquiry%20%E2%80%94%200xdecodeyourself" class="email-cta">Email for more info &rarr;</a>
+            <a href="mailto:hiangeloddo@gmail.com" class="coaching-email-text">hiangeloddo@gmail.com</a>
           </div>
         </div>
       </div>
