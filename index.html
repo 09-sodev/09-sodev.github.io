@@ -623,6 +623,59 @@
     @media (max-width: 768px) {
       .tiers-grid { grid-template-columns: 1fr; }
     }
+
+    /* ── CONTACT SECTION ── */
+    .contact-section {
+      background: #f5f0e8; border-bottom: 1px solid #e0d8cc;
+    }
+    .contact-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+      margin-top: 2rem;
+    }
+    .contact-card {
+      background: #0e0d0b; border: 1px solid #2a2520;
+      border-radius: 12px; padding: 1.75rem;
+    }
+    .contact-card-icon {
+      width: 40px; height: 40px; border-radius: 9px;
+      background: #1e1c18; border: 1px solid #2a2520;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 1rem; font-size: 18px;
+    }
+    .contact-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem; font-weight: 300; color: #f0ece4;
+      margin-bottom: 0.4rem;
+    }
+    .contact-card p {
+      font-size: 13px; color: #b0aca4; line-height: 1.55;
+      margin-bottom: 1.1rem;
+    }
+    .contact-detail {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 13.5px; color: #C9A060;
+      text-decoration: none; font-weight: 400;
+      margin-bottom: 6px;
+    }
+    .contact-detail:hover { text-decoration: underline; }
+    .contact-detail:focus-visible { outline: 2px solid #C9A060; outline-offset: 2px; }
+    .contact-detail i { font-size: 15px; flex-shrink: 0; }
+    .contact-response {
+      margin-top: 2rem; padding: 1.25rem 1.5rem;
+      background: transparent; border: 1px solid #e0d8cc;
+      border-radius: 10px; display: flex; align-items: center; gap: 1rem;
+    }
+    .contact-response-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: #4a9a5a; flex-shrink: 0;
+      animation: pulse 2s infinite;
+    }
+    .contact-response p {
+      font-size: 13px; color: #5a5040; margin: 0;
+    }
+    @media (max-width: 768px) {
+      .contact-grid { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
@@ -638,10 +691,11 @@
           <li><a href="/livejobs">Jobs</a></li>
           <li><a href="/articles">Resources</a></li>
           <li><a href="#team">About</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
       <div class="nav-actions">
-        <a href="mailto:hiangeloddo@gmail.com" class="nav-email" aria-label="Email us to book a session with Sebastian">Email us to book a session</a>
+
         <button class="hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-nav"
           onclick="const n=document.getElementById('mobile-nav');const o=n.classList.toggle('open');this.setAttribute('aria-expanded',o);this.setAttribute('aria-label',o?'Close navigation menu':'Open navigation menu');this.innerHTML=o?'&#x2715;':'&#9776;'">&#9776;</button>
       </div>
@@ -651,7 +705,7 @@
       <a href="/livejobs">Jobs</a>
       <a href="/articles">Resources</a>
       <a href="#team">About</a>
-      <a href="mailto:hiangeloddo@gmail.com">Email us to book a session &rarr;</a>
+      <a href="#contact">Contact</a>
     </nav>
   </header>
 
@@ -670,7 +724,7 @@
         <p class="hero-sub">Career coaching and a live job board for college students and recent grads &mdash; built by people who know what it actually takes to get in the room.</p>
         <div class="hero-btns">
           <a href="/livejobs" class="btn-primary">Browse open roles</a>
-          <a href="mailto:hiangeloddo@gmail.com" class="hero-email-link">hiangeloddo@gmail.com</a>
+          <a href="#contact" class="hero-email-link">Get in touch &rarr;</a>
         </div>
         <div class="stats" role="list" aria-label="Platform statistics">
           <div role="listitem"><div class="stat-num">300+</div><div class="stat-label">Live jobs</div></div>
@@ -899,6 +953,52 @@
       </div>
     </section>
 
+    <!-- CONTACT -->
+    <section class="contact-section" id="contact" aria-labelledby="contact-title">
+      <div class="container section-pad">
+        <p class="eyebrow" style="color:#8a7a60">Get in touch</p>
+        <h2 class="section-title" id="contact-title" style="color:#1a1714">Ready to start?<br><em style="color:#8a6a30">Let&rsquo;s talk.</em></h2>
+
+        <div class="contact-grid">
+
+          <div class="contact-card">
+            <div class="contact-card-icon" aria-hidden="true">
+              <i class="ti ti-user-heart" style="color:#C9A060;font-size:18px"></i>
+            </div>
+            <h3>1:1 Mentoring or Group Cohort</h3>
+            <p>Interested in working with Sebastian directly? Reach out and we&rsquo;ll set up a free 15-minute intro call to figure out which program is right for you.</p>
+            <a href="mailto:hiangeloddo@gmail.com?subject=Mentoring%20Inquiry%20%E2%80%94%200xdecodeyourself" class="contact-detail">
+              <i class="ti ti-mail" aria-hidden="true"></i> hiangeloddo@gmail.com
+            </a>
+            <a href="https://www.linkedin.com/in/sebastianoddo/" target="_blank" rel="noopener noreferrer" class="contact-detail">
+              <i class="ti ti-brand-linkedin" aria-hidden="true"></i> Message Sebastian on LinkedIn
+            </a>
+          </div>
+
+          <div class="contact-card">
+            <div class="contact-card-icon" aria-hidden="true">
+              <i class="ti ti-info-circle" style="color:#8a8278;font-size:18px"></i>
+            </div>
+            <h3>General questions</h3>
+            <p>Questions about the job board, resources, or the platform? Angel is happy to help.</p>
+            <a href="mailto:hiangeloddo@gmail.com?subject=Question%20%E2%80%94%200xdecodeyourself" class="contact-detail">
+              <i class="ti ti-mail" aria-hidden="true"></i> hiangeloddo@gmail.com
+            </a>
+            <a href="https://www.linkedin.com/in/sebastianoddo/" target="_blank" rel="noopener noreferrer" class="contact-detail">
+              <i class="ti ti-world" aria-hidden="true"></i> sebastianoddo.com
+            </a>
+          </div>
+
+        </div>
+
+        <div class="contact-response" aria-label="Response time">
+          <div class="contact-response-dot" aria-hidden="true"></div>
+          <p>We typically respond within 24 hours. If you&rsquo;re ready to book, mention which program you&rsquo;re interested in and we&rsquo;ll get a call on the calendar.</p>
+        </div>
+
+      </div>
+    </section>
+
   </main>
 
   <footer role="contentinfo">
@@ -910,7 +1010,7 @@
           <li><a href="#coaching">Coaching</a></li>
           <li><a href="/articles">Resources</a></li>
           <li><a href="#team">About</a></li>
-          <li><a href="mailto:hiangeloddo@gmail.com" style="color:var(--gold)">Contact</a></li>
+          <li><a href="#contact" style="color:var(--gold)">Contact</a></li>
         </ul>
       </div>
       <div class="footer-bottom">
