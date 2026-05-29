@@ -466,17 +466,17 @@
     .footer-logo span { color: var(--gold); }
     .footer-links { display: flex; gap: 1.5rem; list-style: none; flex-wrap: wrap; }
     .footer-links a {
-      font-size: 11.5px; color: var(--text-faint); text-decoration: none;
+      font-size: 11.5px; color: #8a8278; text-decoration: none;
       letter-spacing: 0.04em; text-transform: uppercase;
     }
-    .footer-links a:hover { color: #8a8278; }
+    .footer-links a:hover { color: var(--text); }
     .footer-links a:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
     .footer-bottom {
       border-top: 1px solid var(--ink-3); padding-top: 1.25rem;
       display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;
     }
-    .footer-copy { font-size: 11.5px; color: #2a2824; }
-    .footer-email { font-size: 11.5px; color: var(--text-faint); text-decoration: none; }
+    .footer-copy { font-size: 11.5px; color: #6a6860; }
+    .footer-email { font-size: 11.5px; color: #8a8278; text-decoration: none; }
     .footer-email:hover { color: var(--gold); }
 
     /* ── RESPONSIVE ── */
@@ -564,7 +564,7 @@
         </ul>
       </nav>
       <div class="nav-actions">
-        <a href="mailto:hiangeloddo@gmail.com" class="nav-email" aria-label="Email hiangeloddo@gmail.com">hiangeloddo@gmail.com</a>
+        <a href="mailto:hiangeloddo@gmail.com" class="nav-email" aria-label="Email us to book a session with Sebastian">Email us to book a session</a>
         <button class="hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-nav"
           onclick="const n=document.getElementById('mobile-nav');const o=n.classList.toggle('open');this.setAttribute('aria-expanded',o);this.setAttribute('aria-label',o?'Close navigation menu':'Open navigation menu');this.innerHTML=o?'&#x2715;':'&#9776;'">&#9776;</button>
       </div>
@@ -574,7 +574,7 @@
       <a href="/livejobs">Jobs</a>
       <a href="/articles">Resources</a>
       <a href="#team">About</a>
-      <a href="mailto:hiangeloddo@gmail.com">hiangeloddo@gmail.com</a>
+      <a href="mailto:hiangeloddo@gmail.com">Email us to book a session &rarr;</a>
     </nav>
   </header>
 
@@ -590,7 +590,7 @@
           <span>Live job board &middot; Updated 3&times; daily</span>
         </div>
         <h1 id="hero-heading">Your career,<br><em>decoded.</em></h1>
-        <p class="hero-sub">Career coaching and a live job board for college students and recent grads &mdash; guided by a Global VP of Brand Innovation at Mastercard with 19+ years at the top of the industry.</p>
+        <p class="hero-sub">Career coaching and a live job board for college students and recent grads &mdash; built by people who know what it actually takes to get in the room.</p>
         <div class="hero-btns">
           <a href="/livejobs" class="btn-primary">Browse open roles</a>
           <a href="mailto:hiangeloddo@gmail.com" class="hero-email-link">hiangeloddo@gmail.com</a>
@@ -625,7 +625,7 @@
           <div class="card span2">
             <div class="card-body">
               <h3>From first application to signed offer &mdash; guided by someone who&rsquo;s actually been in the room.</h3>
-              <p style="font-size:13px;color:var(--text-muted);margin-top:0.5rem">Real strategy, built around you &mdash; informed by 19+ years leading global marketing campaigns at Mastercard.</p>
+              <p style="font-size:13px;color:var(--text-muted);margin-top:0.5rem">Real strategy, built around you &mdash; informed by 19+ years at the top of the marketing industry.</p>
             </div>
             <a href="mailto:hiangeloddo@gmail.com" class="inline-email-link">hiangeloddo@gmail.com</a>
           </div>
@@ -718,7 +718,7 @@
           <div class="coaching-text">
             <p class="eyebrow">1:1 coaching</p>
             <h2 class="section-title" id="coaching-title">Stop applying blindly.<br>Start moving with <em>intention.</em></h2>
-            <p itemprop="description">Private, personalized coaching with Sebastian &mdash; Global VP of Brand Innovation at Mastercard with 19+ years leading marketing for one of the world&rsquo;s most iconic brands. Real strategy, not generic advice.</p>
+            <p itemprop="description">Private, personalized coaching with Sebastian &mdash; a marketing executive with 19+ years building campaigns for some of the world&rsquo;s most recognized brands. Real strategy, not generic advice.</p>
           </div>
           <div class="coaching-cta-box">
             <p>Resume review &middot; Interview prep &middot; Offer negotiation &middot; Async feedback &middot; Career clarity</p>
@@ -745,14 +745,6 @@
               </div>
             </div>
             <p class="person-bio" itemprop="description">Global VP of Brand Innovation at Mastercard, where he leads emerging technology marketing across AI, Web3, and blockchain for one of the world&rsquo;s most recognized brands. 19+ years building award-winning campaigns at the intersection of culture, technology, and commerce.</p>
-            <div class="person-links">
-              <a href="https://www.sebastianoddo.com" target="_blank" rel="noopener noreferrer" class="person-link" aria-label="Sebastian Oddo's website">
-                <i class="ti ti-world" aria-hidden="true"></i> sebastianoddo.com
-              </a>
-              <a href="https://www.linkedin.com/in/sebastianoddo/" target="_blank" rel="noopener noreferrer" class="person-link" aria-label="Sebastian Oddo on LinkedIn">
-                <i class="ti ti-brand-linkedin" aria-hidden="true"></i> LinkedIn
-              </a>
-            </div>
             <ul class="highlights" aria-label="Sebastian Oddo's credentials">
               <li itemprop="affiliation">Global VP, Brand Innovation &mdash; Mastercard</li>
               <li>19+ years in digital marketing &amp; brand innovation</li>
@@ -763,6 +755,14 @@
               <li>Adjunct Professor, Manhattanville University</li>
               <li>Mentor &mdash; Girls Who Code &amp; My Brother&rsquo;s Keeper</li>
             </ul>
+            <div class="person-links" style="margin-top:1.1rem">
+              <a href="https://www.sebastianoddo.com" target="_blank" rel="noopener noreferrer" class="person-link" aria-label="Visit sebastianoddo.com">
+                <i class="ti ti-world" aria-hidden="true"></i> sebastianoddo.com
+              </a>
+              <a href="https://www.linkedin.com/in/sebastianoddo/" target="_blank" rel="noopener noreferrer" class="person-link" aria-label="Sebastian Oddo on LinkedIn">
+                <i class="ti ti-brand-linkedin" aria-hidden="true"></i> LinkedIn
+              </a>
+            </div>
           </article>
 
           <article class="person" itemscope itemtype="https://schema.org/Person">

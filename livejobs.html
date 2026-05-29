@@ -90,14 +90,14 @@
     /* FOOTER */
     footer { background: #0a0906; border-top: 1px solid var(--ink-3); padding: 2.5rem 0; margin-top: 2rem; }
     .footer-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem; }
-    .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 16px; color: var(--text-faint); text-decoration: none; }
+    .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 16px; color: #8a8278; text-decoration: none; }
     .footer-logo span { color: var(--gold); }
     .footer-links { display: flex; gap: 1.5rem; list-style: none; flex-wrap: wrap; }
     .footer-links a { font-size: 11.5px; color: var(--text-faint); text-decoration: none; letter-spacing: 0.04em; text-transform: uppercase; }
     .footer-links a:hover { color: #8a8278; }
     .footer-bottom { border-top: 1px solid var(--ink-3); padding-top: 1.25rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
-    .footer-copy { font-size: 11.5px; color: #2a2824; }
-    .footer-email { font-size: 11.5px; color: var(--text-faint); text-decoration: none; }
+    .footer-copy { font-size: 11.5px; color: #6a6860; }
+    .footer-email { font-size: 11.5px; color: #8a8278; text-decoration: none; }
 
     @media (max-width: 768px) {
       nav ul { display: none; } .hamburger { display: block; } .nav-actions .btn-ghost { display: none; }
@@ -134,14 +134,14 @@
         </ul>
       </nav>
       <div class="nav-actions">
-        <a href="mailto:hiangeloddo@gmail.com" class="nav-email" aria-label="Email hiangeloddo@gmail.com">hiangeloddo@gmail.com</a>
+        <a href="mailto:hiangeloddo@gmail.com" class="nav-email" aria-label="Email us to book a session with Sebastian">Email us to book a session</a>
         <button class="hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-nav"
           onclick="const n=document.getElementById('mobile-nav');const o=n.classList.toggle('open');this.setAttribute('aria-expanded',o);this.setAttribute('aria-label',o?'Close navigation menu':'Open navigation menu');this.innerHTML=o?'&#x2715;':'&#9776;'">&#9776;</button>
       </div>
     </div>
     <nav id="mobile-nav" aria-label="Mobile navigation">
       <a href="/">Home</a><a href="/livejobs">Jobs</a><a href="/articles">Resources</a><a href="/#team">About</a>
-      <a href="mailto:hiangeloddo@gmail.com">hiangeloddo@gmail.com</a>
+      <a href="mailto:hiangeloddo@gmail.com">Email us to book a session &rarr;</a>
     </nav>
   </header>
 
