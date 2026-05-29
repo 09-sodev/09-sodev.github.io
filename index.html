@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="0xdecodeyourself — Career coaching and live job board for college students and recent graduates. Coached by Sebastian Oddo, VP of Innovation at Mastercard.">
+  <meta name="description" content="0xdecodeyourself — Career mentoring and live job board for college students and recent grads. 1:1 mentoring and group cohorts with Sebastian Oddo, a marketing executive with 19+ years at the top of the industry.">
   <meta name="keywords" content="career coaching, college students, recent graduates, job board, career clarity, resume review, interview prep, Sebastian Oddo">
   <meta property="og:title" content="0xdecodeyourself — Career Coaching for Students & Grads">
   <meta property="og:description" content="A career clarity platform and live job board. 1:1 coaching backed by 20+ years of executive experience at Mastercard.">
@@ -65,10 +65,10 @@
       },
       {
         "@type": "Question",
-        "name": "How do I book a coaching session with Sebastian?",
+        "name": "What mentoring options does Sebastian Oddo offer?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Email hiangeloddo@gmail.com to inquire about 1:1 coaching with Sebastian Oddo. Sessions cover resume review, interview prep, salary negotiation, and career clarity."
+          "text": "Sebastian offers two mentoring programs: 1:1 Mentoring (4 private 60-minute sessions per month, including resume review, interview prep, offer negotiation, and async feedback) and a Group Cohort (monthly 90-minute sessions for 8-10 peers, with shared resources, accountability partners, and a community Slack). Email hiangeloddo@gmail.com to inquire or book a free 15-minute intro call."
         }
       },
       {
@@ -546,6 +546,83 @@
     .person-link:hover { background: rgba(201,160,96,0.1); border-color: var(--gold); }
     .person-link:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
     .person-link i { font-size: 13px; }
+
+    /* ── COACHING TIERS ── */
+    .coaching-section { background: #f5f0e8; border-bottom: 1px solid #e0d8cc; }
+    .coaching-section .eyebrow { color: #8a7a60; }
+    .coaching-section .section-title { color: #1a1714; }
+    .coaching-section .section-title em { color: #8a6a30; }
+    .coaching-section .section-sub { font-size: 15px; color: #5a5040; max-width: 520px; line-height: 1.6; font-weight: 300; margin-bottom: 2.5rem; }
+
+    .tiers-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 2rem; }
+
+    .tier-card {
+      background: #0e0d0b; border: 1px solid #2a2520;
+      border-radius: 12px; padding: 2rem;
+      display: flex; flex-direction: column;
+    }
+    .tier-card.featured { border: 2px solid #C9A060; }
+
+    .tier-badge {
+      display: inline-block; background: #1e1c18; border: 1px solid #3a3020;
+      border-radius: 100px; padding: 3px 12px;
+      font-size: 10.5px; color: #8a7850;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      margin-bottom: 1.25rem; align-self: flex-start;
+    }
+    .tier-card.featured .tier-badge {
+      background: #2a1e08; border-color: #C9A060; color: #C9A060;
+    }
+
+    .tier-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem; font-weight: 300; color: #f0ece4;
+      line-height: 1.1; margin-bottom: 0.5rem;
+    }
+    .tier-tagline { font-size: 13px; color: #8a8278; margin-bottom: 1.5rem; line-height: 1.5; }
+
+    .tier-includes {
+      list-style: none; margin-bottom: 1.75rem; flex: 1;
+    }
+    .tier-includes li {
+      font-size: 13px; color: #b0aca4; padding: 6px 0;
+      border-bottom: 1px solid #1e1c18;
+      display: flex; align-items: baseline; gap: 10px;
+    }
+    .tier-includes li:last-child { border-bottom: none; }
+    .tier-includes li::before {
+      content: ''; width: 4px; height: 4px; border-radius: 50%;
+      background: #C9A060; flex-shrink: 0; margin-top: 7px;
+    }
+
+    .tier-cta {
+      display: block; text-align: center; text-decoration: none;
+      background: transparent; border: 1px solid #3a3530;
+      color: #f0ece4; font-family: 'DM Sans', sans-serif;
+      font-size: 12.5px; font-weight: 500; padding: 11px;
+      border-radius: 100px; letter-spacing: 0.04em; text-transform: uppercase;
+      transition: all 0.15s;
+    }
+    .tier-cta:hover { border-color: #C9A060; color: #C9A060; }
+    .tier-card.featured .tier-cta {
+      background: #C9A060; border-color: #C9A060; color: #0e0d0b;
+    }
+    .tier-card.featured .tier-cta:hover { background: #d4a96a; }
+    .tier-cta:focus-visible { outline: 2px solid #C9A060; outline-offset: 2px; }
+
+    .coaching-reassurance {
+      display: flex; align-items: center; gap: 1rem;
+      padding: 1.25rem 1.5rem;
+      background: transparent; border: 1px solid #e0d8cc;
+      border-radius: 10px; flex-wrap: wrap;
+    }
+    .coaching-reassurance p { font-size: 13px; color: #5a5040; line-height: 1.5; flex: 1; }
+    .coaching-reassurance a { color: #8a6a30; text-decoration: none; font-weight: 500; }
+    .coaching-reassurance a:hover { text-decoration: underline; }
+
+    @media (max-width: 768px) {
+      .tiers-grid { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
@@ -710,21 +787,54 @@
       </div>
     </section>
 
-    <!-- COACHING CTA -->
-    <section class="light" aria-labelledby="coaching-title" itemscope itemtype="https://schema.org/Service">
-      <meta itemprop="name" content="1:1 Career Coaching with Sebastian Oddo">
+    <!-- COACHING TIERS -->
+    <section class="coaching-section" id="coaching" aria-labelledby="coaching-title" itemscope itemtype="https://schema.org/Service">
+      <meta itemprop="name" content="Career Mentoring with Sebastian Oddo">
       <div class="container section-pad">
-        <div class="coaching-inner">
-          <div class="coaching-text">
-            <p class="eyebrow">1:1 coaching</p>
-            <h2 class="section-title" id="coaching-title">Stop applying blindly.<br>Start moving with <em>intention.</em></h2>
-            <p itemprop="description">Private, personalized coaching with Sebastian &mdash; a marketing executive with 19+ years building campaigns for some of the world&rsquo;s most recognized brands. Real strategy, not generic advice.</p>
-          </div>
-          <div class="coaching-cta-box">
-            <p>Resume review &middot; Interview prep &middot; Offer negotiation &middot; Async feedback &middot; Career clarity</p>
-            <a href="mailto:hiangeloddo@gmail.com" class="coaching-email-text">hiangeloddo@gmail.com</a>
-          </div>
+        <p class="eyebrow">Work with Sebastian</p>
+        <h2 class="section-title" id="coaching-title">Stop applying blindly.<br>Start moving with <em>intention.</em></h2>
+        <p class="coaching-section section-sub" itemprop="description">Personalized mentoring from a marketing executive with 19+ years at the top of the industry. Real strategy built around where you are right now &mdash; not generic advice.</p>
+
+        <div class="tiers-grid">
+
+          <!-- Tier 1: 1:1 Mentoring -->
+          <article class="tier-card featured" itemscope itemtype="https://schema.org/Offer">
+            <div class="tier-badge">Most popular</div>
+            <div class="tier-name">1:1 Mentoring</div>
+            <p class="tier-tagline">Four private sessions per month. Full access to Sebastian&rsquo;s network, frameworks, and honest feedback.</p>
+            <ul class="tier-includes" aria-label="What's included in 1:1 Mentoring">
+              <li>4 private sessions / month (60 min each)</li>
+              <li>Resume, portfolio &amp; LinkedIn review</li>
+              <li>Interview prep &amp; mock sessions</li>
+              <li>Offer negotiation coaching</li>
+              <li>Async voice note feedback between sessions</li>
+              <li>Personalized career roadmap</li>
+            </ul>
+            <a href="mailto:hiangeloddo@gmail.com?subject=1:1%20Mentoring%20Inquiry%20%E2%80%94%200xdecodeyourself" class="tier-cta" aria-label="Inquire about 1:1 Mentoring with Sebastian">Email to inquire &rarr;</a>
+          </article>
+
+          <!-- Tier 2: Group Cohort -->
+          <article class="tier-card" itemscope itemtype="https://schema.org/Offer">
+            <div class="tier-badge">Small group</div>
+            <div class="tier-name">Group Cohort</div>
+            <p class="tier-tagline">8&ndash;10 peers navigating the same decisions. Monthly sessions, shared accountability, and a community that gets it.</p>
+            <ul class="tier-includes" aria-label="What's included in Group Cohort">
+              <li>Monthly group session (90 min)</li>
+              <li>Peer accountability partners</li>
+              <li>Shared resource library &amp; templates</li>
+              <li>Live Q&amp;A with Sebastian each session</li>
+              <li>Access to 0xdecodeyourself job board</li>
+              <li>Community Slack channel</li>
+            </ul>
+            <a href="mailto:hiangeloddo@gmail.com?subject=Group%20Cohort%20Inquiry%20%E2%80%94%200xdecodeyourself" class="tier-cta" aria-label="Inquire about Group Cohort with Sebastian">Email to inquire &rarr;</a>
+          </article>
+
         </div>
+
+        <div class="coaching-reassurance" role="complementary" aria-label="How to get started">
+          <p>Not sure which is right for you? Start with a free 15-minute intro call &mdash; email <a href="mailto:hiangeloddo@gmail.com">hiangeloddo@gmail.com</a> and we&rsquo;ll figure it out together.</p>
+        </div>
+
       </div>
     </section>
 
@@ -797,7 +907,7 @@
         <a href="/" class="footer-logo" aria-label="0xdecodeyourself home">0x<span>decode</span>yourself</a>
         <ul class="footer-links" role="list" aria-label="Footer navigation">
           <li><a href="/livejobs">Jobs</a></li>
-          <li><a href="#team">Coaching</a></li>
+          <li><a href="#coaching">Coaching</a></li>
           <li><a href="/articles">Resources</a></li>
           <li><a href="#team">About</a></li>
           <li><a href="mailto:hiangeloddo@gmail.com" style="color:var(--gold)">Contact</a></li>
