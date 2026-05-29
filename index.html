@@ -532,6 +532,20 @@
     }
     .coaching-email-text:hover { text-decoration: underline; color: #6a4a18; }
     .coaching-email-text:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+
+    .person-links {
+      display: flex; gap: 12px; margin-top: 0.85rem; flex-wrap: wrap;
+    }
+    .person-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 12px; color: var(--gold); text-decoration: none;
+      border: 1px solid #3a3020; border-radius: 100px;
+      padding: 4px 12px; letter-spacing: 0.03em;
+      transition: background 0.15s, border-color 0.15s;
+    }
+    .person-link:hover { background: rgba(201,160,96,0.1); border-color: var(--gold); }
+    .person-link:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+    .person-link i { font-size: 13px; }
   </style>
 </head>
 <body>
@@ -731,6 +745,14 @@
               </div>
             </div>
             <p class="person-bio" itemprop="description">Global VP of Brand Innovation at Mastercard, where he leads emerging technology marketing across AI, Web3, and blockchain for one of the world&rsquo;s most recognized brands. 19+ years building award-winning campaigns at the intersection of culture, technology, and commerce.</p>
+            <div class="person-links">
+              <a href="https://www.sebastianoddo.com" target="_blank" rel="noopener noreferrer" class="person-link" aria-label="Sebastian Oddo's website">
+                <i class="ti ti-world" aria-hidden="true"></i> sebastianoddo.com
+              </a>
+              <a href="https://www.linkedin.com/in/sebastianoddo/" target="_blank" rel="noopener noreferrer" class="person-link" aria-label="Sebastian Oddo on LinkedIn">
+                <i class="ti ti-brand-linkedin" aria-hidden="true"></i> LinkedIn
+              </a>
+            </div>
             <ul class="highlights" aria-label="Sebastian Oddo's credentials">
               <li itemprop="affiliation">Global VP, Brand Innovation &mdash; Mastercard</li>
               <li>19+ years in digital marketing &amp; brand innovation</li>
