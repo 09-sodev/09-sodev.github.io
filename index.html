@@ -676,6 +676,47 @@
     @media (max-width: 768px) {
       .contact-grid { grid-template-columns: 1fr; }
     }
+
+    /* ── THREE COLUMN CARDS ── */
+    .three-col {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 14px; margin-top: 1.75rem;
+    }
+    .three-card {
+      background: var(--ink-2); border: 1px solid var(--border);
+      border-radius: 12px; padding: 1.75rem;
+      display: flex; flex-direction: column;
+    }
+    .three-card-icon {
+      width: 44px; height: 44px; border-radius: 10px;
+      background: var(--ink-3); border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 1rem;
+    }
+    .three-card-label {
+      font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 0.5rem; font-weight: 500;
+    }
+    .three-card-label.free { color: #7ab07a; }
+    .three-card-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem; font-weight: 300; color: var(--text);
+      line-height: 1.2; margin-bottom: 0.6rem;
+    }
+    .three-card-desc {
+      font-size: 13px; color: var(--text-muted);
+      line-height: 1.6; flex: 1; margin-bottom: 1.25rem;
+    }
+    .three-card-link {
+      font-size: 12px; color: var(--gold); text-decoration: none;
+      letter-spacing: 0.03em; font-weight: 500;
+      align-self: flex-start;
+    }
+    .three-card-link:hover { text-decoration: underline; }
+    .three-card-link:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; border-radius: 2px; }
+    @media (max-width: 768px) {
+      .three-col { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
@@ -915,40 +956,40 @@
         <!-- FREE RESOURCES -->
     <section aria-labelledby="resources-title">
       <div class="container section-pad">
-        <p class="eyebrow">Free resources</p>
+        <p class="eyebrow">What&rsquo;s inside</p>
         <h2 class="section-title" id="resources-title">Everything you need,<br><em>in one place.</em></h2>
-        <div class="bento">
-          <div class="card top-gold">
-            <div class="card-num" aria-hidden="true">01</div>
-            <div class="card-icon" aria-hidden="true"><i class="ti ti-search" style="color:var(--gold);font-size:15px"></i></div>
-            <h3>Find the right roles</h3>
-            <p>Curated entry-level positions across tech, finance, marketing, design, and more &mdash; refreshed three times a day, automatically.</p>
-          </div>
-          <div class="card">
-            <div class="card-num" aria-hidden="true">02</div>
-            <div class="card-icon" aria-hidden="true"><i class="ti ti-user-check" style="color:#8a8278;font-size:15px"></i></div>
-            <h3>Get your story straight</h3>
-            <p>Work 1:1 with Sebastian to sharpen your resume, clarify your pitch, and step into interviews as your most confident self.</p>
-          </div>
-          <div class="card span2">
-            <div class="card-body">
-              <h3>From first application to signed offer &mdash; guided by someone who&rsquo;s actually been in the room.</h3>
-              <p style="font-size:13px;color:var(--text-muted);margin-top:0.5rem">Real strategy, built around you &mdash; informed by 19+ years at the top of the marketing industry.</p>
+        <div class="three-col" role="list">
+
+          <article class="three-card" role="listitem">
+            <div class="three-card-icon" aria-hidden="true">
+              <i class="ti ti-user-heart" style="color:var(--gold);font-size:20px"></i>
             </div>
-            <a href="mailto:hiangeloddo@gmail.com" class="inline-email-link">hiangeloddo@gmail.com</a>
-          </div>
-          <div class="card">
-            <div class="card-num" aria-hidden="true">03</div>
-            <div class="card-icon" aria-hidden="true"><i class="ti ti-article" style="color:#8a8278;font-size:15px"></i></div>
-            <h3>Resources that actually help</h3>
-            <p>Guides, templates, and frameworks from Harvard, LinkedIn, and real hiring managers &mdash; curated in one library.</p>
-          </div>
-          <div class="card">
-            <div class="card-num" aria-hidden="true">04</div>
-            <div class="card-icon" aria-hidden="true"><i class="ti ti-chart-line" style="color:#8a8278;font-size:15px"></i></div>
-            <h3>Negotiate what you&rsquo;re worth</h3>
-            <p>Scripts, salary data, and real coaching for the moment that matters most &mdash; the offer call.</p>
-          </div>
+            <div class="three-card-label">Paid</div>
+            <h3 class="three-card-title">Mentoring with Sebastian</h3>
+            <p class="three-card-desc">1:1 sessions or a group cohort &mdash; personalized strategy from a marketing executive with 19+ years at the top of the industry.</p>
+            <a href="#coaching" class="three-card-link">View options &rarr;</a>
+          </article>
+
+          <article class="three-card" role="listitem">
+            <div class="three-card-icon" aria-hidden="true">
+              <i class="ti ti-briefcase" style="color:#6090b0;font-size:20px"></i>
+            </div>
+            <div class="three-card-label free">Free</div>
+            <h3 class="three-card-title">Live Job Board</h3>
+            <p class="three-card-desc">78+ curated entry-level roles across tech, finance, marketing, design, and more. Updated three times a day, automatically.</p>
+            <a href="/livejobs" class="three-card-link">Browse open roles &rarr;</a>
+          </article>
+
+          <article class="three-card" role="listitem">
+            <div class="three-card-icon" aria-hidden="true">
+              <i class="ti ti-book-2" style="color:#7a9a6a;font-size:20px"></i>
+            </div>
+            <div class="three-card-label free">Free</div>
+            <h3 class="three-card-title">Career Resources</h3>
+            <p class="three-card-desc">Guides on resumes, interviews, negotiation, and networking &mdash; curated from Harvard, LinkedIn, McKinsey, and real hiring managers.</p>
+            <a href="/articles" class="three-card-link">Read the guides &rarr;</a>
+          </article>
+
         </div>
       </div>
     </section>
