@@ -1,872 +1,797 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Career coaching for college students & recent grads who want to build something real.">
-    <title>0xdecodeyourself | Career Clarity</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        
-        html, body {
-            background: #ffffff;
-            color: #1a1a1a;
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            line-height: 1.5;
-            overflow-x: hidden;
-            scroll-behavior: smooth;
-        }
-        
-        :root {
-            --gold: #F4B860;
-            --black: #1a1a1a;
-            --white: #ffffff;
-            --light-bg: #fafaf9;
-        }
-        
-        /* Skip to main */
-        .skip-to-main {
-            position: absolute;
-            top: -40px;
-            left: 0;
-            background: var(--gold);
-            color: var(--black);
-            padding: 8px 16px;
-            text-decoration: none;
-            z-index: 100;
-            font-weight: 600;
-        }
-        
-        .skip-to-main:focus {
-            top: 0;
-        }
-        
-        /* Navigation - Fixed Header */
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: var(--white);
-            padding: 2rem 3rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 999;
-            border-bottom: 1px solid #f0f0f0;
-        }
-        
-        .logo {
-            font-size: 16px;
-            font-weight: 800;
-            letter-spacing: -0.3px;
-        }
-        
-        .logo a {
-            text-decoration: none;
-            color: var(--black);
-            display: inline;
-            cursor: pointer;
-        }
-        
-        .logo .accent {
-            color: var(--gold);
-        }
-        
-        .logo-link {
-            text-decoration: none;
-            cursor: pointer;
-        }
-        
-        .tagline {
-            font-size: 11px;
-            color: #999;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            font-weight: 600;
-            margin-top: 4px;
-        }
-        
-        nav {
-            display: flex;
-            gap: 2rem;
-            align-items: center;
-        }
-        
-        nav a {
-            font-size: 13px;
-            color: var(--black);
-            text-decoration: none;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-            transition: color 0.3s;
-            border-bottom: 2px solid transparent;
-            cursor: pointer;
-        }
-        
-        nav a:hover, nav a:focus {
-            color: var(--gold);
-            border-bottom-color: var(--gold);
-            outline: none;
-        }
-        
-        nav a:focus-visible {
-            outline: 3px solid var(--gold);
-            outline-offset: 2px;
-        }
-        
-        .cta-nav {
-            padding: 0.75rem 1.5rem;
-            background: var(--black);
-            color: var(--white);
-            border: 2px solid var(--black);
-            border-radius: 2px;
-            font-size: 12px;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.3s;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        
-        .cta-nav:hover, .cta-nav:focus {
-            background: var(--gold);
-            border-color: var(--gold);
-            color: var(--black);
-            outline: none;
-        }
-        
-        /* Ticker */
-        .ticker {
-            background: var(--black);
-            color: var(--white);
-            padding: 0.75rem 0;
-            overflow: hidden;
-            border-bottom: 1px solid var(--black);
-            position: relative;
-            margin: 0;
-        }
-        
-        .ticker-content {
-            display: flex;
-            animation: scroll-left 30s linear infinite;
-            white-space: nowrap;
-            font-size: 12px;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-        }
-        
-        .ticker-item {
-            padding: 0 2rem;
-            display: inline-block;
-        }
-        
-        @keyframes scroll-left {
-            0% { transform: translateX(100%); }
-            100% { transform: translateX(-100%); }
-        }
-        .hero {
-            margin-top: 140px;
-            padding: 8rem 3rem;
-            min-height: 90vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            background: var(--white);
-        }
-        
-        .hero h1 {
-            font-size: 80px;
-            font-weight: 800;
-            line-height: 1;
-            margin-bottom: 1.5rem;
-            letter-spacing: -2px;
-            text-transform: uppercase;
-        }
-        
-        .hero h1 .accent {
-            color: var(--gold);
-        }
-        
-        .hero p {
-            font-size: 18px;
-            color: #555;
-            line-height: 1.8;
-            max-width: 650px;
-            margin-bottom: 3rem;
-            font-weight: 500;
-        }
-        
-        .cta-primary {
-            display: inline-block;
-            background: var(--gold);
-            color: var(--black);
-            text-decoration: none;
-            padding: 1.25rem 3rem;
-            border-radius: 2px;
-            font-weight: 700;
-            font-size: 13px;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            transition: all 0.3s;
-            border: 2px solid var(--gold);
-            cursor: pointer;
-        }
-        
-        .cta-primary:hover, .cta-primary:focus {
-            background: var(--black);
-            color: var(--gold);
-            outline: none;
-        }
-        
-        /* Section */
-        section {
-            padding: 8rem 3rem;
-            background: var(--white);
-        }
-        
-        section.light-bg {
-            background: var(--light-bg);
-        }
-        
-        section h2 {
-            font-size: 56px;
-            font-weight: 800;
-            line-height: 1.1;
-            margin-bottom: 2rem;
-            letter-spacing: -1px;
-            text-transform: uppercase;
-        }
-        
-        section p {
-            font-size: 16px;
-            line-height: 1.8;
-            color: #666;
-            max-width: 650px;
-            margin-bottom: 1.5rem;
-            font-weight: 500;
-        }
-        
-        /* Offerings Grid */
-        .offerings-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 3rem;
-            margin-top: 3rem;
-        }
-        
-        .offering {
-            padding: 2.5rem;
-            background: var(--white);
-            border: 1px solid #e0e0e0;
-            border-radius: 2px;
-            transition: all 0.3s;
-        }
-        
-        .offering:hover, .offering:focus-within {
-            border-color: var(--gold);
-            box-shadow: 0 12px 40px rgba(244, 184, 96, 0.12);
-        }
-        
-        .offering-number {
-            font-size: 14px;
-            color: var(--gold);
-            font-weight: 800;
-            letter-spacing: 1px;
-            margin-bottom: 1rem;
-            text-transform: uppercase;
-        }
-        
-        .offering h3 {
-            font-size: 22px;
-            font-weight: 800;
-            margin-bottom: 1rem;
-            text-transform: uppercase;
-        }
-        
-        .offering p {
-            font-size: 15px;
-            color: #666;
-            line-height: 1.7;
-        }
-        
-        /* Job Grid - 4 Squares */
-        .job-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-        
-        .job-card {
-            padding: 2.5rem;
-            background: var(--white);
-            border: 1px solid #e0e0e0;
-            border-radius: 2px;
-            transition: all 0.3s;
-            text-align: center;
-            cursor: pointer;
-        }
-        
-        .job-card:hover, .job-card:focus-within {
-            border-color: var(--gold);
-            box-shadow: 0 12px 40px rgba(244, 184, 96, 0.1);
-            transform: translateY(-4px);
-        }
-        
-        .job-card h3 {
-            font-size: 18px;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            text-transform: uppercase;
-        }
-        
-        .job-card p {
-            font-size: 14px;
-            color: #666;
-            line-height: 1.6;
-            margin-bottom: 1.5rem;
-        }
-        
-        .job-link {
-            display: inline-block;
-            background: var(--gold);
-            color: var(--black);
-            text-decoration: none;
-            padding: 0.75rem 2rem;
-            border-radius: 2px;
-            font-weight: 700;
-            font-size: 12px;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-            transition: all 0.3s;
-            border: 2px solid var(--gold);
-        }
-        
-        .job-link:hover, .job-link:focus {
-            background: var(--black);
-            color: var(--gold);
-        }
-        
-        /* Coaching Section */
-        .coaching-section {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 3rem;
-            margin-top: 3rem;
-        }
-        
-        .coaching-item {
-            padding: 2.5rem;
-            background: var(--white);
-            border: 1px solid #e0e0e0;
-            border-radius: 2px;
-            transition: all 0.3s;
-        }
-        
-        .coaching-item:hover {
-            border-color: var(--gold);
-            box-shadow: 0 12px 40px rgba(244, 184, 96, 0.12);
-        }
-        
-        .coaching-item h3 {
-            font-size: 22px;
-            font-weight: 800;
-            margin-bottom: 1rem;
-            text-transform: uppercase;
-        }
-        
-        .coaching-item p {
-            font-size: 15px;
-            color: #666;
-            line-height: 1.7;
-        }
-        
-        /* About Section */
-        #about {
-            background: var(--white);
-            padding: 8rem 3rem;
-        }
-        
-        #about h2 {
-            font-size: 56px;
-            font-weight: 800;
-            margin-bottom: 2rem;
-            text-transform: uppercase;
-        }
-        
-        /* People Grid */
-        .people-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 3rem;
-            margin-top: 3rem;
-        }
-        
-        .person-card {
-            display: grid;
-            grid-template-columns: 120px 1fr;
-            gap: 2rem;
-            align-items: start;
-        }
-        
-        .person-card h3 {
-            font-size: 18px;
-            font-weight: 800;
-            margin-bottom: 0.5rem;
-            text-transform: uppercase;
-        }
-        
-        .person-role {
-            font-size: 13px;
-            color: var(--gold);
-            font-weight: 700;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            margin-bottom: 1rem;
-        }
-        
-        .person-bio {
-            font-size: 15px;
-            color: #666;
-            line-height: 1.8;
-            margin-bottom: 1rem;
-        }
-        
-        .person-highlights {
-            list-style: none;
-            font-size: 13px;
-            color: #555;
-            margin: 0;
-            padding: 0;
-        }
-        
-        .person-highlights li {
-            margin-bottom: 0.5rem;
-            padding-left: 1rem;
-            position: relative;
-        }
-        
-        .person-highlights li::before {
-            content: "◆";
-            position: absolute;
-            left: 0;
-            color: var(--gold);
-            font-size: 6px;
-        }
-        
-        .person-links {
-            display: flex;
-            gap: 1rem;
-            align-items: center;
-            margin-top: 1rem;
-        }
-        
-        .person-links a {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background: #f0f0f0;
-            border-radius: 50%;
-            text-decoration: none;
-            color: var(--black);
-            transition: all 0.3s;
-            font-size: 18px;
-        }
-        
-        .person-links a:hover {
-            background: var(--gold);
-            color: var(--black);
-        }
-        
-        /* Circular Headshots */
-        .headshots-container {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-top: 3rem;
-            flex-wrap: wrap;
-        }
-        
-        .headshot-circle {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            background: #f0f0f0;
-            overflow: hidden;
-            border: 2px solid var(--gold);
-        }
-        
-        .headshot-circle img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        /* Story Section */
-        .story-section {
-            max-width: 900px;
-            margin: 6rem auto;
-            padding: 3rem;
-            background: var(--light-bg);
-            border-radius: 2px;
-        }
-        
-        .story-section h3 {
-            font-size: 36px;
-            font-weight: 800;
-            margin-bottom: 2rem;
-            text-transform: uppercase;
-        }
-        
-        .story-section p {
-            font-size: 16px;
-            color: #666;
-            line-height: 1.9;
-            margin-bottom: 1.5rem;
-        }
-        
-        .story-section p:last-child {
-            margin-bottom: 0;
-        }
-        
-        /* Mission Section */
-        .mission-section {
-            max-width: 900px;
-            margin: 6rem auto;
-            padding: 3rem;
-            background: var(--black);
-            color: var(--white);
-            border-radius: 2px;
-            text-align: center;
-        }
-        
-        .mission-section h3 {
-            font-size: 42px;
-            font-weight: 800;
-            margin-bottom: 1.5rem;
-            text-transform: uppercase;
-            line-height: 1.2;
-        }
-        
-        .mission-section h3 .accent {
-            color: var(--gold);
-        }
-        
-        .mission-section p {
-            font-size: 18px;
-            color: #ccc;
-            line-height: 1.8;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        
-        /* Let's Connect Section */
-        .connect-section {
-            background: var(--black);
-            color: var(--white);
-            padding: 4rem 3rem;
-            text-align: center;
-            margin-top: 4rem;
-        }
-        
-        .connect-section h2 {
-            font-size: 48px;
-            font-weight: 800;
-            margin-bottom: 2rem;
-            text-transform: uppercase;
-        }
-        
-        .connect-section p {
-            font-size: 20px;
-            color: var(--white);
-            font-weight: 700;
-            margin: 0 auto;
-        }
-        
-        .connect-section a {
-            display: inline-block;
-            background: var(--black);
-            color: var(--white);
-            text-decoration: none;
-            padding: 1rem 2.5rem;
-            border-radius: 2px;
-            font-weight: 700;
-            font-size: 16px;
-            letter-spacing: 0.5px;
-            transition: all 0.3s;
-            border: 2px solid var(--white);
-        }
-        
-        .connect-section a:hover, .connect-section a:focus {
-            background: var(--white);
-            color: var(--black);
-            outline: none;
-        }
-        
-        /* Footer */
-        footer {
-            background: var(--black);
-            color: var(--white);
-            padding: 4rem 3rem;
-            text-align: center;
-        }
-        
-        footer a {
-            color: var(--gold);
-            text-decoration: none;
-            font-weight: 700;
-        }
-        
-        footer a:hover {
-            text-decoration: underline;
-        }
-        
-        /* Responsive */
-        @media (max-width: 768px) {
-            header {
-                padding: 1.5rem;
-                flex-direction: column;
-                gap: 1rem;
-            }
-            
-            header > div {
-                display: none;
-            }
-            
-            nav {
-                display: none;
-            }
-            
-            .hero {
-                padding: 3rem 1.5rem;
-                margin-top: 120px;
-            }
-            
-            .hero h1 {
-                font-size: 42px;
-            }
-            
-            .hero p {
-                max-width: 100%;
-            }
-            
-            section {
-                padding: 3rem 1.5rem;
-            }
-            
-            section h2 {
-                font-size: 36px;
-            }
-            
-            .offerings-grid,
-            .job-grid,
-            .coaching-section,
-            .people-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-            
-            .person-card {
-                grid-template-columns: 1fr;
-                gap: 1rem;
-            }
-            
-            .connect-section h2 {
-                font-size: 32px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="0xdecodeyourself — Career coaching and live job board for college students and recent graduates. Coached by Sebastian Oddo, VP of Innovation at Mastercard.">
+  <meta name="keywords" content="career coaching, college students, recent graduates, job board, career clarity, resume review, interview prep, Sebastian Oddo">
+  <meta property="og:title" content="0xdecodeyourself — Career Coaching for Students & Grads">
+  <meta property="og:description" content="A career clarity platform and live job board. 1:1 coaching backed by 20+ years of executive experience at Mastercard.">
+  <meta property="og:url" content="https://0xdecodeyourself.com">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>0xdecodeyourself | Career Coaching for Students & Grads</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "0xdecodeyourself",
+    "url": "https://0xdecodeyourself.com",
+    "email": "hiangeloddo@gmail.com",
+    "description": "Career coaching platform and live job board for college students and recent graduates.",
+    "founder": [
+      {
+        "@type": "Person",
+        "name": "Sebastian Oddo",
+        "jobTitle": "Mentor & Strategic Guide",
+        "worksFor": "Mastercard",
+        "description": "VP of Innovation at Mastercard with 20+ years of experience in digital innovation and brand strategy. TEDx Speaker, Brand Innovators 40 Under 40, adjunct professor at Manhattanville University."
+      },
+      {
+        "@type": "Person",
+        "name": "Angel Oddo",
+        "jobTitle": "CEO & AI Innovation Lead",
+        "description": "Founder and CEO of 0xdecodeyourself. Hudson Valley-based builder bringing AI-powered career tools to students and recent grads."
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is 0xdecodeyourself?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "0xdecodeyourself is a career coaching platform and live job board built for college students and recent graduates. It offers 1:1 coaching with Sebastian Oddo, curated job listings updated 3 times daily, and career resources."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Who is Sebastian Oddo?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sebastian Oddo is the Mentor and Strategic Guide at 0xdecodeyourself. He is VP of Innovation at Mastercard, a Brand Innovators 40 Under 40 honoree, TEDx speaker, published author, and adjunct professor at Manhattanville University with 20+ years of executive experience."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I book a coaching session with Sebastian?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Email hiangeloddo@gmail.com to inquire about 1:1 coaching with Sebastian Oddo. Sessions cover resume review, interview prep, salary negotiation, and career clarity."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How often is the job board updated?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The live job board is updated three times every day automatically — at 6 AM, 12 PM, and 6 PM UTC via GitHub Actions."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is the job board free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, the job board is completely free to access. It features curated entry-level and new-grad positions across tech, finance, marketing, design, and more."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --gold: #C9A060;
+      --gold-hover: #d4a96a;
+      --ink: #0e0d0b;
+      --ink-2: #141210;
+      --ink-3: #1e1c18;
+      --ink-4: #2a2520;
+      --linen: #f5f0e8;
+      --text: #f0ece4;
+      --text-muted: #6e6860;
+      --text-dim: #4a4840;
+      --text-faint: #3a3530;
+      --border: #2a2520;
+      --border-light: #e0d8cc;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--ink);
+      color: var(--text);
+      font-size: 15px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── SKIP LINK ── */
+    .skip-link {
+      position: absolute; left: -9999px; top: 8px;
+      background: var(--gold); color: var(--ink);
+      padding: 8px 16px; border-radius: 4px;
+      font-size: 13px; font-weight: 500; z-index: 9999;
+      text-decoration: none;
+    }
+    .skip-link:focus { left: 8px; }
+
+    /* ── HEADER ── */
+    header {
+      position: sticky; top: 0; z-index: 200;
+      background: var(--ink);
+      border-bottom: 1px solid var(--border);
+    }
+    .header-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: flex; align-items: center;
+      justify-content: space-between;
+      padding: 0 2rem; height: 60px;
+    }
+    .logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px; font-weight: 400;
+      letter-spacing: 0.02em; color: var(--text);
+      text-decoration: none; flex-shrink: 0;
+    }
+    .logo span { color: var(--gold); }
+    nav ul {
+      display: flex; align-items: center;
+      gap: 0.25rem; list-style: none;
+    }
+    nav a {
+      font-size: 12px; color: var(--text-muted);
+      text-decoration: none; font-weight: 400;
+      letter-spacing: 0.05em; text-transform: uppercase;
+      padding: 6px 12px; border-radius: 100px;
+      transition: color 0.15s, background 0.15s;
+    }
+    nav a:hover { color: var(--text); background: var(--ink-3); }
+    nav a:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; border-radius: 100px; }
+    nav a[aria-current="page"] { color: var(--gold); }
+    .nav-actions { display: flex; gap: 8px; align-items: center; flex-shrink: 0; }
+
+    .btn-ghost {
+      border: 1px solid #3a3530; background: transparent;
+      color: var(--text); font-family: 'DM Sans', sans-serif;
+      font-size: 12px; padding: 7px 18px; border-radius: 100px;
+      cursor: pointer; letter-spacing: 0.04em; text-transform: uppercase;
+      text-decoration: none; display: inline-block;
+    }
+    .btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
+    .btn-ghost:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+
+    .btn-primary {
+      background: var(--gold); border: none; color: var(--ink);
+      font-family: 'DM Sans', sans-serif; font-size: 12px;
+      font-weight: 500; padding: 7px 18px; border-radius: 100px;
+      cursor: pointer; letter-spacing: 0.04em; text-transform: uppercase;
+      text-decoration: none; display: inline-block;
+    }
+    .btn-primary:hover { background: var(--gold-hover); }
+    .btn-primary:focus-visible { outline: 2px solid var(--text); outline-offset: 2px; }
+
+    .hamburger {
+      display: none; background: none; border: 1px solid #3a3530;
+      color: var(--text); border-radius: 6px; padding: 6px 9px;
+      cursor: pointer; font-size: 18px; line-height: 1;
+    }
+    .hamburger:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+
+    #mobile-nav {
+      display: none; flex-direction: column;
+      padding: 1rem 2rem; border-top: 1px solid var(--border);
+      background: var(--ink);
+    }
+    #mobile-nav.open { display: flex; }
+    #mobile-nav a {
+      font-size: 14px; color: var(--text-muted);
+      text-decoration: none; padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+      letter-spacing: 0.04em; text-transform: uppercase;
+    }
+    #mobile-nav a:last-child { border-bottom: none; color: var(--gold); }
+    #mobile-nav a:hover, #mobile-nav a:focus { color: var(--text); outline: none; }
+
+    /* ── LAYOUT ── */
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
+    section { border-bottom: 1px solid var(--border); }
+    .section-pad { padding: 3.5rem 0; }
+    .eyebrow {
+      font-size: 11px; color: #5a5650;
+      letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.5rem;
+    }
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.2rem; font-weight: 300; line-height: 1.15;
+      color: var(--text); margin-bottom: 1.75rem;
+    }
+    .section-title em { font-style: italic; color: var(--gold); }
+
+    /* ── HERO ── */
+    .hero { padding: 5rem 0 4rem; position: relative; overflow: hidden; }
+    .hero-arc {
+      position: absolute; right: -100px; top: 50%;
+      transform: translateY(-50%);
+      width: 380px; height: 380px; border-radius: 50%;
+      border: 1px solid var(--ink-3); pointer-events: none;
+    }
+    .hero-arc-2 {
+      position: absolute; right: -20px; top: 50%;
+      transform: translateY(-50%);
+      width: 220px; height: 220px; border-radius: 50%;
+      border: 1px solid var(--ink-3); pointer-events: none;
+    }
+    .live-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      border: 1px solid var(--border); border-radius: 100px;
+      padding: 5px 14px 5px 8px; margin-bottom: 1.75rem;
+    }
+    .pulse {
+      width: 6px; height: 6px; border-radius: 50%; background: var(--gold);
+      animation: pulse 2s infinite; flex-shrink: 0;
+    }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.25} }
+    .live-badge span {
+      font-size: 11px; color: var(--text-muted);
+      letter-spacing: 0.08em; text-transform: uppercase;
+    }
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.8rem, 6vw, 4.2rem);
+      font-weight: 300; line-height: 1.08;
+      letter-spacing: -0.02em; color: var(--text);
+      max-width: 580px; margin-bottom: 1.25rem;
+    }
+    .hero h1 em { font-style: italic; color: var(--gold); }
+    .hero-sub {
+      font-size: 16px; color: var(--text-muted); line-height: 1.65;
+      max-width: 420px; margin-bottom: 2.25rem; font-weight: 300;
+    }
+    .hero-btns { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 3rem; }
+    .hero-btns .btn-primary, .hero-btns .btn-ghost { padding: 12px 28px; font-size: 13px; }
+    .stats {
+      display: flex; gap: 2.5rem; flex-wrap: wrap;
+      border-top: 1px solid var(--ink-3); padding-top: 2rem;
+    }
+    .stat-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem; font-weight: 300; color: var(--text); line-height: 1;
+    }
+    .stat-label {
+      font-size: 10.5px; color: var(--text-dim);
+      letter-spacing: 0.07em; text-transform: uppercase; margin-top: 3px;
+    }
+
+    /* ── BENTO ── */
+    .bento { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .card {
+      background: var(--ink-2); border: 1px solid var(--border);
+      border-radius: 10px; padding: 1.5rem;
+    }
+    .card.top-gold { border-top: 2px solid var(--gold); }
+    .card.span2 {
+      grid-column: span 2;
+      display: flex; align-items: center; justify-content: space-between; gap: 2rem;
+    }
+    .card-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3rem; font-weight: 300; color: var(--ink-3);
+      line-height: 1; float: right; margin-left: 8px;
+    }
+    .card-icon {
+      width: 34px; height: 34px; border-radius: 7px;
+      background: var(--ink-3); border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 0.85rem; font-size: 15px; clear: right;
+    }
+    .card h3 {
+      font-size: 14px; font-weight: 500; color: #d4cfc6;
+      margin-bottom: 0.4rem; line-height: 1.3; clear: right;
+    }
+    .card p { font-size: 13px; color: var(--text-muted); line-height: 1.55; }
+    .card.span2 .card-body { flex: 1; }
+    .card.span2 h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.35rem; font-weight: 300; color: #d4cfc6; margin-bottom: 0.4rem;
+    }
+
+    /* ── JOB BOARD ── */
+    .jobs-header {
+      display: flex; align-items: flex-start;
+      justify-content: space-between; margin-bottom: 1.25rem;
+      flex-wrap: wrap; gap: 1rem;
+    }
+    .updated {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 11.5px; color: var(--text-muted); margin-top: 4px;
+    }
+    .updated-dot { width: 5px; height: 5px; border-radius: 50%; background: #4a9a5a; flex-shrink: 0; }
+    .jobs-link {
+      font-size: 12px; color: var(--gold); text-decoration: none;
+      letter-spacing: 0.04em; text-transform: uppercase; white-space: nowrap;
+      align-self: flex-start; margin-top: 4px;
+    }
+    .jobs-link:hover { text-decoration: underline; }
+    .jobs-link:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; border-radius: 2px; }
+    .filters { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 1.25rem; }
+    .filter-btn {
+      background: var(--ink-2); border: 1px solid var(--border);
+      color: var(--text-muted); font-family: 'DM Sans', sans-serif;
+      font-size: 12px; padding: 6px 14px; border-radius: 100px;
+      cursor: pointer; letter-spacing: 0.03em; transition: all 0.15s;
+    }
+    .filter-btn:hover { border-color: #5a5650; color: #d4cfc6; }
+    .filter-btn:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+    .filter-btn.active { background: var(--gold); border-color: var(--gold); color: var(--ink); font-weight: 500; }
+    .job-row {
+      display: flex; align-items: center;
+      padding: 0.9rem 1.1rem; background: var(--ink-2);
+      border: 1px solid var(--border); border-radius: 8px;
+      margin-bottom: 8px; gap: 1rem;
+    }
+    .job-row:last-child { margin-bottom: 0; }
+    .job-co {
+      width: 36px; height: 36px; background: var(--ink-3);
+      border: 1px solid var(--border); border-radius: 7px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; font-size: 10px; font-weight: 500;
+      color: var(--text-muted); letter-spacing: 0.05em;
+    }
+    .job-info { flex: 1; min-width: 0; }
+    .job-title {
+      font-size: 13.5px; font-weight: 500; color: #d4cfc6;
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    }
+    .job-meta { font-size: 11.5px; color: var(--text-dim); margin-top: 1px; }
+    .job-tags { display: flex; gap: 5px; flex-shrink: 0; }
+    .tag {
+      font-size: 10.5px; padding: 3px 10px;
+      border: 1px solid var(--border); border-radius: 100px;
+      color: #5a5650; background: var(--ink);
+    }
+    .tag.new { border-color: #3a3020; background: #1a1508; color: var(--gold); }
+    .apply {
+      background: transparent; border: 1px solid #3a3530;
+      color: #8a8278; font-family: 'DM Sans', sans-serif;
+      font-size: 11.5px; padding: 6px 14px; border-radius: 100px;
+      cursor: pointer; white-space: nowrap; flex-shrink: 0;
+      text-decoration: none; display: inline-block;
+    }
+    .apply:hover { border-color: var(--gold); color: var(--gold); }
+    .apply:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+
+    /* ── COACHING (light) ── */
+    .light {
+      background: var(--linen); color: #1a1714;
+      border-bottom: 1px solid var(--border-light);
+    }
+    .light .eyebrow { color: #8a7a60; }
+    .light .section-title { color: #1a1714; }
+    .light .section-title em { color: #8a6a30; }
+    .coaching-inner { display: flex; gap: 3rem; align-items: center; flex-wrap: wrap; }
+    .coaching-text { flex: 1; min-width: 240px; }
+    .coaching-text p {
+      font-size: 14px; color: #5a5040; line-height: 1.65;
+      font-weight: 300; margin-top: 0.75rem; max-width: 360px;
+    }
+    .coaching-cta-box {
+      background: var(--ink); border-radius: 10px;
+      padding: 1.5rem 1.75rem; min-width: 230px;
+      border: 1px solid var(--border); flex-shrink: 0;
+    }
+    .coaching-cta-box p {
+      font-size: 13px; color: var(--text-muted); line-height: 1.55; margin-bottom: 1.1rem;
+    }
+    .email-cta {
+      display: block; background: var(--gold); border: none;
+      width: 100%; color: var(--ink); font-family: 'DM Sans', sans-serif;
+      font-size: 12.5px; font-weight: 500; padding: 11px;
+      border-radius: 100px; cursor: pointer;
+      letter-spacing: 0.04em; text-transform: uppercase;
+      text-align: center; text-decoration: none;
+    }
+    .email-cta:hover { background: var(--gold-hover); }
+    .email-cta:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+
+    /* ── TEAM ── */
+    .team-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .person {
+      background: var(--ink-2); border: 1px solid var(--border);
+      border-radius: 10px; padding: 1.75rem; position: relative;
+    }
+    .role-badge {
+      position: absolute; top: 1.25rem; right: 1.25rem;
+      background: var(--ink-3); border: 1px solid #3a3020;
+      border-radius: 100px; padding: 3px 11px;
+      font-size: 10px; color: #8a7850;
+      letter-spacing: 0.07em; text-transform: uppercase;
+    }
+    .person-top { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
+    .avatar {
+      width: 64px; height: 64px; border-radius: 50%;
+      border: 2px solid #3a3020; flex-shrink: 0;
+      object-fit: cover; display: block;
+    }
+    .person-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem; font-weight: 300; color: var(--text);
+      line-height: 1.1; margin-bottom: 2px;
+    }
+    .person-role {
+      font-size: 10.5px; color: var(--gold);
+      letter-spacing: 0.08em; text-transform: uppercase;
+    }
+    .person-bio {
+      font-size: 13px; color: var(--text-muted); line-height: 1.6; margin-bottom: 1rem;
+    }
+    .highlights { list-style: none; }
+    .highlights li {
+      font-size: 12.5px; color: #6e6860; padding: 5px 0;
+      border-bottom: 1px solid var(--ink-3);
+      display: flex; align-items: baseline; gap: 8px;
+    }
+    .highlights li:last-child { border-bottom: none; }
+    .highlights li::before {
+      content: ''; width: 3px; height: 3px; border-radius: 50%;
+      background: var(--gold); flex-shrink: 0; margin-top: 7px;
+    }
+
+    /* ── FOOTER ── */
+    footer { background: #0a0906; border-top: 1px solid var(--ink-3); padding: 2.5rem 0; }
+    .footer-top {
+      display: flex; align-items: center;
+      justify-content: space-between; margin-bottom: 1.5rem;
+      flex-wrap: wrap; gap: 1rem;
+    }
+    .footer-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 16px; color: var(--text-faint); text-decoration: none;
+    }
+    .footer-logo span { color: var(--gold); }
+    .footer-links { display: flex; gap: 1.5rem; list-style: none; flex-wrap: wrap; }
+    .footer-links a {
+      font-size: 11.5px; color: var(--text-faint); text-decoration: none;
+      letter-spacing: 0.04em; text-transform: uppercase;
+    }
+    .footer-links a:hover { color: #8a8278; }
+    .footer-links a:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+    .footer-bottom {
+      border-top: 1px solid var(--ink-3); padding-top: 1.25rem;
+      display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;
+    }
+    .footer-copy { font-size: 11.5px; color: #2a2824; }
+    .footer-email { font-size: 11.5px; color: var(--text-faint); text-decoration: none; }
+    .footer-email:hover { color: var(--gold); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      nav ul { display: none; }
+      .hamburger { display: block; }
+      .nav-actions .btn-ghost { display: none; }
+      .bento { grid-template-columns: 1fr; }
+      .card.span2 { grid-column: span 1; flex-direction: column; align-items: flex-start; }
+      .team-grid { grid-template-columns: 1fr; }
+      .coaching-inner { flex-direction: column; }
+      .stats { gap: 1.5rem; }
+      .job-tags { display: none; }
+      .hero-arc, .hero-arc-2 { display: none; }
+      .footer-top { flex-direction: column; }
+    }
+    @media (max-width: 480px) {
+      .header-inner { padding: 0 1rem; }
+      .container { padding: 0 1rem; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .pulse { animation: none; }
+      * { transition: none !important; }
+    }
+    @media (prefers-color-scheme: light) {
+      /* site intentionally stays dark */
+    }
+  </style>
 </head>
 <body>
-    <a href="#main" class="skip-to-main">Skip to main content</a>
-    
-    <!-- Header -->
-    <header role="banner">
-        <div>
-            <div class="logo">0xdecodeyourself</div>
-            <div class="tagline">Career Clarity</div>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header role="banner">
+    <div class="header-inner">
+      <a href="/" class="logo" aria-label="0xdecodeyourself — home">0x<span>decode</span>yourself</a>
+      <nav role="navigation" aria-label="Main navigation">
+        <ul>
+          <li><a href="/" aria-current="page">Home</a></li>
+          <li><a href="/livejobs">Jobs</a></li>
+          <li><a href="/articles">Resources</a></li>
+          <li><a href="#team">About</a></li>
+        </ul>
+      </nav>
+      <div class="nav-actions">
+        <a href="mailto:hiangeloddo@gmail.com?subject=Coaching%20Inquiry%20%E2%80%94%200xdecodeyourself" class="btn-primary">Book a call</a>
+        <button class="hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-nav"
+          onclick="const n=document.getElementById('mobile-nav');const o=n.classList.toggle('open');this.setAttribute('aria-expanded',o);this.setAttribute('aria-label',o?'Close navigation menu':'Open navigation menu');this.innerHTML=o?'&#x2715;':'&#9776;'">&#9776;</button>
+      </div>
+    </div>
+    <nav id="mobile-nav" aria-label="Mobile navigation">
+      <a href="/">Home</a>
+      <a href="/livejobs">Jobs</a>
+      <a href="/articles">Resources</a>
+      <a href="#team">About</a>
+      <a href="mailto:hiangeloddo@gmail.com?subject=Coaching%20Inquiry%20%E2%80%94%200xdecodeyourself">Book a call &rarr;</a>
+    </nav>
+  </header>
+
+  <main id="main-content" tabindex="-1">
+
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="container">
+        <div class="hero-arc" aria-hidden="true"></div>
+        <div class="hero-arc-2" aria-hidden="true"></div>
+        <div class="live-badge" role="status" aria-live="polite">
+          <div class="pulse" aria-hidden="true"></div>
+          <span>Live job board &middot; Updated 3&times; daily</span>
         </div>
-        <nav role="navigation" aria-label="Main navigation">
-            <a onclick="document.getElementById('offerings').scrollIntoView({behavior:'smooth'})">What We Do</a>
-            <a onclick="document.getElementById('team').scrollIntoView({behavior:'smooth'})">Founders</a>
-            <a href="/livejobs.html">Live Jobs 🔥</a>
-            <a onclick="document.getElementById('coaching').scrollIntoView({behavior:'smooth'})">Coaching</a>
-            <button class="cta-nav" onclick="document.querySelector('.connect-section').scrollIntoView({behavior:'smooth'})">Let's Connect</button>
-        </nav>
-    </header>
-    
-    <!-- Hero -->
-    <main id="main">
-        <section class="hero" role="banner">
-            <h1>Decode <span class="accent">yourself</span>.</h1>
-            <p>Career coaching for college students and recent grads who want to build something real. Find opportunities curated by values, not just salary.</p>
-            <a onclick="document.getElementById('offerings').scrollIntoView({behavior:'smooth'})" class="cta-primary">Explore Now</a>
-        </section>
-        
-        <!-- What We Do -->
-        <section id="offerings" class="light-bg">
-            <h2>What We Do</h2>
-            <p>We combine job discovery with 1:1 coaching to help you find roles that align with your values and build a career you actually want.</p>
-            
-            <div class="offerings-grid">
-                <article class="offering">
-                    <div class="offering-number">01 — Discover</div>
-                    <h3>Find Your Values</h3>
-                    <p>A 2-minute quiz reveals what actually matters to you — learning, stability, impact, creativity, or something else entirely.</p>
-                </article>
-                
-                <article class="offering">
-                    <div class="offering-number">02 — Explore</div>
-                    <h3>Browse Curated Roles</h3>
-                    <p>Access entry-level jobs filtered by your values. No algorithm guessing. Real opportunities at companies where you can grow.</p>
-                </article>
-                
-                <article class="offering">
-                    <div class="offering-number">03 — Clarify</div>
-                    <h3>1:1 Coaching Sessions</h3>
-                    <p>Talk through which roles fit you best. Get clarity on your path. Build a career strategy that's actually yours.</p>
-                </article>
-                
-                <article class="offering">
-                    <div class="offering-number">04 — Launch</div>
-                    <h3>Move Forward</h3>
-                    <p>Ongoing support as you apply, interview, and start. We're with you from "what do I want" to "here's where I'm going."</p>
-                </article>
-            </div>
-        </section>
-        
-        <!-- Jobs Section - 4 Squares with Links -->
-        <section id="jobs">
-            <h2>Entry-Level Opportunities</h2>
-            <p>Access trusted platforms where companies are actively hiring for entry-level roles.</p>
-            
-            <div class="job-grid">
-                <article class="job-card">
-                    <h3>WayUp</h3>
-                    <p>The largest job platform exclusively for students and early career professionals, featuring internships and entry-level positions.</p>
-                    <a href="https://www.wayup.com/" target="_blank" class="job-link">Explore →</a>
-                </article>
-                
-                <article class="job-card">
-                    <h3>LinkedIn</h3>
-                    <p>The premier networking platform with millions of entry-level listings and direct connections to recruiters and alumni.</p>
-                    <a href="https://www.linkedin.com/jobs/" target="_blank" class="job-link">Explore →</a>
-                </article>
-                
-                <article class="job-card">
-                    <h3>CollegeGrad</h3>
-                    <p>A specialized job board dedicated directly to entry-level candidates, recent alumni, and campus recruiting.</p>
-                    <a href="https://collegegrad.com/" target="_blank" class="job-link">Explore →</a>
-                </article>
-                
-                <article class="job-card">
-                    <h3>Indeed</h3>
-                    <p>The world's largest general job aggregator with massive volume and specific filters for entry-level opportunities.</p>
-                    <a href="https://www.indeed.com/" target="_blank" class="job-link">Explore →</a>
-                </article>
-            </div>
-        </section>
-        
-        <!-- Team Section -->
-        <section id="team">
-            <h2>Meet the Founders</h2>
-            <p>A mentor and an innovator building career clarity for the next generation.</p>
-            
-            <!-- People Grid -->
-            <div class="people-grid">
-                <!-- Sebastian -->
-                <article class="person-card">
-                    <div class="headshot-circle">
-                        <img src="sebastian.jpg" alt="Sebastian Oddo">
-                    </div>
-                    <div>
-                        <h3>Sebastian Oddo</h3>
-                        <div class="person-role">Mentor & Strategic Guide</div>
-                        <p class="person-bio">
-                            VP of Innovation at Mastercard with 20+ years of experience in digital innovation and brand strategy. A recognized leader in creativity and emerging technologies.
-                        </p>
-                        <ul class="person-highlights">
-                            <li>Brand Innovators 40 Under 40 Honoree</li>
-                            <li>TEDx Speaker & Published Author</li>
-                            <li>Adjunct Professor at Manhattanville University</li>
-                            <li>Mentor with Girls Who Code & My Brother's Keeper</li>
-                            <li>Top LinkedIn voice on Creativity & Innovation</li>
-                        </ul>
-                        <div class="person-links">
-                            <a href="https://www.linkedin.com/in/sebastianoddo/" target="_blank" title="LinkedIn" aria-label="Sebastian's LinkedIn">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                                </svg>
-                            </a>
-                            <a href="https://www.sebastianoddo.com/" target="_blank" title="Website" aria-label="Sebastian's Website">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <circle cx="12" cy="12" r="10"></circle>
-                                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-                                    <path d="M2 12h20"></path>
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                </article>
-                
-                <!-- Angel -->
-                <article class="person-card">
-                    <div class="headshot-circle">
-                        <img src="angel.png" alt="Angel Oddo">
-                    </div>
-                    <div>
-                        <h3>Angel Oddo</h3>
-                        <div class="person-role">CEO & AI Innovation Lead</div>
-                        <p class="person-bio">
-                            Founder & CEO of 0xdecodeyourself. Hudson Valley-based innovator building career coaching platforms that prioritize values-first guidance for recent grads.
-                        </p>
-                        <ul class="person-highlights">
-                            <li>CEO of 0xdecodeyourself</li>
-                            <li>AI platform innovator & builder</li>
-                            <li>Dried flower arranger & creative experimentalist</li>
-                            <li>Hudson Valley entrepreneur</li>
-                            <li>Espresso freddo enthusiast ☕</li>
-                        </ul>
-                    </div>
-                </article>
-            </div>
-        </section>
-        
-        <!-- Coaching Section -->
-        <section id="coaching" class="light-bg">
-            <h2>1:1 Coaching</h2>
-            <p>Beyond job boards. Real clarity on who you are and what you want. Start with a free 15-minute call.</p>
-            
-            <div class="coaching-section">
-                <article class="coaching-item">
-                    <h3>Individual Coaching</h3>
-                    <p>4 sessions per month where we dive deep into your values, strengths, and career path. One-on-one clarity and accountability.</p>
-                </article>
-                
-                <article class="coaching-item">
-                    <h3>Group Cohort</h3>
-                    <p>8-10 peers going through the same decisions. Monthly group sessions, accountability partners, and a community that gets it.</p>
-                </article>
-            </div>
-        </section>
-    </main>
-    
-    <!-- Let's Connect -->
-    <section class="connect-section" role="region" aria-labelledby="connect-heading">
-        <h2 id="connect-heading">Let's Connect</h2>
-        <p><a href="mailto:hiangeloddo@gmail.com">hiangeloddo@gmail.com</a></p>
+        <h1 id="hero-heading">Your career,<br><em>decoded.</em></h1>
+        <p class="hero-sub">A career clarity platform for college students and recent grads &mdash; built by people who&rsquo;ve been in the room, and want to help you get there too.</p>
+        <div class="hero-btns">
+          <a href="/livejobs" class="btn-primary">Browse open roles</a>
+          <a href="mailto:hiangeloddo@gmail.com?subject=Coaching%20Inquiry%20%E2%80%94%200xdecodeyourself" class="btn-ghost">Work with Sebastian</a>
+        </div>
+        <div class="stats" role="list" aria-label="Platform statistics">
+          <div role="listitem"><div class="stat-num">300+</div><div class="stat-label">Live jobs</div></div>
+          <div role="listitem"><div class="stat-num">3&times;</div><div class="stat-label">Daily refreshes</div></div>
+          <div role="listitem"><div class="stat-num">8</div><div class="stat-label">Career tracks</div></div>
+          <div role="listitem"><div class="stat-num">Free</div><div class="stat-label">Job board access</div></div>
+        </div>
+      </div>
     </section>
-    
-    <!-- Footer -->
-    <footer role="contentinfo">
-        <p>© 2026 0xdecodeyourself</p>
-        <p style="margin-top: 1rem; font-size: 14px; color: #999;">
-            Career clarity for recent grads who want to build something real.
-        </p>
-    </footer>
+
+    <!-- HOW IT WORKS -->
+    <section aria-labelledby="how-title">
+      <div class="container section-pad">
+        <p class="eyebrow">How it works</p>
+        <h2 class="section-title" id="how-title">Everything you need,<br><em>in one place.</em></h2>
+        <div class="bento">
+          <div class="card top-gold">
+            <div class="card-num" aria-hidden="true">01</div>
+            <div class="card-icon" aria-hidden="true"><i class="ti ti-search" style="color:var(--gold);font-size:15px"></i></div>
+            <h3>Find the right roles</h3>
+            <p>Curated entry-level positions across tech, finance, marketing, design, and more &mdash; refreshed three times a day, automatically.</p>
+          </div>
+          <div class="card">
+            <div class="card-num" aria-hidden="true">02</div>
+            <div class="card-icon" aria-hidden="true"><i class="ti ti-user-check" style="color:#8a8278;font-size:15px"></i></div>
+            <h3>Get your story straight</h3>
+            <p>Work 1:1 with Sebastian to sharpen your resume, clarify your pitch, and step into interviews as your most confident self.</p>
+          </div>
+          <div class="card span2">
+            <div class="card-body">
+              <h3>From first application to signed offer &mdash; guided by someone who&rsquo;s actually been in the room.</h3>
+              <p style="font-size:13px;color:var(--text-muted);margin-top:0.5rem">Real strategy, built around you. Grounded in Sebastian&rsquo;s 20+ years of executive experience at Mastercard.</p>
+            </div>
+            <a href="mailto:hiangeloddo@gmail.com?subject=Coaching%20Inquiry%20%E2%80%94%200xdecodeyourself" class="btn-primary" style="white-space:nowrap;flex-shrink:0">Email for info &rarr;</a>
+          </div>
+          <div class="card">
+            <div class="card-num" aria-hidden="true">03</div>
+            <div class="card-icon" aria-hidden="true"><i class="ti ti-article" style="color:#8a8278;font-size:15px"></i></div>
+            <h3>Resources that actually help</h3>
+            <p>Guides, templates, and frameworks from Harvard, LinkedIn, and real hiring managers &mdash; curated in one library.</p>
+          </div>
+          <div class="card">
+            <div class="card-num" aria-hidden="true">04</div>
+            <div class="card-icon" aria-hidden="true"><i class="ti ti-chart-line" style="color:#8a8278;font-size:15px"></i></div>
+            <h3>Negotiate what you&rsquo;re worth</h3>
+            <p>Scripts, salary data, and real coaching for the moment that matters most &mdash; the offer call.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- JOB BOARD PREVIEW -->
+    <section aria-labelledby="jobs-title" itemscope itemtype="https://schema.org/ItemList">
+      <meta itemprop="name" content="Open jobs for students and recent graduates">
+      <div class="container section-pad">
+        <div class="jobs-header">
+          <div>
+            <p class="eyebrow">Live board</p>
+            <h2 class="section-title" id="jobs-title" style="margin-bottom:6px">Latest open roles</h2>
+            <div class="updated" role="status" aria-live="polite" aria-label="Job board last updated time">
+              <div class="updated-dot" aria-hidden="true"></div>
+              <span id="last-updated">Updated 3&times; daily</span>
+            </div>
+          </div>
+          <a href="/livejobs" class="jobs-link" aria-label="View all open roles on the full job board">View all 300+ roles &rarr;</a>
+        </div>
+
+        <div class="filters" role="group" aria-label="Filter jobs by category">
+          <button class="filter-btn active" aria-pressed="true">All</button>
+          <button class="filter-btn" aria-pressed="false">Tech</button>
+          <button class="filter-btn" aria-pressed="false">Finance</button>
+          <button class="filter-btn" aria-pressed="false">Marketing</button>
+          <button class="filter-btn" aria-pressed="false">Design</button>
+          <button class="filter-btn" aria-pressed="false">Remote</button>
+        </div>
+
+        <div role="list" aria-label="Featured job listings">
+          <article class="job-row" role="listitem" data-cat="tech" itemscope itemtype="https://schema.org/JobPosting">
+            <meta itemprop="title" content="Associate Product Manager"><meta itemprop="hiringOrganization" content="Salesforce">
+            <div class="job-co" aria-hidden="true">SF</div>
+            <div class="job-info"><div class="job-title" itemprop="title">Associate Product Manager</div><div class="job-meta">Salesforce &middot; San Francisco, CA &middot; Full-time</div></div>
+            <div class="job-tags" aria-hidden="true"><span class="tag new">New</span><span class="tag">Tech</span></div>
+            <a href="/livejobs" class="apply" aria-label="Apply for Associate Product Manager at Salesforce">Apply</a>
+          </article>
+          <article class="job-row" role="listitem" data-cat="finance" itemscope itemtype="https://schema.org/JobPosting">
+            <meta itemprop="title" content="Analyst, Investment Banking"><meta itemprop="hiringOrganization" content="Goldman Sachs">
+            <div class="job-co" aria-hidden="true">GS</div>
+            <div class="job-info"><div class="job-title" itemprop="title">Analyst, Investment Banking</div><div class="job-meta">Goldman Sachs &middot; New York, NY &middot; Full-time</div></div>
+            <div class="job-tags" aria-hidden="true"><span class="tag new">New</span><span class="tag">Finance</span></div>
+            <a href="/livejobs" class="apply" aria-label="Apply for Investment Banking Analyst at Goldman Sachs">Apply</a>
+          </article>
+          <article class="job-row" role="listitem" data-cat="marketing" itemscope itemtype="https://schema.org/JobPosting">
+            <meta itemprop="title" content="Brand Marketing Coordinator"><meta itemprop="hiringOrganization" content="Nike">
+            <div class="job-co" aria-hidden="true">NK</div>
+            <div class="job-info"><div class="job-title" itemprop="title">Brand Marketing Coordinator</div><div class="job-meta">Nike &middot; Remote &middot; Full-time</div></div>
+            <div class="job-tags" aria-hidden="true"><span class="tag">Marketing</span><span class="tag">Remote</span></div>
+            <a href="/livejobs" class="apply" aria-label="Apply for Brand Marketing Coordinator at Nike">Apply</a>
+          </article>
+          <article class="job-row" role="listitem" data-cat="design" itemscope itemtype="https://schema.org/JobPosting">
+            <meta itemprop="title" content="UX Design Graduate Program"><meta itemprop="hiringOrganization" content="Adobe">
+            <div class="job-co" aria-hidden="true">AD</div>
+            <div class="job-info"><div class="job-title" itemprop="title">UX Design Graduate Program</div><div class="job-meta">Adobe &middot; Seattle, WA &middot; Full-time</div></div>
+            <div class="job-tags" aria-hidden="true"><span class="tag new">New</span><span class="tag">Design</span></div>
+            <a href="/livejobs" class="apply" aria-label="Apply for UX Design Graduate Program at Adobe">Apply</a>
+          </article>
+          <article class="job-row" role="listitem" data-cat="tech" itemscope itemtype="https://schema.org/JobPosting">
+            <meta itemprop="title" content="Data Analyst, New Grad"><meta itemprop="hiringOrganization" content="Spotify">
+            <div class="job-co" aria-hidden="true">SP</div>
+            <div class="job-info"><div class="job-title" itemprop="title">Data Analyst, New Grad</div><div class="job-meta">Spotify &middot; Remote &middot; Full-time</div></div>
+            <div class="job-tags" aria-hidden="true"><span class="tag">Tech</span><span class="tag">Remote</span></div>
+            <a href="/livejobs" class="apply" aria-label="Apply for Data Analyst at Spotify">Apply</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- COACHING CTA -->
+    <section class="light" aria-labelledby="coaching-title" itemscope itemtype="https://schema.org/Service">
+      <meta itemprop="name" content="1:1 Career Coaching with Sebastian Oddo">
+      <div class="container section-pad">
+        <div class="coaching-inner">
+          <div class="coaching-text">
+            <p class="eyebrow">1:1 coaching</p>
+            <h2 class="section-title" id="coaching-title">Stop applying blindly.<br>Start moving with <em>intention.</em></h2>
+            <p itemprop="description">Private, personalized coaching with Sebastian &mdash; VP of Innovation at Mastercard and 20+ year executive. Real strategy built around where you are right now, not generic advice.</p>
+          </div>
+          <div class="coaching-cta-box">
+            <p>Resume review &middot; Interview prep &middot; Offer negotiation &middot; Async feedback &middot; Career clarity</p>
+            <a href="mailto:hiangeloddo@gmail.com?subject=Coaching%20Inquiry%20%E2%80%94%200xdecodeyourself" class="email-cta">Email for more info &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TEAM -->
+    <section aria-labelledby="team-title" id="team">
+      <div class="container section-pad">
+        <p class="eyebrow">The team</p>
+        <h2 class="section-title" id="team-title">Two perspectives.<br><em>One mission.</em></h2>
+        <div class="team-grid">
+
+          <article class="person" itemscope itemtype="https://schema.org/Person">
+            <div class="role-badge">Mentor</div>
+            <div class="person-top">
+              <img src="sebastian.jpg" alt="Sebastian Oddo, Mentor and Strategic Guide at 0xdecodeyourself" class="avatar" loading="lazy" width="64" height="64" itemprop="image">
+              <div>
+                <div class="person-name" itemprop="name">Sebastian Oddo</div>
+                <div class="person-role" itemprop="jobTitle">Mentor &amp; Strategic Guide</div>
+              </div>
+            </div>
+            <p class="person-bio" itemprop="description">VP of Innovation at Mastercard with 20+ years in digital innovation, brand strategy, and creative leadership. The executive backbone behind the platform&rsquo;s coaching philosophy.</p>
+            <ul class="highlights" aria-label="Sebastian Oddo's credentials">
+              <li itemprop="affiliation">VP of Innovation, Mastercard</li>
+              <li>Brand Innovators 40 Under 40 Honoree</li>
+              <li>TEDx Speaker &amp; Published Author</li>
+              <li>Adjunct Professor, Manhattanville University</li>
+              <li>Mentor &mdash; Girls Who Code &amp; My Brother&rsquo;s Keeper</li>
+              <li>Top LinkedIn Voice: Creativity &amp; Innovation</li>
+            </ul>
+          </article>
+
+          <article class="person" itemscope itemtype="https://schema.org/Person">
+            <div class="role-badge" style="color:#a09060;border-color:#2a2820;background:#1a1810">CEO</div>
+            <div class="person-top">
+              <img src="angel.png" alt="Angel Oddo, CEO and AI Innovation Lead at 0xdecodeyourself" class="avatar" loading="lazy" width="64" height="64" itemprop="image">
+              <div>
+                <div class="person-name" itemprop="name">Angel Oddo</div>
+                <div class="person-role" itemprop="jobTitle">CEO &amp; AI Innovation Lead</div>
+              </div>
+            </div>
+            <p class="person-bio" itemprop="description">Founder and CEO of 0xdecodeyourself. Hudson Valley-based builder bringing AI-powered career tools and values-first coaching to students and recent grads navigating what&rsquo;s next.</p>
+            <ul class="highlights" aria-label="Angel Oddo's highlights">
+              <li>Founder &amp; CEO, 0xdecodeyourself</li>
+              <li>AI platform builder &amp; product innovator</li>
+              <li>Hudson Valley entrepreneur &mdash; Kingston, NY</li>
+              <li>Accessibility-forward design advocate</li>
+              <li>Career coaching for Gen Z &amp; first-gen grads</li>
+              <li>Creative: dried flowers, watercolors, herbed mocktails</li>
+            </ul>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <a href="/" class="footer-logo" aria-label="0xdecodeyourself home">0x<span>decode</span>yourself</a>
+        <ul class="footer-links" role="list" aria-label="Footer navigation">
+          <li><a href="/livejobs">Jobs</a></li>
+          <li><a href="#team">Coaching</a></li>
+          <li><a href="/articles">Resources</a></li>
+          <li><a href="#team">About</a></li>
+          <li><a href="mailto:hiangeloddo@gmail.com" style="color:var(--gold)">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; 2026 0xdecodeyourself. All rights reserved.</p>
+        <a href="mailto:hiangeloddo@gmail.com" class="footer-email">hiangeloddo@gmail.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Filter toggles
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('.filter-btn').forEach(b => {
+          b.classList.remove('active');
+          b.setAttribute('aria-pressed', 'false');
+        });
+        this.classList.add('active');
+        this.setAttribute('aria-pressed', 'true');
+        const cat = this.textContent.trim().toLowerCase();
+        document.querySelectorAll('.job-row').forEach(row => {
+          const isRemote = row.querySelector('.job-meta').textContent.toLowerCase().includes('remote');
+          const rowCat = row.dataset.cat;
+          const show = cat === 'all' || rowCat === cat || (cat === 'remote' && isRemote);
+          row.style.display = show ? 'flex' : 'none';
+        });
+      });
+    });
+
+    // Pull live timestamp from jobs-data.json
+    fetch('/jobs-data.json')
+      .then(r => r.json())
+      .then(data => {
+        const el = document.getElementById('last-updated');
+        const ts = data && data.metadata && (data.metadata.lastUpdated || data.metadata.generatedAt);
+        if (ts) {
+          const d = new Date(ts);
+          const opts = { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit', timeZoneName: 'short' };
+          el.textContent = 'Last updated: ' + d.toLocaleString('en-US', opts);
+        }
+      })
+      .catch(() => {});
+  </script>
+
 </body>
 </html>
