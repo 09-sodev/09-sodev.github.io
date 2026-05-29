@@ -1,660 +1,242 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>0xdecodeyourself | Learning Resources</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Career resources for college students and recent graduates. Guides on resumes, interviews, salary negotiation, and career clarity — curated by 0xdecodeyourself.">
+  <title>Resources | 0xdecodeyourself</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --gold: #C9A060; --gold-hover: #d4a96a;
+      --ink: #0e0d0b; --ink-2: #141210; --ink-3: #1e1c18; --ink-4: #2a2520;
+      --text: #f0ece4; --text-muted: #b0aca4; --text-dim: #8a8680;
+      --text-faint: #3a3530; --border: #2a2520;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--ink); color: var(--text); font-size: 15px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    .skip-link { position: absolute; left: -9999px; top: 8px; background: var(--gold); color: var(--ink); padding: 8px 16px; border-radius: 4px; font-size: 13px; font-weight: 500; z-index: 9999; text-decoration: none; }
+    .skip-link:focus { left: 8px; }
 
-        body {
-            background: #f8f7f5;
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            color: #1a1a1a;
-        }
+    /* HEADER */
+    header { position: sticky; top: 0; z-index: 200; background: var(--ink); border-bottom: 1px solid var(--border); }
+    .header-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 0 2rem; height: 60px; }
+    .logo { font-family: 'Cormorant Garamond', serif; font-size: 18px; font-weight: 400; letter-spacing: 0.02em; color: var(--text); text-decoration: none; flex-shrink: 0; }
+    .logo span { color: var(--gold); }
+    nav ul { display: flex; align-items: center; gap: 0.25rem; list-style: none; }
+    nav a { font-size: 12px; color: var(--text-dim); text-decoration: none; font-weight: 400; letter-spacing: 0.05em; text-transform: uppercase; padding: 6px 12px; border-radius: 100px; transition: color 0.15s, background 0.15s; }
+    nav a:hover { color: var(--text); background: var(--ink-3); }
+    nav a:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; border-radius: 100px; }
+    nav a[aria-current="page"] { color: var(--gold); }
+    .nav-actions { display: flex; gap: 8px; align-items: center; flex-shrink: 0; }
+    .btn-primary { background: var(--gold); border: none; color: var(--ink); font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 500; padding: 7px 18px; border-radius: 100px; cursor: pointer; letter-spacing: 0.04em; text-transform: uppercase; text-decoration: none; display: inline-block; }
+    .btn-primary:hover { background: var(--gold-hover); }
+    .btn-primary:focus-visible { outline: 2px solid var(--text); outline-offset: 2px; }
+    .hamburger { display: none; background: none; border: 1px solid #3a3530; color: var(--text); border-radius: 6px; padding: 6px 9px; cursor: pointer; font-size: 18px; line-height: 1; }
+    .hamburger:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+    #mobile-nav { display: none; flex-direction: column; padding: 1rem 2rem; border-top: 1px solid var(--border); background: var(--ink); }
+    #mobile-nav.open { display: flex; }
+    #mobile-nav a { font-size: 14px; color: var(--text-dim); text-decoration: none; padding: 10px 0; border-bottom: 1px solid var(--border); letter-spacing: 0.04em; text-transform: uppercase; }
+    #mobile-nav a:last-child { border-bottom: none; color: var(--gold); }
 
-        /* Header */
-        header {
-            background: #ffffff;
-            border-bottom: 1px solid #e5e3e0;
-            padding: 20px 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-        }
+    /* PAGE */
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
+    .page-hero { padding: 3.5rem 0 2.5rem; border-bottom: 1px solid var(--border); }
+    .eyebrow { font-size: 11px; color: #5a5650; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.5rem; }
+    .page-title { font-family: 'Cormorant Garamond', serif; font-size: 2.8rem; font-weight: 300; line-height: 1.1; color: var(--text); margin-bottom: 0.75rem; }
+    .page-title em { font-style: italic; color: var(--gold); }
+    .page-sub { font-size: 15px; color: var(--text-muted); max-width: 500px; line-height: 1.6; }
 
-        .header-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+    /* FILTERS */
+    .filters-bar { padding: 1.5rem 0; border-bottom: 1px solid var(--border); }
+    .filter-row { display: flex; gap: 8px; flex-wrap: wrap; }
+    .filter-btn { background: var(--ink-2); border: 1px solid var(--border); color: var(--text-dim); font-family: 'DM Sans', sans-serif; font-size: 12px; padding: 5px 14px; border-radius: 100px; cursor: pointer; transition: all 0.15s; }
+    .filter-btn:hover { border-color: #5a5650; color: var(--text); }
+    .filter-btn:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+    .filter-btn.active { background: var(--gold); border-color: var(--gold); color: var(--ink); font-weight: 500; }
 
-        .logo {
-            font-size: 16px;
-            font-weight: 800;
-            letter-spacing: -0.3px;
-        }
+    /* ARTICLES GRID */
+    .articles-section { padding: 2.5rem 0; }
+    .articles-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 14px; }
+    .article-card { background: var(--ink-2); border: 1px solid var(--border); border-radius: 10px; padding: 1.5rem; display: flex; flex-direction: column; transition: border-color 0.15s; text-decoration: none; }
+    .article-card:hover { border-color: #4a4840; }
+    .article-card:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; border-radius: 10px; }
+    .article-cat { font-size: 10.5px; color: var(--gold); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.6rem; }
+    .article-title { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 300; color: var(--text); line-height: 1.3; margin-bottom: 0.6rem; }
+    .article-desc { font-size: 12.5px; color: var(--text-muted); line-height: 1.55; flex: 1; margin-bottom: 1rem; }
+    .article-source { font-size: 11px; color: #5a5650; letter-spacing: 0.04em; text-transform: uppercase; }
+    .article-arrow { font-size: 12px; color: var(--gold); margin-top: 0.75rem; }
 
-        .logo .accent {
-            color: #F4B860;
-        }
+    /* CTA STRIP */
+    .cta-strip { background: #141210; border: 1px solid var(--border); border-radius: 10px; padding: 2rem 2.5rem; display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; margin-top: 2.5rem; }
+    .cta-strip-text h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 300; color: var(--text); margin-bottom: 0.4rem; }
+    .cta-strip-text p { font-size: 13px; color: var(--text-muted); }
+    .cta-btn { background: var(--gold); border: none; color: var(--ink); font-family: 'DM Sans', sans-serif; font-size: 12.5px; font-weight: 500; padding: 11px 24px; border-radius: 100px; cursor: pointer; white-space: nowrap; text-decoration: none; display: inline-block; letter-spacing: 0.04em; text-transform: uppercase; }
+    .cta-btn:hover { background: var(--gold-hover); }
 
-        .back-link {
-            color: #F4B860;
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: 600;
-            transition: opacity 0.2s;
-        }
+    /* FOOTER */
+    footer { background: #0a0906; border-top: 1px solid var(--ink-3); padding: 2.5rem 0; margin-top: 2rem; }
+    .footer-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem; }
+    .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 16px; color: var(--text-faint); text-decoration: none; }
+    .footer-logo span { color: var(--gold); }
+    .footer-links { display: flex; gap: 1.5rem; list-style: none; flex-wrap: wrap; }
+    .footer-links a { font-size: 11.5px; color: var(--text-faint); text-decoration: none; letter-spacing: 0.04em; text-transform: uppercase; }
+    .footer-links a:hover { color: #8a8278; }
+    .footer-bottom { border-top: 1px solid var(--ink-3); padding-top: 1.25rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+    .footer-copy { font-size: 11.5px; color: #2a2824; }
+    .footer-email { font-size: 11.5px; color: var(--text-faint); text-decoration: none; }
 
-        .back-link:hover {
-            opacity: 0.8;
-        }
-
-        /* Container */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-
-        .hero {
-            margin-bottom: 50px;
-            text-align: center;
-        }
-
-        .hero h1 {
-            font-size: 48px;
-            font-weight: 800;
-            margin-bottom: 12px;
-            text-transform: uppercase;
-            letter-spacing: -1px;
-        }
-
-        .hero h1 .gold {
-            color: #F4B860;
-        }
-
-        .hero p {
-            font-size: 18px;
-            color: #555;
-            max-width: 700px;
-            margin: 0 auto;
-            line-height: 1.6;
-        }
-
-        /* Category Filters */
-        .category-filters {
-            display: flex;
-            gap: 12px;
-            margin-bottom: 40px;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .filter-btn {
-            padding: 10px 20px;
-            border: 2px solid #ddd;
-            background: #ffffff;
-            border-radius: 25px;
-            cursor: pointer;
-            font-weight: 600;
-            font-size: 13px;
-            text-transform: uppercase;
-            letter-spacing: 0.3px;
-            transition: all 0.2s;
-        }
-
-        .filter-btn:hover {
-            border-color: #F4B860;
-            color: #F4B860;
-        }
-
-        .filter-btn.active {
-            background: #F4B860;
-            border-color: #F4B860;
-            color: #1a1a1a;
-        }
-
-        /* Articles Grid */
-        .articles-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 24px;
-            margin-bottom: 40px;
-        }
-
-        .article-card {
-            background: #ffffff;
-            border-radius: 12px;
-            overflow: hidden;
-            border: 1px solid #e5e3e0;
-            transition: all 0.3s ease;
-            display: flex;
-            flex-direction: column;
-            text-decoration: none;
-            color: inherit;
-            cursor: pointer;
-        }
-
-        .article-card:hover {
-            border-color: #F4B860;
-            box-shadow: 0 12px 24px rgba(0,0,0,0.08);
-            transform: translateY(-4px);
-        }
-
-        .article-image {
-            width: 100%;
-            height: 160px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 56px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .article-image::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            opacity: 0.12;
-            background: radial-gradient(circle at 70% 30%, #fff 0%, transparent 60%);
-        }
-
-        .article-image[data-cat="job-search"]   { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
-        .article-image[data-cat="resume"]         { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); }
-        .article-image[data-cat="interview"]      { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); }
-        .article-image[data-cat="networking"]     { background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); }
-        .article-image[data-cat="career"]         { background: linear-gradient(135deg, #F4B860 0%, #f5784a 100%); }
-        .article-image[data-cat="default"]        { background: linear-gradient(135deg, #F4B860 0%, #f5a742 100%); }
-
-        .article-content {
-            padding: 24px;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            flex: 1;
-        }
-
-        .article-category {
-            display: inline-block;
-            padding: 6px 12px;
-            background: #FFF3E0;
-            border-radius: 6px;
-            font-size: 11px;
-            font-weight: 700;
-            text-transform: uppercase;
-            color: #E65100;
-            letter-spacing: 0.3px;
-            width: fit-content;
-        }
-
-        .article-title {
-            font-size: 16px;
-            font-weight: 700;
-            line-height: 1.4;
-            color: #1a1a1a;
-        }
-
-        .article-excerpt {
-            font-size: 13px;
-            color: #666;
-            line-height: 1.5;
-            flex: 1;
-        }
-
-        .article-source {
-            font-size: 12px;
-            color: #999;
-            font-weight: 500;
-            padding-top: 12px;
-            border-top: 1px solid #f0f0f0;
-        }
-
-        .article-footer {
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            padding-top: 16px;
-            border-top: 1px solid #f0f0f0;
-            margin-top: auto;
-        }
-
-        .read-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            color: #ffffff;
-            background: #F4B860;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 12px;
-            letter-spacing: 0.3px;
-            padding: 8px 16px;
-            border-radius: 20px;
-            transition: background 0.2s, transform 0.15s;
-        }
-
-        .read-link:hover {
-            background: #e6a84e;
-            transform: translateY(-1px);
-        }
-
-        /* Stats Section */
-        .stats {
-            background: #ffffff;
-            border-radius: 12px;
-            padding: 40px 20px;
-            text-align: center;
-            margin-bottom: 40px;
-            border: 1px solid #e5e3e0;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 40px;
-            margin-top: 30px;
-        }
-
-        .stat-item h3 {
-            font-size: 32px;
-            color: #F4B860;
-            font-weight: 800;
-            margin-bottom: 8px;
-        }
-
-        .stat-item p {
-            font-size: 14px;
-            color: #666;
-        }
-
-        /* Footer */
-        footer {
-            background: #1a1a1a;
-            color: #ffffff;
-            text-align: center;
-            padding: 40px 20px;
-            margin-top: 60px;
-        }
-
-        footer a {
-            color: #F4B860;
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 32px;
-            }
-
-            .articles-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .header-content {
-                flex-direction: column;
-                gap: 12px;
-                text-align: center;
-            }
-        }
-    </style>
+    @media (max-width: 768px) {
+      nav ul { display: none; } .hamburger { display: block; }
+      .articles-grid { grid-template-columns: 1fr; }
+      .cta-strip { flex-direction: column; }
+      .page-title { font-size: 2rem; }
+    }
+    @media (max-width: 480px) { .header-inner, .container { padding-left: 1rem; padding-right: 1rem; } }
+    @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+  </style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="header-content">
-            <div class="logo">
-                <span>0xdecodeyourself</span><span class="accent"> | Learning Resources</span>
-            </div>
-            <a href="/" class="back-link">← Back to Home</a>
-        </div>
-    </header>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <header role="banner">
+    <div class="header-inner">
+      <a href="/" class="logo" aria-label="0xdecodeyourself — home">0x<span>decode</span>yourself</a>
+      <nav role="navigation" aria-label="Main navigation">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/livejobs">Jobs</a></li>
+          <li><a href="/articles" aria-current="page">Resources</a></li>
+          <li><a href="/#team">About</a></li>
+        </ul>
+      </nav>
+      <div class="nav-actions">
+        <a href="mailto:hiangeloddo@gmail.com?subject=Coaching%20Inquiry%20%E2%80%94%200xdecodeyourself" class="btn-primary">Book a call</a>
+        <button class="hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-nav"
+          onclick="const n=document.getElementById('mobile-nav');const o=n.classList.toggle('open');this.setAttribute('aria-expanded',o);this.setAttribute('aria-label',o?'Close navigation menu':'Open navigation menu');this.innerHTML=o?'&#x2715;':'&#9776;'">&#9776;</button>
+      </div>
+    </div>
+    <nav id="mobile-nav" aria-label="Mobile navigation">
+      <a href="/">Home</a><a href="/livejobs">Jobs</a><a href="/articles">Resources</a><a href="/#team">About</a>
+      <a href="mailto:hiangeloddo@gmail.com?subject=Coaching%20Inquiry%20%E2%80%94%200xdecodeyourself">Book a call &rarr;</a>
+    </nav>
+  </header>
 
-    <!-- Main Content -->
-    <div class="container">
-        <!-- Hero -->
-        <div class="hero">
-            <h1>Career <span class="gold">Resources</span></h1>
-            <p>Hand-picked articles and guides to help you land your first job, master your career, and build something real.</p>
-        </div>
-
-        <!-- Category Filters -->
-        <div class="category-filters">
-            <button class="filter-btn active" onclick="filterArticles('all')">All Articles</button>
-            <button class="filter-btn" onclick="filterArticles('job-search')">Job Search</button>
-            <button class="filter-btn" onclick="filterArticles('resume')">Resume & Cover Letter</button>
-            <button class="filter-btn" onclick="filterArticles('interview')">Interview Prep</button>
-            <button class="filter-btn" onclick="filterArticles('networking')">Networking</button>
-            <button class="filter-btn" onclick="filterArticles('career')">Career Development</button>
-        </div>
-
-        <!-- Articles Grid -->
-        <div class="articles-grid" id="articlesGrid">
-            <!-- Articles will be populated by JavaScript -->
-        </div>
-
-        <!-- Stats Section -->
-        <div class="stats">
-            <h2 style="font-size: 28px; margin-bottom: 10px;">Your Career Journey Starts Here</h2>
-            <p style="color: #666;">Resources from top universities and career experts</p>
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <h3>25+</h3>
-                    <p>Expert Articles</p>
-                </div>
-                <div class="stat-item">
-                    <h3>100+</h3>
-                    <p>Grads Helped</p>
-                </div>
-                <div class="stat-item">
-                    <h3>100%</h3>
-                    <p>Free Resources</p>
-                </div>
-            </div>
-        </div>
+  <main id="main-content" tabindex="-1">
+    <div class="page-hero">
+      <div class="container">
+        <p class="eyebrow">Career resources</p>
+        <h1 class="page-title">Guides that actually<br><em>move the needle.</em></h1>
+        <p class="page-sub">Curated from Harvard, LinkedIn, McKinsey, and real hiring managers. Everything you need for your job search, in one place.</p>
+      </div>
     </div>
 
-    <!-- Footer -->
-    <footer>
-        <p>💡 <strong>Pro Tip:</strong> Bookmark these articles and return to them as you progress through your career</p>
-        <p style="margin-top: 16px; font-size: 14px;">
-            Career resources curated by <a href="/">DECODE YOURSELF</a> • 
-            <a href="mailto:hiangeloddo@gmail.com">Questions? Get coaching support</a>
-        </p>
-    </footer>
+    <div class="filters-bar">
+      <div class="container">
+        <div class="filter-row" role="group" aria-label="Filter resources by topic">
+          <button class="filter-btn active" data-cat="all" aria-pressed="true">All topics</button>
+          <button class="filter-btn" data-cat="resume" aria-pressed="false">Resume</button>
+          <button class="filter-btn" data-cat="interview" aria-pressed="false">Interviews</button>
+          <button class="filter-btn" data-cat="negotiation" aria-pressed="false">Negotiation</button>
+          <button class="filter-btn" data-cat="networking" aria-pressed="false">Networking</button>
+          <button class="filter-btn" data-cat="career" aria-pressed="false">Career clarity</button>
+          <button class="filter-btn" data-cat="jobsearch" aria-pressed="false">Job search</button>
+        </div>
+      </div>
+    </div>
 
-    <script>
-        const articles = [
-            {
-                id: 1,
-                title: "How to Land Your First Job Even With No Experience",
-                excerpt: "Learn what it really means to have no experience and how to overcome the entry-level catch-22. Master the strategies that help recent grads break into competitive industries.",
-                category: "job-search",
-                source: "Harvard Summer School",
-                icon: "🎓",
-                url: "https://summer.harvard.edu/blog/how-to-land-your-first-job-even-with-no-experience/"
-            },
-            {
-                id: 2,
-                title: "24 Best Jobs for College Grads With No Experience",
-                excerpt: "Discover entry-level positions specifically designed for recent graduates. Learn what skills employers value most and how to position yourself for success.",
-                category: "job-search",
-                source: "Indeed",
-                icon: "💼",
-                url: "https://www.indeed.com/career-advice/finding-a-job/best-jobs-for-college-grads-with-no-experience"
-            },
-            {
-                id: 3,
-                title: "How to Get a Job After College With No Experience",
-                excerpt: "Explore the practical details of landing a job after graduation. Learn about apprenticeships, mentorship, and how to overcome the confidence gap.",
-                category: "job-search",
-                source: "Acadium",
-                icon: "🚀",
-                url: "https://acadium.com/blog/how-to-get-a-job-after-college-with-no-experience/"
-            },
-            {
-                id: 4,
-                title: "Overcoming the Entry-Level Catch-22",
-                excerpt: "Strategies to reframe your experience and stand out. Learn how internships, projects, and volunteer work count toward your professional qualifications.",
-                category: "job-search",
-                source: "TopResume",
-                icon: "✨",
-                url: "https://topresume.com/career-advice/how-to-find-entry-level-job-with-no-work-experience"
-            },
-            {
-                id: 5,
-                title: "From Graduation to Career: Land Your First Job Before Competition Heats Up",
-                excerpt: "Timing matters. Learn when and how to start your job search strategically, including how seasonal hiring can work in your favor.",
-                category: "job-search",
-                source: "Salem Solutions",
-                icon: "⏰",
-                url: "https://www.salemsolutions.com/2025/05/07/from-graduation-to-career-how-to-land-your-first-job-before-the-competition-heats-up/"
-            },
-            {
-                id: 6,
-                title: "How to Find Entry-Level Jobs With No Experience",
-                excerpt: "A comprehensive guide to finding entry-level positions. Explore job boards, networks, and where companies actively recruit recent graduates.",
-                category: "job-search",
-                source: "CareerBuilder",
-                icon: "🔍",
-                url: "https://www.careerbuilder.com/advice/blog/how-to-find-entry-level-jobs-with-no-experience"
-            },
-            {
-                id: 7,
-                title: "College Graduate Resume Examples & Writing Tips",
-                excerpt: "Create a standout resume that highlights your academic achievements and transferable skills. Learn the format, structure, and keywords that get results.",
-                category: "resume",
-                source: "Resume Genius",
-                icon: "📄",
-                url: "https://resumegenius.com/blog/resume-help/college-graduate-resume"
-            },
-            {
-                id: 8,
-                title: "Resume Tips for Recent College Graduates",
-                excerpt: "Master the fundamentals of resume writing. Learn where to place your education, how to highlight coursework, and what recruiters look for in 15 seconds.",
-                category: "resume",
-                source: "UMBC Career Center",
-                icon: "✍️",
-                url: "https://professionalprograms.umbc.edu/blog/resume-tips-for-recent-college-graduates/"
-            },
-            {
-                id: 9,
-                title: "Perfect Resume Guide for Recent College Graduates",
-                excerpt: "Detailed guidance on creating a compelling resume without extensive work experience. Includes sample resume and expert tips from TopResume's Career Expert.",
-                category: "resume",
-                source: "TopResume",
-                icon: "🎯",
-                url: "https://topresume.com/career-advice/excellent-resume-for-recent-grad"
-            },
-            {
-                id: 10,
-                title: "Career Advice for Recent or Soon-To-Be College Graduates",
-                excerpt: "Direct advice from a renowned career coach. Learn how to structure your resume, translate academic experience into work skills, and start your career right.",
-                category: "career",
-                source: "RobinRyan.com",
-                icon: "🌟",
-                url: "https://robinryan.com/resources/articles/career-advice-for-recent-or-soon-to-be-college-graduates/"
-            },
-            {
-                id: 11,
-                title: "How To Write a College Graduate Resume",
-                excerpt: "Step-by-step guidance on prioritizing your education section and showcasing skills. Learn what to include when you lack traditional work experience.",
-                category: "resume",
-                source: "Indeed",
-                icon: "📋",
-                url: "https://www.indeed.com/career-advice/resumes-cover-letters/college-graduate-resume"
-            },
-            {
-                id: 12,
-                title: "College Grads: How Your Resume Should Look",
-                excerpt: "Begin with contact information and a strong objective. Learn how to structure your resume to catch the attention of hiring managers in seconds.",
-                category: "resume",
-                source: "Fastweb",
-                icon: "👁️",
-                url: "https://www.fastweb.com/career-planning/articles/college-grads-how-your-resume-should-look"
-            },
-            {
-                id: 13,
-                title: "13 LinkedIn Profile Tips for College Students",
-                excerpt: "Build a powerful LinkedIn presence. Learn how to showcase your leadership, activities, and achievements to unlock opportunities.",
-                category: "networking",
-                source: "Elmhurst University",
-                icon: "🔗",
-                url: "https://www.elmhurst.edu/blog/linkedin-profile-tips/"
-            },
-            {
-                id: 14,
-                title: "LinkedIn Tips for College Students and Recent Grads",
-                excerpt: "LinkedIn is more than a resume online. Master networking, connecting with professionals, and finding jobs through strategic LinkedIn use.",
-                category: "networking",
-                source: "OnlineU",
-                icon: "💬",
-                url: "https://www.onlineu.com/resources/going-to-college/linkedin-tips"
-            },
-            {
-                id: 15,
-                title: "Networking Tips for Recent College Grads: 8 Steps",
-                excerpt: "Shift your mindset about networking. Learn how to build genuine relationships, maintain connections, and create opportunities for your future career.",
-                category: "networking",
-                source: "UAGC",
-                icon: "🤝",
-                url: "https://www.uagc.edu/blog/networking-tips-recent-college-grads-8-steps-build-lasting-professional-connections"
-            },
-            {
-                id: 16,
-                title: "Six LinkedIn Networking Tips for University Students",
-                excerpt: "Common LinkedIn mistakes recent grads make and how to avoid them. Learn strategic networking that actually leads to job opportunities.",
-                category: "networking",
-                source: "Absolute Internship",
-                icon: "⭐",
-                url: "https://absoluteinternship.com/blog/six-linkedin-networking-tips-for-university-students/"
-            },
-            {
-                id: 17,
-                title: "6 Must-Do LinkedIn Tips for New Grads",
-                excerpt: "Update your profile to reflect your education and activities. Join alumni networks and position yourself as a professional from day one.",
-                category: "networking",
-                source: "UMass Global",
-                icon: "🎓",
-                url: "https://www.umassglobal.edu/blog-news/6-must-do-linkedin-tips-new-grads"
-            },
-            {
-                id: 18,
-                title: "LinkedIn 101 for Recent Graduates Looking for Work",
-                excerpt: "Learn the fundamentals of LinkedIn for job searching. Discover how to find companies, leverage connections, and get recommendations.",
-                category: "networking",
-                source: "LinkedIn",
-                icon: "101",
-                url: "https://www.linkedin.com/pulse/linkedin-101-college-students-recent-graduates-looking-wywrot"
-            },
-            {
-                id: 19,
-                title: "How to Improve Your LinkedIn Profile as a Recent College Grad",
-                excerpt: "Transform your LinkedIn profile into a networking tool. Understand why networking is your greatest competitive advantage after graduation.",
-                category: "networking",
-                source: "WordStream",
-                icon: "📈",
-                url: "https://www.wordstream.com/blog/ws/2014/09/09/improve-linkedin-profile"
-            },
-            {
-                id: 20,
-                title: "Getting Started on LinkedIn: Advice for Recent Grads",
-                excerpt: "Create a profile that pops. Learn how to avoid generic headlines and truly represent yourself to recruiters and hiring managers.",
-                category: "networking",
-                source: "Lindsey Pollak",
-                icon: "🎨",
-                url: "https://lindseypollak.com/getting-started-on-linkedin-advice-for-recent-grads/"
-            },
-            {
-                id: 21,
-                title: "Tips for a Successful Internship Interview",
-                excerpt: "Ace your interview preparation. Learn common questions, how to articulate your motivation, and how to make a lasting impression.",
-                category: "interview",
-                source: "U.S. News",
-                icon: "🎤",
-                url: "https://careers.usnews.com/advice/outside-voices-careers/articles/tips-for-a-successful-internship-interview"
-            },
-            {
-                id: 22,
-                title: "Ten Tips to Help You Ace Your Interview",
-                excerpt: "From preparation to execution. Learn the top practices that help recent graduates stand out and land their first job.",
-                category: "interview",
-                source: "Making Waves Education Foundation",
-                icon: "💪",
-                url: "https://making-waves.org/ten-tips-help-ace-career-job-internship-interview-tips/"
-            },
-            {
-                id: 23,
-                title: "How to Answer Common Internship Interview Questions",
-                excerpt: "Master your responses with real examples. Learn the past-present-future formula and how to showcase your growth potential.",
-                category: "interview",
-                source: "Monster",
-                icon: "❓",
-                url: "https://www.monster.com/career-advice/interviewing/interview-questions/internship-interview-questions"
-            },
-            {
-                id: 24,
-                title: "What To Expect During an Internship Interview",
-                excerpt: "Know what's coming. Learn the structure, types of questions, and how to prepare thoughtful responses that demonstrate your fit.",
-                category: "interview",
-                source: "Indeed",
-                icon: "🧠",
-                url: "https://www.indeed.com/career-advice/career-development/what-to-expect-during-an-internship-interview"
-            },
-            {
-                id: 25,
-                title: "10 Best Practices for Interviewing as a Recent Graduate",
-                excerpt: "Be clear, intentional, and genuine. Learn how to demonstrate soft skills and show you're ready to learn and contribute immediately.",
-                category: "interview",
-                source: "InterviewFocus",
-                icon: "✅",
-                url: "https://interviewfocus.com/best-practices-for-interviewing-as-a-recent-graduate/"
-            }
-        ];
+    <div class="articles-section">
+      <div class="container">
+        <div class="articles-grid" id="articles-grid" role="list" aria-label="Career resources">
+        </div>
 
-        function renderArticles(articlesToRender) {
-            const grid = document.getElementById('articlesGrid');
-            grid.innerHTML = articlesToRender.map(article => `
-                <a href="${article.url}" target="_blank" rel="noopener noreferrer" class="article-card" data-category="${article.category}">
-                    <div class="article-image" data-cat="${article.category || 'default'}">${article.icon}</div>
-                    <div class="article-content">
-                        <span class="article-category">${getCategoryLabel(article.category)}</span>
-                        <h3 class="article-title">${article.title}</h3>
-                        <p class="article-excerpt">${article.excerpt}</p>
-                        <div class="article-source">From ${article.source}</div>
-                        <div class="article-footer">
-                            <span class="read-link">Read Article →</span>
-                        </div>
-                    </div>
-                </a>
-            `).join('');
-        }
+        <div class="cta-strip" aria-label="Work with Sebastian coaching CTA">
+          <div class="cta-strip-text">
+            <h3>Want a real strategy, not just reading?</h3>
+            <p>Work 1:1 with Sebastian &mdash; VP of Innovation at Mastercard &mdash; to build yours.</p>
+          </div>
+          <a href="mailto:hiangeloddo@gmail.com?subject=Coaching%20Inquiry%20%E2%80%94%200xdecodeyourself" class="cta-btn">Email for more info &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </main>
 
-        function getCategoryLabel(category) {
-            const labels = {
-                'all': 'All',
-                'job-search': 'Job Search',
-                'resume': 'Resume',
-                'interview': 'Interview',
-                'networking': 'Networking',
-                'career': 'Career'
-            };
-            return labels[category] || category;
-        }
+  <footer role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <a href="/" class="footer-logo">0x<span>decode</span>yourself</a>
+        <ul class="footer-links" role="list">
+          <li><a href="/livejobs">Jobs</a></li><li><a href="/#team">Coaching</a></li>
+          <li><a href="/articles">Resources</a></li><li><a href="/#team">About</a></li>
+          <li><a href="mailto:hiangeloddo@gmail.com" style="color:var(--gold)">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; 2026 0xdecodeyourself. All rights reserved.</p>
+        <a href="mailto:hiangeloddo@gmail.com" class="footer-email">hiangeloddo@gmail.com</a>
+      </div>
+    </div>
+  </footer>
 
-        function filterArticles(category) {
-            // Update button styles
-            document.querySelectorAll('.filter-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            event.target.classList.add('active');
+  <script>
+    const articles = [
+      { cat: "resume", title: "How to Write a Resume That Gets Past ATS", desc: "75% of resumes never reach a human. Here's how to format and keyword-optimize yours to get through.", source: "TopResume", url: "https://www.topresume.com/career-advice/what-is-an-ats-resume" },
+      { cat: "resume", title: "The One-Page Resume Rule — When to Break It", desc: "When does your resume earn a second page? A clear framework from real hiring managers.", source: "Harvard", url: "https://hbswk.hbs.edu/item/the-art-of-the-one-page-resume" },
+      { cat: "resume", title: "Action Verbs That Make Recruiters Stop Scrolling", desc: "A curated list of impact verbs organized by role type — from engineering to marketing to finance.", source: "LinkedIn", url: "https://www.linkedin.com/business/talent/blog/talent-acquisition/resume-action-verbs" },
+      { cat: "resume", title: "How to Quantify Your Experience (Even Without Numbers)", desc: "You don't need revenue figures to show impact. Here's how to frame non-quantitative work.", source: "Indeed", url: "https://www.indeed.com/career-advice/resumes-cover-letters/quantify-your-resume" },
+      { cat: "resume", title: "Cover Letters That Actually Get Read in 2026", desc: "Most are ignored. The ones that work do one thing differently — here's what it is.", source: "The Muse", url: "https://www.themuse.com/advice/the-perfect-cover-letter-template-to-show-off-your-skills" },
+      { cat: "interview", title: "The STAR Method, Done Right", desc: "Situation, Task, Action, Result — but most candidates stop at Result. Here's what comes after.", source: "McKinsey", url: "https://www.mckinsey.com/careers/interview-tips" },
+      { cat: "interview", title: "How to Answer 'Tell Me About Yourself'", desc: "The first question in every interview. Most candidates blow it. A three-part framework that works.", source: "Harvard Business Review", url: "https://hbr.org/2023/08/how-to-answer-tell-me-about-yourself" },
+      { cat: "interview", title: "Common Behavioral Questions and How to Prep", desc: "The 20 most common behavioral questions with example answers and what interviewers are really listening for.", source: "Indeed", url: "https://www.indeed.com/career-advice/interviewing/behavioral-interview-questions" },
+      { cat: "interview", title: "How to Research a Company Before Your Interview", desc: "Go beyond the About page. A step-by-step research framework that surfaces talking points interviewers love.", source: "LinkedIn", url: "https://www.linkedin.com/pulse/how-research-company-before-job-interview-linkedin-news/" },
+      { cat: "interview", title: "What to Ask at the End of Every Interview", desc: "The questions you ask say as much as the answers you give. Here are 10 that signal genuine curiosity.", source: "Glassdoor", url: "https://www.glassdoor.com/blog/questions-to-ask-in-an-interview/" },
+      { cat: "interview", title: "How to Nail a Case Interview", desc: "For consulting and strategy roles. The framework used by McKinsey, BCG, and Bain candidates.", source: "McKinsey", url: "https://www.mckinsey.com/careers/interviewing/case-interview-practice" },
+      { cat: "negotiation", title: "They Offered You $65K. Here's What to Say Next.", desc: "Word-for-word scripts for negotiating your first offer without burning the bridge.", source: "Salary.com", url: "https://www.salary.com/articles/salary-negotiation-tips-recent-grads/" },
+      { cat: "negotiation", title: "How to Know If an Offer Is Actually Good", desc: "Total comp, benefits, growth trajectory — a checklist for evaluating an offer before you accept.", source: "Levels.fyi", url: "https://www.levels.fyi/blog/how-to-evaluate-job-offer.html" },
+      { cat: "negotiation", title: "Negotiating Remotely — What's Different", desc: "Phone and email negotiations have different dynamics. Here's how to adapt your approach.", source: "Harvard Business Review", url: "https://hbr.org/2020/09/how-to-negotiate-salary-in-a-virtual-world" },
+      { cat: "negotiation", title: "The Salary Research Toolkit for New Grads", desc: "Levels.fyi, Glassdoor, LinkedIn Salary, and industry reports — how to triangulate real numbers.", source: "Glassdoor", url: "https://www.glassdoor.com/blog/how-to-research-salary/" },
+      { cat: "networking", title: "How to Cold Message Someone on LinkedIn (And Get a Reply)", desc: "The message framework that gets a 40%+ response rate — short, specific, and easy to answer.", source: "LinkedIn", url: "https://www.linkedin.com/business/sales/blog/profile-best-practices/17-steps-to-a-better-linkedin-profile-in-2017" },
+      { cat: "networking", title: "Informational Interviews: The Underused Career Hack", desc: "A 30-minute coffee chat can open more doors than 50 applications. How to ask, prepare, and follow up.", source: "Harvard", url: "https://ocs.fas.harvard.edu/informational-interviewing" },
+      { cat: "networking", title: "How to Build a Network When You Don't Have One", desc: "Starting from zero. Alumni networks, Discord servers, LinkedIn, and industry events — a practical guide.", source: "The Muse", url: "https://www.themuse.com/advice/how-to-network-when-you-hate-networking" },
+      { cat: "networking", title: "Following Up Without Being Annoying", desc: "The timing, tone, and content of a follow-up email that keeps you on a recruiter's radar.", source: "Indeed", url: "https://www.indeed.com/career-advice/interviewing/follow-up-email-after-interview" },
+      { cat: "career", title: "How to Figure Out What You Actually Want", desc: "Values clarification, strength mapping, and a process for making decisions you won't regret.", source: "0xdecodeyourself", url: "mailto:hiangeloddo@gmail.com?subject=Career%20Clarity%20Session" },
+      { cat: "career", title: "The First 90 Days: How to Succeed in a New Job", desc: "What to learn, who to meet, and what not to do in your first three months.", source: "Harvard Business Review", url: "https://hbr.org/2023/05/making-the-most-of-your-first-90-days-in-a-new-job" },
+      { cat: "career", title: "How to Handle Rejection Without Spiraling", desc: "A practical framework for processing a no, extracting the signal, and staying in motion.", source: "Psychology Today", url: "https://www.psychologytoday.com/us/blog/in-practice/202109/how-to-handle-job-rejection" },
+      { cat: "career", title: "Should You Go to Graduate School Right Away?", desc: "The honest pros and cons of going straight vs. working first — organized by field.", source: "Harvard", url: "https://hbr.org/2021/06/should-you-go-to-grad-school" },
+      { cat: "jobsearch", title: "The Hidden Job Market (And How to Access It)", desc: "70% of jobs are never posted. Here's how to get in front of opportunities before they go public.", source: "LinkedIn", url: "https://www.linkedin.com/pulse/how-tap-hidden-job-market-tips-job-seekers-linkedin-news/" },
+      { cat: "jobsearch", title: "How to Organize Your Job Search Like a Pro", desc: "Tracking spreadsheets, weekly cadences, and the metrics that actually predict outcomes.", source: "Indeed", url: "https://www.indeed.com/career-advice/finding-a-job/job-search-organization" },
+      { cat: "jobsearch", title: "Entry-Level Jobs That Aren't Listed as Entry Level", desc: "Many great roles don't use that phrase. How to search smarter and filter by what actually matters.", source: "The Muse", url: "https://www.themuse.com/advice/the-secret-to-finding-entry-level-jobs" },
+      { cat: "jobsearch", title: "How to Use LinkedIn as a New Grad", desc: "Profile optimization, alumni search, job alerts, and connection strategy for students and recent grads.", source: "LinkedIn", url: "https://university.linkedin.com/linkedin-for-students" }
+    ];
 
-            // Filter and render articles
-            const filtered = category === 'all' 
-                ? articles 
-                : articles.filter(a => a.category === category);
-            
-            renderArticles(filtered);
-        }
+    function renderArticles(cat) {
+      const grid = document.getElementById('articles-grid');
+      const filtered = cat === 'all' ? articles : articles.filter(a => a.cat === cat);
+      grid.innerHTML = filtered.map(a => `
+        <a href="${a.url}" target="${a.url.startsWith('mailto') ? '_self' : '_blank'}" rel="noopener noreferrer"
+           class="article-card" role="listitem"
+           aria-label="${a.title} — from ${a.source}">
+          <div class="article-cat">${a.cat.replace('jobsearch','Job search').replace('career','Career clarity')}</div>
+          <div class="article-title">${a.title}</div>
+          <div class="article-desc">${a.desc}</div>
+          <div class="article-source">${a.source}</div>
+          <div class="article-arrow">Read &rarr;</div>
+        </a>
+      `).join('');
+    }
 
-        // Initial render
-        renderArticles(articles);
-    </script>
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('.filter-btn').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-pressed','false'); });
+        this.classList.add('active'); this.setAttribute('aria-pressed','true');
+        renderArticles(this.dataset.cat);
+      });
+    });
+
+    renderArticles('all');
+  </script>
 </body>
 </html>
