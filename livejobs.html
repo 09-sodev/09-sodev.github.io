@@ -3,303 +3,195 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Live job board for college students and recent graduates. 78+ curated entry-level roles across tech, finance, marketing, design, and more. Updated 3x daily.">
+  <meta name="description" content="Live job board for college students and recent graduates. 78+ curated entry-level roles updated 3x daily.">
   <title>Live Jobs | 0xdecodeyourself</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@200;300;400&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --gold: #C9A060; --gold-hover: #d4a96a;
-      --ink: #0e0d0b; --ink-2: #141210; --ink-3: #1e1c18; --ink-4: #2a2520;
-      --text: #f0ece4; --text-muted: #b0aca4; --text-dim: #8a8680;
-      --text-faint: #3a3530; --border: #2a2520;
+      --cream: #F7F4EF; --warm-white: #FDFCFA; --ink: #1A1814;
+      --ink-light: #4A4640; --ink-faint: #9A9690; --rule: #DDD9D2; --gold: #B8924A;
     }
     html { scroll-behavior: smooth; }
-    body { font-family: 'DM Sans', sans-serif; background: var(--ink); color: var(--text); font-size: 15px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
-    .skip-link { position: absolute; left: -9999px; top: 8px; background: var(--gold); color: var(--ink); padding: 8px 16px; border-radius: 4px; font-size: 13px; font-weight: 500; z-index: 9999; text-decoration: none; }
+    body { font-family: 'Jost', sans-serif; background: var(--warm-white); color: var(--ink); font-weight: 300; -webkit-font-smoothing: antialiased; }
+    .skip-link { position: absolute; left: -9999px; top: 8px; background: var(--gold); color: #fff; padding: 8px 16px; font-size: 13px; z-index: 9999; text-decoration: none; }
     .skip-link:focus { left: 8px; }
 
-    /* HEADER — identical to index.html */
-    header { position: sticky; top: 0; z-index: 200; background: var(--ink); border-bottom: 1px solid var(--border); }
-    .header-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 0 2rem; height: 60px; }
-    .logo { font-family: 'Cormorant Garamond', serif; font-size: 18px; font-weight: 400; letter-spacing: 0.02em; color: var(--text); text-decoration: none; flex-shrink: 0; }
-    .logo span { color: var(--gold); }
-    nav ul { display: flex; align-items: center; gap: 0.25rem; list-style: none; }
-    nav a { font-size: 12px; color: var(--text-dim); text-decoration: none; font-weight: 400; letter-spacing: 0.05em; text-transform: uppercase; padding: 6px 12px; border-radius: 100px; transition: color 0.15s, background 0.15s; }
-    nav a:hover { color: var(--text); background: var(--ink-3); }
-    nav a:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; border-radius: 100px; }
-    nav a[aria-current="page"] { color: var(--gold); }
-    .nav-actions { display: flex; gap: 8px; align-items: center; flex-shrink: 0; }
-    .btn-ghost { border: 1.5px solid #8a8278; background: transparent; color: var(--text); font-family: 'DM Sans', sans-serif; font-size: 12px; padding: 7px 18px; border-radius: 100px; cursor: pointer; letter-spacing: 0.04em; text-transform: uppercase; text-decoration: none; display: inline-block; }
-    .btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
-    .btn-primary { background: var(--gold); border: none; color: var(--ink); font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 500; padding: 7px 18px; border-radius: 100px; cursor: pointer; letter-spacing: 0.04em; text-transform: uppercase; text-decoration: none; display: inline-block; }
-    .btn-primary:hover { background: var(--gold-hover); }
-    .btn-primary:focus-visible, .btn-ghost:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
-    .hamburger { display: none; background: none; border: 1px solid #3a3530; color: var(--text); border-radius: 6px; padding: 6px 9px; cursor: pointer; font-size: 18px; line-height: 1; }
-    .hamburger:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
-    #mobile-nav { display: none; flex-direction: column; padding: 1rem 2rem; border-top: 1px solid var(--border); background: var(--ink); }
-    #mobile-nav.open { display: flex; }
-    #mobile-nav a { font-size: 14px; color: var(--text-dim); text-decoration: none; padding: 10px 0; border-bottom: 1px solid var(--border); letter-spacing: 0.04em; text-transform: uppercase; }
-    #mobile-nav a:last-child { border-bottom: none; color: var(--gold); }
+    nav { position: sticky; top: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 0 3rem; height: 64px; background: rgba(253,252,250,0.96); backdrop-filter: blur(12px); border-bottom: 1px solid var(--rule); }
+    .nav-logo { font-family: 'Playfair Display', serif; font-size: 15px; font-weight: 400; letter-spacing: 0.04em; color: var(--ink); text-decoration: none; }
+    .nav-logo em { font-style: italic; color: var(--gold); }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a { font-size: 11px; font-weight: 300; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-light); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a[aria-current] { color: var(--ink); }
+    .nav-links a[aria-current] { border-bottom: 1px solid var(--ink); padding-bottom: 1px; }
+    .nav-cta { font-size: 11px; font-weight: 300; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink); text-decoration: none; border: 1px solid var(--ink); padding: 8px 20px; transition: background 0.2s, color 0.2s; }
+    .nav-cta:hover { background: var(--ink); color: var(--warm-white); }
 
-    /* PAGE */
-    .container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
-    .page-hero { padding: 3.5rem 0 2.5rem; border-bottom: 1px solid var(--border); }
-    .eyebrow { font-size: 11px; color: #5a5650; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.5rem; }
-    .page-title { font-family: 'Cormorant Garamond', serif; font-size: 2.8rem; font-weight: 300; line-height: 1.1; color: var(--text); margin-bottom: 0.75rem; }
-    .page-title em { font-style: italic; color: var(--gold); }
-    .page-sub { font-size: 15px; color: var(--text-muted); max-width: 500px; line-height: 1.6; }
+    .page-hero { padding: 5rem 4rem 3.5rem; border-bottom: 1px solid var(--rule); background: var(--cream); }
+    .eyebrow { font-size: 10px; font-weight: 300; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 1.25rem; }
+    .page-title { font-family: 'Playfair Display', serif; font-size: clamp(2.2rem, 5vw, 3.5rem); font-weight: 300; line-height: 1.1; color: var(--ink); margin-bottom: 0.75rem; }
+    .page-title em { font-style: italic; }
+    .page-sub { font-size: 14px; color: var(--ink-light); max-width: 480px; line-height: 1.75; margin-top: 0.75rem; }
     .updated-row { display: flex; align-items: center; gap: 1.5rem; margin-top: 1.25rem; flex-wrap: wrap; }
-    .updated-badge { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: var(--text-muted); }
-    .updated-dot { width: 6px; height: 6px; border-radius: 50%; background: #4a9a5a; flex-shrink: 0; }
-    .job-count-badge { background: var(--ink-2); border: 1px solid var(--border); border-radius: 100px; padding: 4px 14px; font-size: 12px; color: var(--text-dim); }
+    .updated-badge { display: inline-flex; align-items: center; gap: 6px; font-size: 11.5px; color: var(--ink-faint); }
+    .updated-dot { width: 5px; height: 5px; border-radius: 50%; background: #6a9a6a; }
 
-    /* FILTERS */
-    .filters-bar { padding: 1.5rem 0; border-bottom: 1px solid var(--border); }
-    .filter-row { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 10px; }
+    .filters-bar { padding: 1.5rem 4rem; border-bottom: 1px solid var(--rule); background: var(--warm-white); }
+    .filter-row { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 8px; align-items: center; }
     .filter-row:last-child { margin-bottom: 0; }
-    .filter-label { font-size: 10.5px; color: #5a5650; letter-spacing: 0.08em; text-transform: uppercase; align-self: center; min-width: 60px; }
-    .filter-btn { background: var(--ink-2); border: 1px solid var(--border); color: var(--text-dim); font-family: 'DM Sans', sans-serif; font-size: 12px; padding: 5px 14px; border-radius: 100px; cursor: pointer; letter-spacing: 0.02em; transition: all 0.15s; }
-    .filter-btn:hover { border-color: #5a5650; color: var(--text); }
+    .filter-label { font-size: 9.5px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-faint); min-width: 60px; }
+    .filter-btn { background: transparent; border: 1px solid var(--rule); color: var(--ink-faint); font-family: 'Jost', sans-serif; font-size: 11px; font-weight: 300; padding: 5px 14px; cursor: pointer; letter-spacing: 0.06em; transition: all 0.15s; }
+    .filter-btn:hover { border-color: var(--ink-light); color: var(--ink); }
     .filter-btn:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
-    .filter-btn.active { background: var(--gold); border-color: var(--gold); color: var(--ink); font-weight: 500; }
+    .filter-btn.active { background: var(--ink); border-color: var(--ink); color: var(--warm-white); }
 
-    /* JOB LIST */
-    .jobs-section { padding: 2rem 0; }
-    .results-line { font-size: 12px; color: var(--text-dim); margin-bottom: 1.25rem; letter-spacing: 0.03em; }
-    .job-card { display: flex; align-items: center; padding: 1rem 1.25rem; background: var(--ink-2); border: 1px solid var(--border); border-radius: 10px; margin-bottom: 10px; gap: 1rem; transition: border-color 0.15s; }
-    .job-card:hover { border-color: #4a4840; }
-    .job-card:last-child { margin-bottom: 0; }
-    .job-logo { width: 42px; height: 42px; background: var(--ink-3); border: 1px solid var(--border); border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 11px; font-weight: 500; color: var(--text-dim); letter-spacing: 0.04em; }
-    .job-main { flex: 1; min-width: 0; }
-    .job-title { font-size: 14px; font-weight: 500; color: var(--text); margin-bottom: 3px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-    .job-meta { font-size: 12px; color: var(--text-muted); display: flex; gap: 1rem; flex-wrap: wrap; }
-    .job-tags { display: flex; gap: 6px; flex-shrink: 0; align-items: center; flex-wrap: wrap; }
-    .tag { font-size: 10.5px; padding: 3px 10px; border: 1px solid var(--border); border-radius: 100px; color: #6a6660; background: var(--ink); }
-    .tag.new { border-color: #3a3020; background: #1a1508; color: var(--gold); }
-    .tag.remote { border-color: #1a2a3a; background: #0e1820; color: #6090b0; }
-    .tag.intern { border-color: #2a1a3a; background: #160e20; color: #9070b0; }
-    .apply-btn { background: var(--gold); border: none; color: var(--ink); font-family: 'DM Sans', sans-serif; font-size: 11.5px; font-weight: 500; padding: 8px 18px; border-radius: 100px; cursor: pointer; white-space: nowrap; flex-shrink: 0; text-decoration: none; display: inline-block; letter-spacing: 0.03em; }
-    .apply-btn:hover { background: var(--gold-hover); }
-    .apply-btn:focus-visible { outline: 2px solid var(--text); outline-offset: 2px; }
-    .no-results { text-align: center; padding: 3rem; color: var(--text-dim); font-size: 14px; }
+    .jobs-section { padding: 3rem 4rem; }
+    .results-line { font-size: 11px; color: var(--ink-faint); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 1.5rem; }
+    .job-row { display: flex; align-items: center; padding: 1.25rem 0; border-bottom: 1px solid var(--rule); gap: 1.5rem; }
+    .job-row:first-child { border-top: 1px solid var(--rule); }
+    .job-co { width: 44px; height: 44px; border: 1px solid var(--rule); display: flex; align-items: center; justify-content: center; font-size: 10px; color: var(--ink-faint); flex-shrink: 0; background: var(--cream); letter-spacing: 0.04em; }
+    .job-info { flex: 1; min-width: 0; }
+    .job-title { font-size: 14px; color: var(--ink); margin-bottom: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .job-meta { font-size: 11.5px; color: var(--ink-faint); }
+    .job-tags { display: flex; gap: 6px; flex-shrink: 0; }
+    .tag { font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; border: 1px solid var(--rule); padding: 3px 9px; color: var(--ink-faint); }
+    .tag.new { border-color: var(--gold); color: var(--gold); }
+    .tag.remote { border-color: #6a9a6a; color: #6a9a6a; }
+    .apply-btn { font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--ink); padding-bottom: 1px; flex-shrink: 0; transition: opacity 0.2s; }
+    .apply-btn:hover { opacity: 0.5; }
+    .apply-btn:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+    .no-results { text-align: center; padding: 4rem; font-size: 13px; color: var(--ink-faint); letter-spacing: 0.06em; }
 
-    /* FOOTER */
-    footer { background: #0a0906; border-top: 1px solid var(--ink-3); padding: 2.5rem 0; margin-top: 2rem; }
-    .footer-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem; }
-    .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 16px; color: #8a8278; text-decoration: none; }
-    .footer-logo span { color: var(--gold); }
-    .footer-links { display: flex; gap: 1.5rem; list-style: none; flex-wrap: wrap; }
-    .footer-links a { font-size: 11.5px; color: var(--text-faint); text-decoration: none; letter-spacing: 0.04em; text-transform: uppercase; }
-    .footer-links a:hover { color: #8a8278; }
-    .footer-bottom { border-top: 1px solid var(--ink-3); padding-top: 1.25rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
-    .footer-copy { font-size: 11.5px; color: #6a6860; }
-    .footer-email { font-size: 11.5px; color: #8a8278; text-decoration: none; }
+    footer { padding: 2.5rem 4rem; border-top: 1px solid var(--rule); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+    .footer-logo { font-family: 'Playfair Display', serif; font-size: 14px; color: var(--ink); text-decoration: none; }
+    .footer-logo em { font-style: italic; color: var(--gold); }
+    .footer-links { display: flex; gap: 2rem; list-style: none; }
+    .footer-links a { font-size: 10.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-faint); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--ink); }
+    .footer-copy { font-size: 10.5px; color: var(--ink-faint); }
 
     @media (max-width: 768px) {
-      nav ul { display: none; } .hamburger { display: block; } .nav-actions .btn-ghost { display: none; }
-      .job-tags { display: none; } .job-card { flex-wrap: wrap; }
+      nav, .page-hero, .filters-bar, .jobs-section, footer { padding-left: 1.5rem; padding-right: 1.5rem; }
+      .nav-links { display: none; }
+      .job-tags { display: none; }
       .page-title { font-size: 2rem; }
     }
-    @media (max-width: 480px) { .header-inner, .container { padding-left: 1rem; padding-right: 1rem; } }
     @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
-
-    .nav-email {
-      font-size: 12px; color: var(--gold); text-decoration: none;
-      letter-spacing: 0.03em; font-weight: 400;
-    }
-    .nav-email:hover { text-decoration: underline; }
-    .nav-email:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; border-radius: 2px; }
-    .cta-email-text {
-      font-size: 15px; color: var(--gold); text-decoration: none;
-      font-weight: 400; white-space: nowrap;
-    }
-    .cta-email-text:hover { text-decoration: underline; }
   </style>
 </head>
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>
-  <header role="banner">
-    <div class="header-inner">
-      <a href="/" class="logo" aria-label="0xdecodeyourself — home">0x<span>decode</span>yourself</a>
-      <nav role="navigation" aria-label="Main navigation">
-        <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/livejobs" aria-current="page">Jobs</a></li>
-          <li><a href="/articles">Resources</a></li>
-          <li><a href="/#team">About</a></li>
-          <li><a href="/#contact">Contact</a></li>
-        </ul>
-      </nav>
-      <div class="nav-actions">
-
-        <button class="hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-nav"
-          onclick="const n=document.getElementById('mobile-nav');const o=n.classList.toggle('open');this.setAttribute('aria-expanded',o);this.setAttribute('aria-label',o?'Close navigation menu':'Open navigation menu');this.innerHTML=o?'&#x2715;':'&#9776;'">&#9776;</button>
-      </div>
-    </div>
-    <nav id="mobile-nav" aria-label="Mobile navigation">
-      <a href="/">Home</a><a href="/livejobs">Jobs</a><a href="/articles">Resources</a><a href="/#team">About</a>
-      <a href="/#contact">Contact &rarr;</a>
-    </nav>
-  </header>
+  <nav role="banner">
+    <a href="/" class="nav-logo">0x<em>decode</em>yourself</a>
+    <ul class="nav-links">
+      <li><a href="/#mentoring">Mentoring</a></li>
+      <li><a href="/livejobs" aria-current="page">Jobs</a></li>
+      <li><a href="/articles">Resources</a></li>
+      <li><a href="/#about">About</a></li>
+      <li><a href="/#contact">Contact</a></li>
+    </ul>
+    <a href="/#contact" class="nav-cta">Get in touch</a>
+  </nav>
 
   <main id="main-content" tabindex="-1">
     <div class="page-hero">
-      <div class="container">
-        <p class="eyebrow">Live board</p>
-        <h1 class="page-title">Entry-level jobs,<br><em>curated for you.</em></h1>
-        <p class="page-sub">Real roles for college students and recent grads — across tech, finance, marketing, design, and more.</p>
-        <div class="updated-row">
-          <div class="updated-badge" role="status" aria-live="polite">
-            <div class="updated-dot" aria-hidden="true"></div>
-            <span id="last-updated">Updated 3&times; daily</span>
-          </div>
-          <div class="job-count-badge" aria-live="polite"><span id="job-count">78</span> roles</div>
+      <p class="eyebrow">Live board</p>
+      <h1 class="page-title">Entry-level roles,<br><em>curated for you.</em></h1>
+      <p class="page-sub">Real opportunities for students and recent grads — across tech, finance, marketing, design, consulting, and more.</p>
+      <div class="updated-row">
+        <div class="updated-badge" role="status" aria-live="polite">
+          <div class="updated-dot" aria-hidden="true"></div>
+          <span id="last-updated">Updated 3&times; daily</span>
         </div>
+        <span style="font-size:11px;color:var(--ink-faint)" aria-live="polite"><span id="job-count">78</span> roles</span>
       </div>
     </div>
 
     <div class="filters-bar">
-      <div class="container">
-        <div class="filter-row" role="group" aria-label="Filter by category">
-          <span class="filter-label">Category</span>
-          <button class="filter-btn active" data-filter="cat" data-val="all" aria-pressed="true">All</button>
-          <button class="filter-btn" data-filter="cat" data-val="technology" aria-pressed="false">Tech</button>
-          <button class="filter-btn" data-filter="cat" data-val="finance" aria-pressed="false">Finance</button>
-          <button class="filter-btn" data-filter="cat" data-val="marketing" aria-pressed="false">Marketing</button>
-          <button class="filter-btn" data-filter="cat" data-val="design" aria-pressed="false">Design</button>
-          <button class="filter-btn" data-filter="cat" data-val="consulting" aria-pressed="false">Consulting</button>
-          <button class="filter-btn" data-filter="cat" data-val="data" aria-pressed="false">Data</button>
-          <button class="filter-btn" data-filter="cat" data-val="operations" aria-pressed="false">Operations</button>
-          <button class="filter-btn" data-filter="cat" data-val="sales" aria-pressed="false">Sales</button>
-        </div>
-        <div class="filter-row" role="group" aria-label="Filter by level">
-          <span class="filter-label">Level</span>
-          <button class="filter-btn active" data-filter="level" data-val="all" aria-pressed="true">All levels</button>
-          <button class="filter-btn" data-filter="level" data-val="entry" aria-pressed="false">Entry level</button>
-          <button class="filter-btn" data-filter="level" data-val="internship" aria-pressed="false">Internship</button>
-        </div>
-        <div class="filter-row" role="group" aria-label="Filter by work type">
-          <span class="filter-label">Type</span>
-          <button class="filter-btn active" data-filter="type" data-val="all" aria-pressed="true">All types</button>
-          <button class="filter-btn" data-filter="type" data-val="remote" aria-pressed="false">Remote</button>
-          <button class="filter-btn" data-filter="type" data-val="hybrid" aria-pressed="false">Hybrid</button>
-          <button class="filter-btn" data-filter="type" data-val="onsite" aria-pressed="false">On-site</button>
-        </div>
+      <div class="filter-row" role="group" aria-label="Filter by category">
+        <span class="filter-label">Category</span>
+        <button class="filter-btn active" data-filter="cat" data-val="all" aria-pressed="true">All</button>
+        <button class="filter-btn" data-filter="cat" data-val="technology" aria-pressed="false">Tech</button>
+        <button class="filter-btn" data-filter="cat" data-val="finance" aria-pressed="false">Finance</button>
+        <button class="filter-btn" data-filter="cat" data-val="marketing" aria-pressed="false">Marketing</button>
+        <button class="filter-btn" data-filter="cat" data-val="design" aria-pressed="false">Design</button>
+        <button class="filter-btn" data-filter="cat" data-val="consulting" aria-pressed="false">Consulting</button>
+        <button class="filter-btn" data-filter="cat" data-val="data" aria-pressed="false">Data</button>
+        <button class="filter-btn" data-filter="cat" data-val="operations" aria-pressed="false">Operations</button>
+        <button class="filter-btn" data-filter="cat" data-val="sales" aria-pressed="false">Sales</button>
+      </div>
+      <div class="filter-row" role="group" aria-label="Filter by level">
+        <span class="filter-label">Level</span>
+        <button class="filter-btn active" data-filter="level" data-val="all" aria-pressed="true">All levels</button>
+        <button class="filter-btn" data-filter="level" data-val="entry" aria-pressed="false">Entry level</button>
+        <button class="filter-btn" data-filter="level" data-val="internship" aria-pressed="false">Internship</button>
+      </div>
+      <div class="filter-row" role="group" aria-label="Filter by work type">
+        <span class="filter-label">Type</span>
+        <button class="filter-btn active" data-filter="type" data-val="all" aria-pressed="true">All types</button>
+        <button class="filter-btn" data-filter="type" data-val="remote" aria-pressed="false">Remote</button>
+        <button class="filter-btn" data-filter="type" data-val="hybrid" aria-pressed="false">Hybrid</button>
+        <button class="filter-btn" data-filter="type" data-val="onsite" aria-pressed="false">On-site</button>
       </div>
     </div>
 
     <div class="jobs-section">
-      <div class="container">
-        <p class="results-line" id="results-line" aria-live="polite">Showing all 78 roles</p>
-        <div id="jobs-list" role="list" aria-label="Job listings"></div>
-      </div>
+      <p class="results-line" id="results-line" aria-live="polite">Showing all 78 roles</p>
+      <div id="jobs-list" role="list" aria-label="Job listings"></div>
     </div>
   </main>
 
   <footer role="contentinfo">
-    <div class="container">
-      <div class="footer-top">
-        <a href="/" class="footer-logo">0x<span>decode</span>yourself</a>
-        <ul class="footer-links" role="list">
-          <li><a href="/livejobs">Jobs</a></li><li><a href="/#team">Coaching</a></li>
-          <li><a href="/articles">Resources</a></li><li><a href="/#team">About</a></li>
-          <li><a href="mailto:hiangeloddo@gmail.com" style="color:var(--gold)">Contact</a></li>
-        </ul>
-      </div>
-      <div class="footer-bottom">
-        <p class="footer-copy">&copy; 2026 0xdecodeyourself. All rights reserved.</p>
-        <a href="mailto:hiangeloddo@gmail.com" class="footer-email">hiangeloddo@gmail.com</a>
-      </div>
-    </div>
+    <a href="/" class="footer-logo">0x<em>decode</em>yourself</a>
+    <ul class="footer-links">
+      <li><a href="/#mentoring">Mentoring</a></li>
+      <li><a href="/livejobs">Jobs</a></li>
+      <li><a href="/articles">Resources</a></li>
+      <li><a href="/#about">About</a></li>
+      <li><a href="/#contact">Contact</a></li>
+    </ul>
+    <p class="footer-copy">&copy; 2026 0xdecodeyourself</p>
   </footer>
 
   <script>
-    let allJobs = [];
-    let activeFilters = { cat: 'all', level: 'all', type: 'all' };
-
-    function getInitials(company) {
-      return company.split(/[\s&+]/).filter(Boolean).map(w => w[0]).join('').substring(0, 2).toUpperCase();
-    }
-
+    let allJobs = [], activeFilters = { cat: 'all', level: 'all', type: 'all' };
+    function getInitials(c) { return c.split(/[\s&+]/).filter(Boolean).map(w=>w[0]).join('').substring(0,2).toUpperCase(); }
     function renderJobs() {
-      const list = document.getElementById('jobs-list');
       const filtered = allJobs.filter(j => {
-        const catOk = activeFilters.cat === 'all' || j.category === activeFilters.cat;
-        const levelOk = activeFilters.level === 'all' || j.level === activeFilters.level;
-        const typeOk = activeFilters.type === 'all' || j.type === activeFilters.type;
-        return catOk && levelOk && typeOk;
+        return (activeFilters.cat === 'all' || j.category === activeFilters.cat) &&
+               (activeFilters.level === 'all' || j.level === activeFilters.level) &&
+               (activeFilters.type === 'all' || j.type === activeFilters.type);
       });
-
-      document.getElementById('results-line').textContent =
-        `Showing ${filtered.length} of ${allJobs.length} roles`;
+      document.getElementById('results-line').textContent = `Showing ${filtered.length} of ${allJobs.length} roles`;
       document.getElementById('job-count').textContent = allJobs.length;
-
-      if (filtered.length === 0) {
-        list.innerHTML = '<div class="no-results">No roles match those filters. Try broadening your search.</div>';
-        return;
-      }
-
-      list.innerHTML = filtered.map(j => {
-        const isNew = (new Date() - new Date(j.posted)) < 2 * 24 * 60 * 60 * 1000;
-        const tags = [
-          isNew ? '<span class="tag new">New</span>' : '',
-          j.level === 'internship' ? '<span class="tag intern">Internship</span>' : '',
-          j.type === 'remote' ? '<span class="tag remote">Remote</span>' : '',
-          j.type === 'hybrid' ? '<span class="tag">Hybrid</span>' : '',
-          j.salary ? `<span class="tag">${j.salary}</span>` : ''
-        ].filter(Boolean).join('');
-
-        return `<article class="job-card" role="listitem" itemscope itemtype="https://schema.org/JobPosting">
-          <meta itemprop="title" content="${j.title}">
-          <meta itemprop="hiringOrganization" content="${j.company}">
-          <div class="job-logo" aria-hidden="true">${getInitials(j.company)}</div>
-          <div class="job-main">
-            <div class="job-title" itemprop="title">${j.title}</div>
-            <div class="job-meta">
-              <span itemprop="hiringOrganization">${j.company}</span>
-              <span itemprop="jobLocation">${j.location}</span>
-            </div>
-          </div>
+      if (!filtered.length) { document.getElementById('jobs-list').innerHTML = '<div class="no-results">No roles match those filters.</div>'; return; }
+      document.getElementById('jobs-list').innerHTML = filtered.map(j => {
+        const isNew = (new Date() - new Date(j.posted)) < 2*24*60*60*1000;
+        const tags = [isNew?'<span class="tag new">New</span>':'', j.level==='internship'?'<span class="tag">Internship</span>':'', j.type==='remote'?'<span class="tag remote">Remote</span>':''].filter(Boolean).join('');
+        return `<article class="job-row" role="listitem">
+          <div class="job-co" aria-hidden="true">${getInitials(j.company)}</div>
+          <div class="job-info"><div class="job-title">${j.title}</div><div class="job-meta">${j.company} &middot; ${j.location}</div></div>
           <div class="job-tags" aria-hidden="true">${tags}</div>
-          <a href="${j.url}" target="_blank" rel="noopener noreferrer" class="apply-btn"
-            aria-label="Apply for ${j.title} at ${j.company} (opens in new tab)">Apply &rarr;</a>
+          <a href="${j.url}" target="_blank" rel="noopener noreferrer" class="apply-btn" aria-label="Apply for ${j.title} at ${j.company}">Apply &rarr;</a>
         </article>`;
       }).join('');
     }
-
-    // Filter button logic
     document.querySelectorAll('.filter-btn').forEach(btn => {
       btn.addEventListener('click', function() {
-        const group = this.dataset.filter;
-        document.querySelectorAll(`[data-filter="${group}"]`).forEach(b => {
-          b.classList.remove('active'); b.setAttribute('aria-pressed', 'false');
-        });
-        this.classList.add('active'); this.setAttribute('aria-pressed', 'true');
-        activeFilters[group] = this.dataset.val;
+        document.querySelectorAll(`[data-filter="${this.dataset.filter}"]`).forEach(b => { b.classList.remove('active'); b.setAttribute('aria-pressed','false'); });
+        this.classList.add('active'); this.setAttribute('aria-pressed','true');
+        activeFilters[this.dataset.filter] = this.dataset.val;
         renderJobs();
       });
     });
-
-    // Load jobs
-    fetch('/jobs-data.json')
-      .then(r => r.json())
-      .then(data => {
-        allJobs = data.jobs || [];
-        const ts = data.metadata && (data.metadata.lastUpdated || data.metadata.generatedAt);
-        if (ts) {
-          const d = new Date(ts);
-          document.getElementById('last-updated').textContent =
-            'Last updated: ' + d.toLocaleString('en-US', { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit', timeZoneName: 'short' });
-        }
-        renderJobs();
-      })
-      .catch(() => {
-        document.getElementById('jobs-list').innerHTML = '<div class="no-results">Loading jobs... please refresh.</div>';
-      });
+    fetch('/jobs-data.json').then(r=>r.json()).then(data => {
+      allJobs = data.jobs || [];
+      const ts = data.metadata && (data.metadata.lastUpdated || data.metadata.generatedAt);
+      if (ts) { const d = new Date(ts); document.getElementById('last-updated').textContent = 'Last updated: ' + d.toLocaleString('en-US',{month:'short',day:'numeric',hour:'numeric',minute:'2-digit',timeZoneName:'short'}); }
+      renderJobs();
+    }).catch(() => { document.getElementById('jobs-list').innerHTML = '<div class="no-results">Loading jobs... please refresh.</div>'; });
   </script>
 </body>
 </html>
