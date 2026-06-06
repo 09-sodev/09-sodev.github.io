@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "lastUpdated": "2026-06-05T10:00:00.000Z",
-    "generatedAt": "2026-06-05T10:00:00.000Z",
+    "lastUpdated": "2026-06-05T14:00:00.000Z",
+    "generatedAt": "2026-06-05T14:00:00.000Z",
     "totalJobs": 76
   },
   "jobs": [
@@ -14,116 +14,128 @@
       "level": "entry",
       "category": "technology",
       "posted": "2026-06-04T09:00:00Z",
-      "url": "https://www.netapp.com/careers/",
-      "description": "NetApp Emerging Talent program for new grad software engineers."
+      "url": "https://careers.netapp.com/go/Entry-Level-&-Intern-Jobs/5561700/"
     },
     {
       "id": "tech-002",
       "title": "Software Engineer, New Grad",
-      "company": "Underdog Fantasy",
+      "company": "Atlassian",
       "location": "New York, NY",
       "type": "remote",
       "level": "entry",
       "category": "technology",
       "posted": "2026-06-04T10:00:00Z",
-      "url": "https://underdogfantasy.com/careers",
-      "description": "Associate Software Engineer role for 2026 new grads."
+      "url": "https://www.atlassian.com/company/careers/all-jobs"
     },
     {
       "id": "tech-003",
       "title": "Entry-Level Software Developer",
-      "company": "Sev1Tech",
+      "company": "Booz Allen Hamilton",
       "location": "Washington, DC",
       "type": "hybrid",
       "level": "entry",
       "category": "technology",
       "posted": "2026-06-03T09:00:00Z",
-      "url": "https://sev1tech.com/careers",
-      "description": "Software developer role for recent graduates."
+      "url": "https://careers.boozallen.com/jobs?keywords=entry+level+software&level=Entry+Level"
     },
     {
       "id": "tech-004",
-      "title": "Software Engineer (Entry Level)",
-      "company": "ZenX ManPower",
-      "location": "Austin, TX",
+      "title": "Software Engineer, Associate",
+      "company": "Capgemini Engineering",
+      "location": "Multiple Locations",
       "type": "hybrid",
       "level": "entry",
       "category": "technology",
       "posted": "2026-06-03T08:00:00Z",
-      "url": "https://ziprecruiter.com",
-      "description": "Entry-level software developer for hybrid team in Austin."
+      "url": "https://www.capgemini.com/us-en/careers/job-search/?search=software+engineer+entry+level"
     },
     {
       "id": "tech-005",
-      "title": "Full Stack Engineer Intern",
-      "company": "Atlassian",
-      "location": "Remote",
-      "type": "remote",
+      "title": "Software Engineering Internship, Summer 2026",
+      "company": "JPMorgan Chase",
+      "location": "New York, NY",
+      "type": "hybrid",
       "level": "internship",
       "category": "technology",
       "posted": "2026-06-02T10:00:00Z",
-      "url": "https://www.atlassian.com/company/careers",
-      "description": "Fullstack internship on JiraAlign product team."
+      "url": "https://careers.jpmorgan.com/us/en/students/programs/software-engineer-program"
     },
     {
       "id": "tech-006",
-      "title": "AI/ML Software Engineer, New Grad",
+      "title": "New Grad Software Engineer",
       "company": "Perpay",
       "location": "Philadelphia, PA",
       "type": "hybrid",
       "level": "entry",
       "category": "technology",
       "posted": "2026-06-01T09:00:00Z",
-      "url": "https://job-boards.greenhouse.io/perpay",
-      "description": "New grad software engineer building AI-driven data science solutions."
+      "url": "https://job-boards.greenhouse.io/perpay"
     },
     {
       "id": "tech-007",
-      "title": "Associate Embedded Software Engineer",
-      "company": "Capgemini Engineering",
-      "location": "Multiple Locations",
+      "title": "Silicon Photonics Engineer, New Grad",
+      "company": "GlobalFoundries",
+      "location": "Malta, NY",
       "type": "onsite",
       "level": "entry",
       "category": "technology",
-      "posted": "2026-06-01T08:00:00Z",
-      "url": "https://www.capgemini.com/careers/",
-      "description": "Entry-level embedded software engineering for new graduates."
+      "posted": "2026-06-04T07:00:00Z",
+      "url": "https://careers.globalfoundries.com/us/en/search-results?keywords=new+grad"
     },
     {
       "id": "tech-008",
-      "title": "Software Engineering Intern, Summer 2026",
-      "company": "JPMorgan Chase",
-      "location": "New York, NY",
-      "type": "hybrid",
-      "level": "internship",
+      "title": "Technical Product Support Specialist, New Grad",
+      "company": "Salesforce",
+      "location": "Remote",
+      "type": "remote",
+      "level": "entry",
       "category": "technology",
-      "posted": "2026-05-31T09:00:00Z",
-      "url": "https://careers.jpmorgan.com",
-      "description": "2026 Software Engineer Program summer internship."
+      "posted": "2026-06-05T07:00:00Z",
+      "url": "https://careers.salesforce.com/en/jobs/?search=associate+new+grad&team=Customer+Success+Group"
+    },
+    {
+      "id": "tech-009",
+      "title": "Associate Product Manager, New Grad",
+      "company": "HubSpot",
+      "location": "Remote",
+      "type": "remote",
+      "level": "entry",
+      "category": "technology",
+      "posted": "2026-06-03T07:00:00Z",
+      "url": "https://www.hubspot.com/careers/jobs?hubs_signup-cta=careers-nav#name=associate%20product%20manager"
+    },
+    {
+      "id": "tech-010",
+      "title": "Software Engineer I, New Grad",
+      "company": "Affirm",
+      "location": "Remote",
+      "type": "remote",
+      "level": "entry",
+      "category": "technology",
+      "posted": "2026-06-01T07:00:00Z",
+      "url": "https://www.affirm.com/careers#open-positions"
     },
     {
       "id": "fin-001",
       "title": "Junior Financial Analyst",
-      "company": "Precise Financial Management",
-      "location": "New York, NY",
-      "type": "onsite",
+      "company": "Vanguard",
+      "location": "Malvern, PA",
+      "type": "hybrid",
       "level": "entry",
       "category": "finance",
       "posted": "2026-06-04T09:00:00Z",
-      "url": "https://ziprecruiter.com",
-      "description": "Entry-level financial analyst for AE/legal firm financial management."
+      "url": "https://www.vanguardjobs.com/search-jobs/entry%20level%20analyst"
     },
     {
       "id": "fin-002",
-      "title": "FP&A Analyst (Entry Level)",
-      "company": "Azend Pharma",
-      "location": "New Jersey",
+      "title": "Financial Analyst, Entry Level",
+      "company": "BlackRock",
+      "location": "New York, NY",
       "type": "hybrid",
       "level": "entry",
       "category": "finance",
       "posted": "2026-06-04T08:00:00Z",
-      "url": "https://ziprecruiter.com",
-      "description": "Financial planning and analysis analyst for pharma company."
+      "url": "https://careers.blackrock.com/early-careers"
     },
     {
       "id": "fin-003",
@@ -134,8 +146,7 @@
       "level": "internship",
       "category": "finance",
       "posted": "2026-06-03T10:00:00Z",
-      "url": "https://www.lifenethealth.org/careers",
-      "description": "Financial analyst internship supporting mission-driven healthcare org."
+      "url": "https://www.lifenethealth.org/about/careers"
     },
     {
       "id": "fin-004",
@@ -146,20 +157,18 @@
       "level": "entry",
       "category": "finance",
       "posted": "2026-06-03T09:00:00Z",
-      "url": "https://www.bny.com/us/en/about-us/careers.html",
-      "description": "Anti-money laundering analyst role for recent grads with data skills."
+      "url": "https://bnymellon.eightfold.ai/careers?query=analyst+entry+level"
     },
     {
       "id": "fin-005",
-      "title": "Accounting Assistant / Operations Analyst",
-      "company": "Staffing Solutions",
-      "location": "St. Petersburg, FL",
-      "type": "hybrid",
-      "level": "entry",
+      "title": "Investment Banking Summer Analyst",
+      "company": "Jefferies",
+      "location": "New York, NY",
+      "type": "onsite",
+      "level": "internship",
       "category": "finance",
-      "posted": "2026-06-02T09:00:00Z",
-      "url": "https://ziprecruiter.com",
-      "description": "Recent graduate in Accounting or Finance for hybrid ops-finance role."
+      "posted": "2026-06-05T07:00:00Z",
+      "url": "https://jefferies.com/careers/students-and-graduates/"
     },
     {
       "id": "fin-006",
@@ -170,227 +179,285 @@
       "level": "internship",
       "category": "finance",
       "posted": "2026-06-01T10:00:00Z",
-      "url": "https://job-boards.greenhouse.io/perpay",
-      "description": "Strategic analytics internship working on financial products."
+      "url": "https://job-boards.greenhouse.io/perpay"
     },
     {
       "id": "fin-007",
-      "title": "Treasury Analyst",
-      "company": "Underdog Fantasy",
-      "location": "New York, NY",
-      "type": "remote",
+      "title": "Corporate Finance Rotational Program",
+      "company": "Johnson & Johnson",
+      "location": "New Brunswick, NJ",
+      "type": "hybrid",
       "level": "entry",
       "category": "finance",
       "posted": "2026-05-31T09:00:00Z",
-      "url": "https://underdogfantasy.com/careers",
-      "description": "Entry-level treasury analyst for high-growth fintech startup."
+      "url": "https://jobs.jnj.com/en/jobs/?search=finance+rotational+program&category=Finance"
+    },
+    {
+      "id": "fin-008",
+      "title": "Accounting Associate, New Grad",
+      "company": "PwC",
+      "location": "Multiple Locations",
+      "type": "hybrid",
+      "level": "entry",
+      "category": "finance",
+      "posted": "2026-06-01T07:00:00Z",
+      "url": "https://jobs.us.pwc.com/go/New-Graduate-Jobs/7710800/"
+    },
+    {
+      "id": "fin-009",
+      "title": "Audit Associate, Entry Level",
+      "company": "Deloitte",
+      "location": "New York, NY",
+      "type": "hybrid",
+      "level": "entry",
+      "category": "finance",
+      "posted": "2026-05-30T09:00:00Z",
+      "url": "https://apply.deloitte.com/careers/SearchJobs/entry%20level%20audit"
     },
     {
       "id": "mkt-001",
-      "title": "Social Media Coordinator",
-      "company": "AMB Sports + Entertainment",
-      "location": "Atlanta, GA",
-      "type": "onsite",
+      "title": "Brand Marketing Analyst",
+      "company": "McKinsey & Company",
+      "location": "New York, NY",
+      "type": "hybrid",
       "level": "entry",
       "category": "marketing",
       "posted": "2026-06-05T08:00:00Z",
-      "url": "https://www.glassdoor.com",
-      "description": "Social media coordinator for major sports and entertainment brand."
+      "url": "https://www.mckinsey.com/careers/search-jobs#"
     },
     {
       "id": "mkt-002",
-      "title": "Entry-Level Marketing Coordinator",
-      "company": "Style Netbox",
-      "location": "Los Angeles, CA",
-      "type": "onsite",
+      "title": "Marketing Coordinator, Entry Level",
+      "company": "Est\u00e9e Lauder Companies",
+      "location": "New York, NY",
+      "type": "hybrid",
       "level": "entry",
       "category": "marketing",
       "posted": "2026-06-04T09:00:00Z",
-      "url": "https://ziprecruiter.com",
-      "description": "Marketing coordinator managing social accounts and promotional events."
+      "url": "https://www.elccareers.com/search/?q=marketing+coordinator&search-submit=Search"
     },
     {
       "id": "mkt-003",
-      "title": "Digital Marketing Assistant",
-      "company": "NoGigiddy",
-      "location": "Remote",
-      "type": "remote",
+      "title": "Social Media Coordinator",
+      "company": "NBCUniversal",
+      "location": "New York, NY",
+      "type": "hybrid",
       "level": "entry",
       "category": "marketing",
       "posted": "2026-06-04T08:00:00Z",
-      "url": "https://ziprecruiter.com",
-      "description": "Entry-level social media manager for fully remote team."
+      "url": "https://www.nbcunicareers.com/search-jobs?search=social+media+coordinator"
     },
     {
       "id": "mkt-004",
-      "title": "Marketing & Social Media Coordinator",
-      "company": "Tallis Corp",
-      "location": "Sherman Oaks, CA",
-      "type": "onsite",
+      "title": "Digital Marketing Associate",
+      "company": "American Express",
+      "location": "New York, NY",
+      "type": "hybrid",
       "level": "entry",
       "category": "marketing",
       "posted": "2026-06-03T09:00:00Z",
-      "url": "https://ziprecruiter.com",
-      "description": "Full-time social media and marketing coordinator role."
+      "url": "https://aexp.eightfold.ai/careers?query=marketing+associate+entry+level"
     },
     {
       "id": "mkt-005",
-      "title": "Content Creator & Brand Associate",
-      "company": "Renaissance Tile and Bath",
-      "location": "Atlanta, GA",
-      "type": "onsite",
-      "level": "entry",
-      "category": "marketing",
-      "posted": "2026-06-03T08:00:00Z",
-      "url": "https://www.glassdoor.com",
-      "description": "Social media coordinator for luxury design brand."
-    },
-    {
-      "id": "mkt-006",
-      "title": "Marketing Assistant Intern",
-      "company": "Regional Media Group",
+      "title": "Content & Social Media Intern",
+      "company": "Spotify",
       "location": "New York, NY",
       "type": "hybrid",
       "level": "internship",
       "category": "marketing",
+      "posted": "2026-06-03T08:00:00Z",
+      "url": "https://www.lifeatspotify.com/jobs?l=new-york&q=intern+marketing"
+    },
+    {
+      "id": "mkt-006",
+      "title": "Marketing Analytics Associate",
+      "company": "L'Or\u00e9al",
+      "location": "New York, NY",
+      "type": "hybrid",
+      "level": "entry",
+      "category": "marketing",
       "posted": "2026-06-02T10:00:00Z",
-      "url": "https://ziprecruiter.com",
-      "description": "Content creation, scheduling, and campaign support internship."
+      "url": "https://careers.loreal.com/en_US/jobs/SearchJobs/marketing%20associate%20entry%20level"
     },
     {
       "id": "mkt-007",
-      "title": "Ticketing & Digital Media Assistant",
-      "company": "Sports & Entertainment Co.",
-      "location": "New York, NY",
+      "title": "Brand Marketing Intern, Summer 2026",
+      "company": "Nike",
+      "location": "Portland, OR",
       "type": "onsite",
-      "level": "entry",
+      "level": "internship",
       "category": "marketing",
       "posted": "2026-06-01T09:00:00Z",
-      "url": "https://ziprecruiter.com",
-      "description": "Entry-level paid social and ticketing role at live events company."
+      "url": "https://jobs.nike.com/job/R-53547"
     },
     {
       "id": "mkt-008",
-      "title": "Paid Social Media Specialist",
-      "company": "Digital Agency",
-      "location": "Remote",
-      "type": "remote",
+      "title": "Email Marketing Coordinator",
+      "company": "Warby Parker",
+      "location": "New York, NY",
+      "type": "hybrid",
       "level": "entry",
       "category": "marketing",
       "posted": "2026-05-31T09:00:00Z",
-      "url": "https://ziprecruiter.com",
-      "description": "Entry-level paid social specialist managing campaign optimization."
+      "url": "https://www.warbyparker.com/jobs#open-roles"
+    },
+    {
+      "id": "mkt-009",
+      "title": "Growth Marketing Associate",
+      "company": "Duolingo",
+      "location": "Pittsburgh, PA",
+      "type": "hybrid",
+      "level": "entry",
+      "category": "marketing",
+      "posted": "2026-06-05T07:00:00Z",
+      "url": "https://careers.duolingo.com/?search=marketing"
+    },
+    {
+      "id": "mkt-010",
+      "title": "Marketing Operations Intern",
+      "company": "HubSpot",
+      "location": "Remote",
+      "type": "remote",
+      "level": "internship",
+      "category": "marketing",
+      "posted": "2026-06-03T07:00:00Z",
+      "url": "https://www.hubspot.com/careers/jobs?hubs_signup-cta=careers-nav#name=marketing+intern"
     },
     {
       "id": "des-001",
       "title": "Associate Product Designer",
-      "company": "Perpay",
-      "location": "Philadelphia, PA",
+      "company": "Figma",
+      "location": "San Francisco, CA",
       "type": "hybrid",
       "level": "entry",
       "category": "design",
       "posted": "2026-06-04T09:00:00Z",
-      "url": "https://job-boards.greenhouse.io/perpay",
-      "description": "Associate product designer for consumer fintech product team."
+      "url": "https://www.figma.com/careers/#job-openings"
     },
     {
       "id": "des-002",
       "title": "UX Design Intern, Summer 2026",
       "company": "IBM",
-      "location": "New York, NY",
+      "location": "Austin, TX",
       "type": "hybrid",
       "level": "internship",
       "category": "design",
       "posted": "2026-06-03T10:00:00Z",
-      "url": "https://www.ibm.com/careers",
-      "description": "UX/product design internship on IBM enterprise tools team."
+      "url": "https://www.ibm.com/careers/us-en/search/?q=UX+design+intern"
     },
     {
       "id": "des-003",
-      "title": "Junior UX Researcher",
-      "company": "Booz Allen Hamilton",
-      "location": "Washington, DC",
-      "type": "hybrid",
-      "level": "entry",
-      "category": "design",
-      "posted": "2026-06-03T09:00:00Z",
-      "url": "https://www.boozallen.com/careers.html",
-      "description": "Entry-level UX researcher supporting federal government design projects."
-    },
-    {
-      "id": "des-004",
-      "title": "Brand Design Associate",
-      "company": "Motorola Solutions",
-      "location": "Chicago, IL",
-      "type": "hybrid",
-      "level": "entry",
-      "category": "design",
-      "posted": "2026-06-02T09:00:00Z",
-      "url": "https://www.motorolasolutions.com/en_us/about/careers.html",
-      "description": "Entry-level NAPC design role for new grad creatives."
-    },
-    {
-      "id": "des-005",
-      "title": "Visual Content Designer Intern",
-      "company": "NBCUniversal",
-      "location": "Universal City, CA",
-      "type": "onsite",
-      "level": "internship",
-      "category": "design",
-      "posted": "2026-06-01T10:00:00Z",
-      "url": "https://www.nbcunicareers.com",
-      "description": "Gaming & digital platforms design intern at NBCU."
-    },
-    {
-      "id": "des-006",
       "title": "Product Design Intern",
       "company": "Notion",
       "location": "San Francisco, CA",
       "type": "hybrid",
       "level": "internship",
       "category": "design",
+      "posted": "2026-06-03T09:00:00Z",
+      "url": "https://www.notion.so/careers"
+    },
+    {
+      "id": "des-004",
+      "title": "Junior UX Researcher",
+      "company": "Booz Allen Hamilton",
+      "location": "Washington, DC",
+      "type": "hybrid",
+      "level": "entry",
+      "category": "design",
+      "posted": "2026-06-02T09:00:00Z",
+      "url": "https://careers.boozallen.com/jobs?keywords=ux+researcher&level=Entry+Level"
+    },
+    {
+      "id": "des-005",
+      "title": "Visual Design Associate",
+      "company": "Verizon",
+      "location": "New York, NY",
+      "type": "hybrid",
+      "level": "entry",
+      "category": "design",
+      "posted": "2026-06-01T10:00:00Z",
+      "url": "https://mycareer.verizon.com/jobs/?q=design+associate+entry+level"
+    },
+    {
+      "id": "des-006",
+      "title": "Motion Design Intern",
+      "company": "NBCUniversal",
+      "location": "Universal City, CA",
+      "type": "onsite",
+      "level": "internship",
+      "category": "design",
       "posted": "2026-05-31T09:00:00Z",
-      "url": "https://www.notion.so/careers",
-      "description": "Product design internship at one of the fastest-growing SaaS tools."
+      "url": "https://www.nbcunicareers.com/search-jobs?search=design+intern"
+    },
+    {
+      "id": "des-007",
+      "title": "Brand Design Associate",
+      "company": "Spotify",
+      "location": "New York, NY",
+      "type": "hybrid",
+      "level": "entry",
+      "category": "design",
+      "posted": "2026-06-05T07:00:00Z",
+      "url": "https://www.lifeatspotify.com/jobs?l=new-york&q=design"
+    },
+    {
+      "id": "des-008",
+      "title": "Graphic Design Intern",
+      "company": "Cond\u00e9 Nast",
+      "location": "New York, NY",
+      "type": "hybrid",
+      "level": "internship",
+      "category": "design",
+      "posted": "2026-06-02T07:00:00Z",
+      "url": "https://careers.condenast.com/jobs?keywords=design+intern"
     },
     {
       "id": "con-001",
-      "title": "Business Analyst Fellow",
-      "company": "Sony Music Entertainment",
+      "title": "Business Analyst",
+      "company": "McKinsey & Company",
       "location": "New York, NY",
       "type": "hybrid",
       "level": "entry",
       "category": "consulting",
       "posted": "2026-06-04T09:00:00Z",
-      "url": "https://www.sonymusic.com/careers/",
-      "description": "Business analyst fellow on global technology team at Sony Music."
+      "url": "https://www.mckinsey.com/careers/search-jobs/jobs/businessanalyst-15136"
     },
     {
       "id": "con-002",
-      "title": "Junior Strategic Analyst",
-      "company": "Perpay",
-      "location": "Philadelphia, PA",
+      "title": "Analyst, Strategy & Operations",
+      "company": "Deloitte",
+      "location": "New York, NY",
       "type": "hybrid",
       "level": "entry",
       "category": "consulting",
       "posted": "2026-06-04T08:00:00Z",
-      "url": "https://job-boards.greenhouse.io/perpay",
-      "description": "Junior strategic analyst supporting growth and operations initiatives."
+      "url": "https://apply.deloitte.com/careers/SearchJobs/analyst+entry+level+strategy"
     },
     {
       "id": "con-003",
-      "title": "University Consulting Program",
-      "company": "Booz Allen Hamilton",
-      "location": "Washington, DC",
+      "title": "Associate Consultant",
+      "company": "Bain & Company",
+      "location": "Boston, MA",
       "type": "hybrid",
       "level": "entry",
       "category": "consulting",
       "posted": "2026-06-03T09:00:00Z",
-      "url": "https://www.boozallen.com/careers.html",
-      "description": "University hiring program for new grad strategy and tech consultants."
+      "url": "https://www.bain.com/careers/find-a-role/associate-consultant/"
     },
     {
       "id": "con-004",
+      "title": "Junior Consultant, New Grad",
+      "company": "Accenture",
+      "location": "Multiple Locations",
+      "type": "hybrid",
+      "level": "entry",
+      "category": "consulting",
+      "posted": "2026-06-03T08:00:00Z",
+      "url": "https://www.accenture.com/us-en/careers/jobsearch?jk=analyst+entry+level+new+grad"
+    },
+    {
+      "id": "con-005",
       "title": "Business Operations Associate",
       "company": "Perpay",
       "location": "Philadelphia, PA",
@@ -398,20 +465,7 @@
       "level": "entry",
       "category": "consulting",
       "posted": "2026-06-02T09:00:00Z",
-      "url": "https://job-boards.greenhouse.io/perpay",
-      "description": "Rotational business operations associate program."
-    },
-    {
-      "id": "con-005",
-      "title": "Early Talent Rotational Program",
-      "company": "Terex",
-      "location": "Westport, CT",
-      "type": "hybrid",
-      "level": "entry",
-      "category": "consulting",
-      "posted": "2026-06-01T10:00:00Z",
-      "url": "https://www.terex.com/en/careers",
-      "description": "Rotational program for high-potential grads across business functions."
+      "url": "https://job-boards.greenhouse.io/perpay"
     },
     {
       "id": "con-006",
@@ -422,128 +476,161 @@
       "level": "internship",
       "category": "consulting",
       "posted": "2026-05-31T09:00:00Z",
-      "url": "https://careers.doordash.com",
-      "description": "Summer strategy and operations internship on international team."
+      "url": "https://careers.doordash.com/jobs?q=strategy+operations+intern"
     },
     {
       "id": "con-007",
       "title": "Leadership Development Program",
-      "company": "Regional Healthcare Network",
-      "location": "Melville, NY",
+      "company": "Target",
+      "location": "Minneapolis, MN",
       "type": "onsite",
       "level": "entry",
       "category": "consulting",
       "posted": "2026-06-04T08:00:00Z",
-      "url": "https://linkedin.com",
-      "description": "Actively hiring for LDP cohort starting Summer 2026."
+      "url": "https://corporate.target.com/Careers/job-search?searchKeywords=leadership+development+program"
+    },
+    {
+      "id": "con-008",
+      "title": "Management Consulting Analyst",
+      "company": "EY",
+      "location": "New York, NY",
+      "type": "hybrid",
+      "level": "entry",
+      "category": "consulting",
+      "posted": "2026-06-02T07:00:00Z",
+      "url": "https://careers.ey.com/ey/search/?q=analyst+consulting+entry+level&location=New+York"
+    },
+    {
+      "id": "con-009",
+      "title": "Early Talent Rotational Program",
+      "company": "Terex",
+      "location": "Westport, CT",
+      "type": "hybrid",
+      "level": "entry",
+      "category": "consulting",
+      "posted": "2026-06-01T10:00:00Z",
+      "url": "https://careers.terex.com/us/en/search-results?keywords=rotational+program"
     },
     {
       "id": "dat-001",
       "title": "Data Analyst, Entry Level",
-      "company": "New America",
-      "location": "Washington, DC",
+      "company": "Spotify",
+      "location": "New York, NY",
       "type": "hybrid",
       "level": "entry",
       "category": "data",
       "posted": "2026-06-05T08:00:00Z",
-      "url": "https://www.newamerica.org/jobs/",
-      "description": "Data and policy analyst for education funding equity initiative."
+      "url": "https://www.lifeatspotify.com/jobs?l=new-york&q=data+analyst"
     },
     {
       "id": "dat-002",
-      "title": "Data Analyst (MDM)",
-      "company": "TechConsult NJ",
-      "location": "Iselin, NJ",
-      "type": "onsite",
+      "title": "Business Intelligence Analyst, New Grad",
+      "company": "Walmart",
+      "location": "Bentonville, AR",
+      "type": "hybrid",
       "level": "entry",
       "category": "data",
       "posted": "2026-06-04T10:00:00Z",
-      "url": "https://ziprecruiter.com",
-      "description": "Data analyst supporting Informatica MDM operations and ingestion."
+      "url": "https://careers.walmart.com/results?q=data+analyst+entry+level"
     },
     {
       "id": "dat-003",
-      "title": "Business Intelligence Intern",
-      "company": "LexisNexis Risk Solutions",
-      "location": "Remote",
-      "type": "remote",
-      "level": "internship",
-      "category": "data",
-      "posted": "2026-06-04T09:00:00Z",
-      "url": "https://www.lexisnexis.com/en-us/about-us/careers.page",
-      "description": "Gen AI data science intern supporting risk analytics team."
-    },
-    {
-      "id": "dat-004",
-      "title": "Data Science Intern",
-      "company": "Perpay",
-      "location": "Philadelphia, PA",
-      "type": "hybrid",
-      "level": "internship",
-      "category": "data",
-      "posted": "2026-06-03T10:00:00Z",
-      "url": "https://job-boards.greenhouse.io/perpay",
-      "description": "Data science internship on fintech consumer intelligence team."
-    },
-    {
-      "id": "dat-005",
-      "title": "Senior Business Data Analyst Intern",
+      "title": "Data Science Intern, Summer 2026",
       "company": "Intuit",
       "location": "Mountain View, CA",
       "type": "hybrid",
       "level": "internship",
       "category": "data",
-      "posted": "2026-06-03T09:00:00Z",
-      "url": "https://www.intuit.com/careers/",
-      "description": "Fraud & risk data analyst internship on Intuit's trust and safety team."
+      "posted": "2026-06-04T09:00:00Z",
+      "url": "https://jobs.intuit.com/search-jobs/data+science+intern"
     },
     {
-      "id": "dat-006",
-      "title": "IT Functional Analyst I",
-      "company": "Niagara Bottling",
-      "location": "Diamond Bar, CA",
-      "type": "hybrid",
-      "level": "entry",
-      "category": "data",
-      "posted": "2026-06-02T10:00:00Z",
-      "url": "https://www.niagarawater.com/careers/",
-      "description": "Oracle Finance functional analyst \u2014 AP/AR/GL/CM."
-    },
-    {
-      "id": "dat-007",
-      "title": "Data Analytics Intern",
-      "company": "CareSource",
-      "location": "Dayton, OH",
-      "type": "hybrid",
-      "level": "internship",
-      "category": "data",
-      "posted": "2026-06-01T09:00:00Z",
-      "url": "https://www.caresource.com/about/careers/",
-      "description": "Summer internship in business intelligence and data management."
-    },
-    {
-      "id": "dat-008",
+      "id": "dat-004",
       "title": "Data Engineering Internship, 2026",
       "company": "Perpay",
       "location": "Philadelphia, PA",
       "type": "hybrid",
       "level": "internship",
       "category": "data",
-      "posted": "2026-05-31T09:00:00Z",
-      "url": "https://job-boards.greenhouse.io/perpay",
-      "description": "Data engineering internship on pipeline and infrastructure team."
+      "posted": "2026-06-03T10:00:00Z",
+      "url": "https://job-boards.greenhouse.io/perpay"
     },
     {
-      "id": "dat-009",
-      "title": "Data Analyst Intern, Summer 2026",
-      "company": "Walmart",
-      "location": "Bentonville, AR",
+      "id": "dat-005",
+      "title": "Analytics Engineer, New Grad",
+      "company": "Robinhood",
+      "location": "Remote",
+      "type": "remote",
+      "level": "entry",
+      "category": "data",
+      "posted": "2026-06-03T09:00:00Z",
+      "url": "https://careers.robinhood.com/openings?search=data+analyst"
+    },
+    {
+      "id": "dat-006",
+      "title": "Data Analyst Intern",
+      "company": "LexisNexis Risk Solutions",
+      "location": "Remote",
+      "type": "remote",
+      "level": "internship",
+      "category": "data",
+      "posted": "2026-06-02T10:00:00Z",
+      "url": "https://www.relx.com/careers/areas-of-work/technology"
+    },
+    {
+      "id": "dat-007",
+      "title": "People Analytics Intern",
+      "company": "Google",
+      "location": "New York, NY",
       "type": "hybrid",
       "level": "internship",
       "category": "data",
-      "posted": "2026-05-30T09:00:00Z",
-      "url": "https://careers.walmart.com",
-      "description": "Summer grad intern in data science at the world's largest retailer."
+      "posted": "2026-06-03T07:00:00Z",
+      "url": "https://careers.google.com/jobs/results/?q=people+analytics+intern"
+    },
+    {
+      "id": "dat-008",
+      "title": "Marketing Analytics Associate",
+      "company": "Nielsen",
+      "location": "New York, NY",
+      "type": "hybrid",
+      "level": "entry",
+      "category": "data",
+      "posted": "2026-06-05T07:00:00Z",
+      "url": "https://jobs.nielsen.com/job-search/?q=analytics+associate+entry+level"
+    },
+    {
+      "id": "dat-009",
+      "title": "Data Analyst, Consumer Insights",
+      "company": "Mastercard",
+      "location": "Purchase, NY",
+      "type": "hybrid",
+      "level": "entry",
+      "category": "data",
+      "posted": "2026-06-01T09:00:00Z",
+      "url": "https://careers.mastercard.com/us/en/search-results?keywords=data+analyst+entry+level"
+    },
+    {
+      "id": "dat-010",
+      "title": "Business Analytics Intern",
+      "company": "CareSource",
+      "location": "Dayton, OH",
+      "type": "hybrid",
+      "level": "internship",
+      "category": "data",
+      "posted": "2026-06-01T07:00:00Z",
+      "url": "https://www.caresource.com/about/careers/search-jobs/?search=data+analytics+intern"
+    },
+    {
+      "id": "dat-011",
+      "title": "IT Functional Analyst I",
+      "company": "Niagara Bottling",
+      "location": "Diamond Bar, CA",
+      "type": "hybrid",
+      "level": "entry",
+      "category": "data",
+      "posted": "2026-05-31T09:00:00Z",
+      "url": "https://www.niagarawater.com/careers/"
     },
     {
       "id": "ops-001",
@@ -554,32 +641,29 @@
       "level": "entry",
       "category": "operations",
       "posted": "2026-06-05T09:00:00Z",
-      "url": "https://www.wileyedge.com/careers",
-      "description": "Operations analyst for recent grads in Pittsburgh and Orlando."
+      "url": "https://www.wileyedge.com/career-seekers"
     },
     {
       "id": "ops-002",
-      "title": "Field Administrator (Entry Level)",
-      "company": "Construction & Engineering Firm",
-      "location": "New York, NY",
-      "type": "onsite",
+      "title": "Supply Chain Associate, New Grad",
+      "company": "Amazon",
+      "location": "Seattle, WA",
+      "type": "hybrid",
       "level": "entry",
       "category": "operations",
       "posted": "2026-06-04T09:00:00Z",
-      "url": "https://linkedin.com",
-      "description": "Entry-level field administrator for operations team in NYC."
+      "url": "https://www.amazon.jobs/en/search?base_query=supply+chain+associate+entry+level&category=operations-it-support-and-engineering"
     },
     {
       "id": "ops-003",
       "title": "Business Operations Associate",
-      "company": "McDonald's Corporation",
+      "company": "McDonald's",
       "location": "Chicago, IL",
       "type": "hybrid",
       "level": "entry",
       "category": "operations",
       "posted": "2026-06-03T10:00:00Z",
-      "url": "https://corporate.mcdonalds.com/corpmcd/en-us/our-company/careers.html",
-      "description": "Entry-level operations associate for corporate HQ team."
+      "url": "https://corporate.mcdonalds.com/corpmcd/en-us/our-company/careers/search-jobs.html?keywords=operations+associate"
     },
     {
       "id": "ops-004",
@@ -590,35 +674,21 @@
       "level": "entry",
       "category": "operations",
       "posted": "2026-06-03T09:00:00Z",
-      "url": "https://careers.caesars.com",
-      "description": "Entry-level planning and analysis role at major hospitality company."
+      "url": "https://careers.caesars.com/search/?q=analyst+entry+level"
     },
     {
       "id": "ops-005",
-      "title": "Resident Property Associate",
-      "company": "Real Estate Management Co.",
+      "title": "Project Coordinator, Entry Level",
+      "company": "Turner Construction",
       "location": "New York, NY",
       "type": "onsite",
       "level": "entry",
       "category": "operations",
       "posted": "2026-06-04T08:00:00Z",
-      "url": "https://linkedin.com",
-      "description": "Early applicant opportunity \u2014 residential property operations."
+      "url": "https://www.turnerconstruction.com/careers/job-listings?keywords=entry+level"
     },
     {
       "id": "ops-006",
-      "title": "Help Desk Analyst",
-      "company": "Tech Services Newark",
-      "location": "Newark, NJ",
-      "type": "onsite",
-      "level": "entry",
-      "category": "operations",
-      "posted": "2026-06-02T09:00:00Z",
-      "url": "https://ziprecruiter.com",
-      "description": "Long-term IT operations analyst role, Associate degree or higher."
-    },
-    {
-      "id": "ops-007",
       "title": "Supply Chain Operations Intern",
       "company": "Justrite Safety Group",
       "location": "Deerfield, IL",
@@ -626,11 +696,10 @@
       "level": "internship",
       "category": "operations",
       "posted": "2026-06-01T10:00:00Z",
-      "url": "https://www.justrite.com/careers",
-      "description": "10-week summer operations internship, June\u2013August 2026."
+      "url": "https://www.justrite.com/about/careers"
     },
     {
-      "id": "ops-008",
+      "id": "ops-007",
       "title": "Data Integrity Analyst",
       "company": "Bass Pro Shops",
       "location": "Springfield, MO",
@@ -638,179 +707,10 @@
       "level": "entry",
       "category": "operations",
       "posted": "2026-05-31T09:00:00Z",
-      "url": "https://basspro.com/careers",
-      "description": "Data integrity analyst supporting retail operations systems."
+      "url": "https://basspro.jobs/search/?q=analyst+entry+level"
     },
     {
-      "id": "sal-001",
-      "title": "Entry-Level Inside Sales Representative",
-      "company": "Regional Tech Firm",
-      "location": "Melville, NY",
-      "type": "onsite",
-      "level": "entry",
-      "category": "sales",
-      "posted": "2026-06-04T09:00:00Z",
-      "url": "https://linkedin.com",
-      "description": "Inside sales rep with full benefits package \u2014 actively hiring."
-    },
-    {
-      "id": "sal-002",
-      "title": "Account Executive",
-      "company": "B2B SaaS Startup",
-      "location": "Brooklyn, NY",
-      "type": "hybrid",
-      "level": "entry",
-      "category": "sales",
-      "posted": "2026-06-04T08:00:00Z",
-      "url": "https://linkedin.com",
-      "description": "Early applicant opportunity \u2014 AE role at growing Brooklyn startup."
-    },
-    {
-      "id": "sal-003",
-      "title": "Field Sales Enablement Trainer",
-      "company": "Notion",
-      "location": "San Francisco, CA",
-      "type": "hybrid",
-      "level": "entry",
-      "category": "sales",
-      "posted": "2026-06-03T10:00:00Z",
-      "url": "https://www.notion.so/careers",
-      "description": "Sales enablement role supporting Notion's field sales organization."
-    },
-    {
-      "id": "sal-004",
-      "title": "Entry-Level Sales Representative",
-      "company": "True North Group",
-      "location": "Hurst, TX",
-      "type": "onsite",
-      "level": "entry",
-      "category": "sales",
-      "posted": "2026-06-03T09:00:00Z",
-      "url": "https://ziprecruiter.com",
-      "description": "Outside sales territory role \u2014 1 opening, immediate start."
-    },
-    {
-      "id": "sal-005",
-      "title": "Sales Development Representative",
-      "company": "Fintech Scale-Up",
-      "location": "Remote",
-      "type": "remote",
-      "level": "entry",
-      "category": "sales",
-      "posted": "2026-06-02T10:00:00Z",
-      "url": "https://ziprecruiter.com",
-      "description": "SDR role for recent grads with strong communication skills."
-    },
-    {
-      "id": "sal-006",
-      "title": "Business Development Intern",
-      "company": "Digital Agency NYC",
-      "location": "New York, NY",
-      "type": "hybrid",
-      "level": "internship",
-      "category": "sales",
-      "posted": "2026-06-01T09:00:00Z",
-      "url": "https://linkedin.com",
-      "description": "BD intern supporting outbound pipeline and client acquisition."
-    },
-    {
-      "id": "sal-007",
-      "title": "Associate Account Manager",
-      "company": "Media & Advertising Group",
-      "location": "Chicago, IL",
-      "type": "hybrid",
-      "level": "entry",
-      "category": "sales",
-      "posted": "2026-05-31T09:00:00Z",
-      "url": "https://linkedin.com",
-      "description": "Entry-level account manager role at leading media group."
-    },
-    {
-      "id": "sal-008",
-      "title": "Graduate Sales Program",
-      "company": "Capgemini",
-      "location": "Multiple Locations",
-      "type": "hybrid",
-      "level": "entry",
-      "category": "sales",
-      "posted": "2026-05-30T09:00:00Z",
-      "url": "https://www.capgemini.com/careers/",
-      "description": "Structured graduate sales development program across US offices."
-    },
-    {
-      "id": "tech-009",
-      "title": "Technical Product Support Specialist",
-      "company": "SaaS Company",
-      "location": "Remote",
-      "type": "remote",
-      "level": "entry",
-      "category": "technology",
-      "posted": "2026-06-05T07:00:00Z",
-      "url": "https://linkedin.com",
-      "description": "New grad 2026 product support role \u2014 fully remote."
-    },
-    {
-      "id": "dat-010",
-      "title": "Marketing Analyst, Entry Level",
-      "company": "Consumer Goods Company",
-      "location": "New York, NY",
-      "type": "hybrid",
-      "level": "entry",
-      "category": "data",
-      "posted": "2026-06-05T07:00:00Z",
-      "url": "https://glassdoor.com",
-      "description": "AR and trade spend analysis role, ideally CPG/food background."
-    },
-    {
-      "id": "fin-008",
-      "title": "Investment Banking Summer Analyst",
-      "company": "Boutique IB Firm",
-      "location": "New York, NY",
-      "type": "onsite",
-      "level": "internship",
-      "category": "finance",
-      "posted": "2026-06-05T07:00:00Z",
-      "url": "https://linkedin.com",
-      "description": "Summer analyst program for penultimate-year students."
-    },
-    {
-      "id": "con-008",
-      "title": "Site Civil Intern",
-      "company": "Engineering Consulting Firm",
-      "location": "New York, NY",
-      "type": "onsite",
-      "level": "internship",
-      "category": "consulting",
-      "posted": "2026-06-05T07:00:00Z",
-      "url": "https://linkedin.com",
-      "description": "Early applicant \u2014 civil site intern for summer 2026."
-    },
-    {
-      "id": "mkt-009",
-      "title": "Brand Marketing Intern",
-      "company": "Consumer Startup",
-      "location": "Austin, TX",
-      "type": "hybrid",
-      "level": "internship",
-      "category": "marketing",
-      "posted": "2026-06-05T07:00:00Z",
-      "url": "https://linkedin.com",
-      "description": "Hands-on brand marketing internship at fast-growing DTC brand."
-    },
-    {
-      "id": "des-007",
-      "title": "Graphic Design Intern",
-      "company": "Ad Agency",
-      "location": "Remote",
-      "type": "remote",
-      "level": "internship",
-      "category": "design",
-      "posted": "2026-06-05T07:00:00Z",
-      "url": "https://linkedin.com",
-      "description": "Remote graphic design intern for boutique creative agency."
-    },
-    {
-      "id": "ops-009",
+      "id": "ops-008",
       "title": "Entry-Level Mechanical Engineer",
       "company": "Olsson",
       "location": "Fort Worth, TX",
@@ -818,104 +718,128 @@
       "level": "entry",
       "category": "operations",
       "posted": "2026-06-05T07:00:00Z",
-      "url": "https://www.olsson.com/careers",
-      "description": "May 2026 grad opportunity \u2014 data center mechanical engineering."
+      "url": "https://www.olsson.com/careers/open-positions/?search=entry+level"
     },
     {
-      "id": "tech-010",
-      "title": "Silicon Photonics Technology Engineer",
-      "company": "GlobalFoundries",
-      "location": "Malta, NY",
-      "type": "onsite",
-      "level": "entry",
-      "category": "technology",
-      "posted": "2026-06-04T07:00:00Z",
-      "url": "https://gf.com/careers",
-      "description": "2026 new college graduate \u2014 silicon photonics dev & integration."
-    },
-    {
-      "id": "sal-009",
-      "title": "Institutional Sales Associate Intern",
-      "company": "Asset Management Firm",
-      "location": "New York, NY",
+      "id": "ops-009",
+      "title": "Logistics & Operations Intern",
+      "company": "FedEx",
+      "location": "Memphis, TN",
       "type": "hybrid",
       "level": "internship",
-      "category": "sales",
-      "posted": "2026-06-04T07:00:00Z",
-      "url": "https://linkedin.com",
-      "description": "Sales internship supporting institutional client coverage team."
-    },
-    {
-      "id": "dat-011",
-      "title": "People Analytics Intern",
-      "company": "Fortune 500 Co.",
-      "location": "Remote",
-      "type": "remote",
-      "level": "internship",
-      "category": "data",
-      "posted": "2026-06-03T07:00:00Z",
-      "url": "https://linkedin.com",
-      "description": "HR data analytics internship \u2014 remote, summer 2026."
-    },
-    {
-      "id": "mkt-010",
-      "title": "Email Marketing Coordinator",
-      "company": "E-Commerce Brand",
-      "location": "Remote",
-      "type": "remote",
-      "level": "entry",
-      "category": "marketing",
-      "posted": "2026-06-03T07:00:00Z",
-      "url": "https://linkedin.com",
-      "description": "Entry-level email marketing role \u2014 Klaviyo, segmentation, A/B testing."
-    },
-    {
-      "id": "con-009",
-      "title": "Management Consulting Analyst",
-      "company": "Boutique Consulting",
-      "location": "Boston, MA",
-      "type": "hybrid",
-      "level": "entry",
-      "category": "consulting",
+      "category": "operations",
       "posted": "2026-06-02T07:00:00Z",
-      "url": "https://linkedin.com",
-      "description": "Analyst-level consulting role for new grads \u2014 generalist strategy work."
-    },
-    {
-      "id": "des-008",
-      "title": "Motion Design Intern",
-      "company": "Creative Studio",
-      "location": "Los Angeles, CA",
-      "type": "hybrid",
-      "level": "internship",
-      "category": "design",
-      "posted": "2026-06-02T07:00:00Z",
-      "url": "https://linkedin.com",
-      "description": "Motion and animation intern for branded content studio."
-    },
-    {
-      "id": "fin-009",
-      "title": "Accounting Associate, New Grad",
-      "company": "Mid-Size CPA Firm",
-      "location": "Chicago, IL",
-      "type": "hybrid",
-      "level": "entry",
-      "category": "finance",
-      "posted": "2026-06-01T07:00:00Z",
-      "url": "https://linkedin.com",
-      "description": "Entry-level public accounting associate for growing CPA firm."
+      "url": "https://careers.fedex.com/fedex/jobs?keywords=intern+operations"
     },
     {
       "id": "ops-010",
-      "title": "Project Coordinator, Entry Level",
-      "company": "Infrastructure Services Co.",
-      "location": "Dallas, TX",
+      "title": "Operations Associate, Rotational",
+      "company": "GE Vernova",
+      "location": "Multiple Locations",
       "type": "hybrid",
       "level": "entry",
       "category": "operations",
       "posted": "2026-06-01T07:00:00Z",
-      "url": "https://linkedin.com",
-      "description": "Project coordinator supporting infrastructure delivery team."
+      "url": "https://jobs.gevernova.com/careers/jobs?keywords=operations+associate+entry+level"
+    },
+    {
+      "id": "sal-001",
+      "title": "Sales Development Representative",
+      "company": "Salesforce",
+      "location": "New York, NY",
+      "type": "hybrid",
+      "level": "entry",
+      "category": "sales",
+      "posted": "2026-06-04T09:00:00Z",
+      "url": "https://careers.salesforce.com/en/jobs/?search=sales+development+representative+entry+level"
+    },
+    {
+      "id": "sal-002",
+      "title": "Account Executive, New Grad",
+      "company": "HubSpot",
+      "location": "Remote",
+      "type": "remote",
+      "level": "entry",
+      "category": "sales",
+      "posted": "2026-06-04T08:00:00Z",
+      "url": "https://www.hubspot.com/careers/jobs#name=account+executive"
+    },
+    {
+      "id": "sal-003",
+      "title": "Field Sales Enablement",
+      "company": "Notion",
+      "location": "San Francisco, CA",
+      "type": "hybrid",
+      "level": "entry",
+      "category": "sales",
+      "posted": "2026-06-03T10:00:00Z",
+      "url": "https://www.notion.so/careers"
+    },
+    {
+      "id": "sal-004",
+      "title": "Inside Sales Associate",
+      "company": "Verizon",
+      "location": "Basking Ridge, NJ",
+      "type": "hybrid",
+      "level": "entry",
+      "category": "sales",
+      "posted": "2026-06-03T09:00:00Z",
+      "url": "https://mycareer.verizon.com/jobs/?q=inside+sales+associate+entry+level"
+    },
+    {
+      "id": "sal-005",
+      "title": "Business Development Representative",
+      "company": "Klaviyo",
+      "location": "Boston, MA",
+      "type": "hybrid",
+      "level": "entry",
+      "category": "sales",
+      "posted": "2026-06-02T10:00:00Z",
+      "url": "https://www.klaviyo.com/careers/open-roles?department=Sales"
+    },
+    {
+      "id": "sal-006",
+      "title": "Sales Intern, Summer 2026",
+      "company": "LinkedIn",
+      "location": "New York, NY",
+      "type": "hybrid",
+      "level": "internship",
+      "category": "sales",
+      "posted": "2026-06-01T09:00:00Z",
+      "url": "https://careers.linkedin.com/pathways-programs/entry-level"
+    },
+    {
+      "id": "sal-007",
+      "title": "Associate Account Manager",
+      "company": "Nielsen",
+      "location": "Chicago, IL",
+      "type": "hybrid",
+      "level": "entry",
+      "category": "sales",
+      "posted": "2026-05-31T09:00:00Z",
+      "url": "https://jobs.nielsen.com/job-search/?q=account+manager+entry+level"
+    },
+    {
+      "id": "sal-008",
+      "title": "Graduate Sales Development Program",
+      "company": "Capgemini",
+      "location": "Multiple Locations",
+      "type": "hybrid",
+      "level": "entry",
+      "category": "sales",
+      "posted": "2026-05-30T09:00:00Z",
+      "url": "https://www.capgemini.com/us-en/careers/job-search/?search=sales+graduate"
+    },
+    {
+      "id": "sal-009",
+      "title": "Institutional Sales Intern",
+      "company": "Fidelity Investments",
+      "location": "Boston, MA",
+      "type": "hybrid",
+      "level": "internship",
+      "category": "sales",
+      "posted": "2026-06-04T07:00:00Z",
+      "url": "https://jobs.fidelity.com/search-results/?keyword=sales+intern"
     }
   ]
 }
