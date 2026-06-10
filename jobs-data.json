@@ -1,8 +1,8 @@
 {
   "metadata": {
-    "lastUpdated": "2026-06-05T14:00:00.000Z",
-    "generatedAt": "2026-06-05T14:00:00.000Z",
-    "totalJobs": 76
+    "lastUpdated": "2026-06-09T13:00:00.000Z",
+    "generatedAt": "2026-06-09T13:00:00.000Z",
+    "totalJobs": 83
   },
   "jobs": [
     {
@@ -840,6 +840,83 @@
       "category": "sales",
       "posted": "2026-06-04T07:00:00Z",
       "url": "https://jobs.fidelity.com/search-results/?keyword=sales+intern"
+    },
+    {
+      "id": "tech-101",
+      "title": "Early Career Software Engineer",
+      "company": "Ramp",
+      "location": "Remote (US)",
+      "type": "remote",
+      "level": "entry",
+      "category": "technology",
+      "posted": "2026-06-08T09:00:00Z",
+      "url": "https://ramp.com/careers"
+    },
+    {
+      "id": "tech-102",
+      "title": "New Graduate Engineer - Software",
+      "company": "SpaceX",
+      "location": "Hawthorne, CA",
+      "type": "onsite",
+      "level": "entry",
+      "category": "technology",
+      "posted": "2026-06-08T10:00:00Z",
+      "url": "https://www.spacex.com/careers/"
+    },
+    {
+      "id": "tech-103",
+      "title": "Junior Software Engineer",
+      "company": "Leidos",
+      "location": "Columbia, MD",
+      "type": "hybrid",
+      "level": "entry",
+      "category": "technology",
+      "posted": "2026-06-09T08:00:00Z",
+      "url": "https://careers.leidos.com/"
+    },
+    {
+      "id": "fin-101",
+      "title": "Corporate Finance Analyst (2026 New College Graduate)",
+      "company": "GlobalFoundries",
+      "location": "Malta, NY",
+      "type": "onsite",
+      "level": "entry",
+      "category": "finance",
+      "posted": "2026-06-08T09:00:00Z",
+      "url": "https://gf.com/about-us/careers/"
+    },
+    {
+      "id": "mkt-101",
+      "title": "2026 Analyst, Marketing & Communications",
+      "company": "Athena Global Advisors",
+      "location": "Philadelphia, PA",
+      "type": "hybrid",
+      "level": "entry",
+      "category": "marketing",
+      "posted": "2026-06-09T09:00:00Z",
+      "url": "https://athenaga.com/careers/"
+    },
+    {
+      "id": "mkt-102",
+      "title": "Marketing Analyst",
+      "company": "High 5 Games",
+      "location": "Remote (US)",
+      "type": "remote",
+      "level": "entry",
+      "category": "marketing",
+      "posted": "2026-06-08T11:00:00Z",
+      "url": "https://www.high5games.com/careers/"
+    },
+    {
+      "id": "data-101",
+      "title": "Data Analyst, Emerging Talent Intern",
+      "company": "Warner Bros. Discovery",
+      "location": "New York, NY",
+      "type": "onsite",
+      "level": "internship",
+      "category": "data",
+      "posted": "2026-06-09T10:00:00Z",
+      "url": "https://careers.wbd.com/"
     }
   ]
 }
