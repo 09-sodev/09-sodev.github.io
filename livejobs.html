@@ -53,7 +53,9 @@
     .job-row:first-child { border-top: 1px solid var(--rule); }
     .job-co { width: 44px; height: 44px; border: 1px solid var(--rule); display: flex; align-items: center; justify-content: center; font-size: 10px; color: var(--ink-faint); flex-shrink: 0; background: var(--cream); letter-spacing: 0.04em; }
     .job-info { flex: 1; min-width: 0; }
-    .job-title { font-size: 14px; color: var(--ink); margin-bottom: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .job-title { font-size: 14px; color: var(--ink); margin-bottom: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; text-decoration: none; display: block; transition: opacity 0.2s; }
+    .job-title:hover { opacity: 0.6; }
+    .job-title:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
     .job-meta { font-size: 11.5px; color: var(--ink-faint); }
     .job-tags { display: flex; gap: 6px; flex-shrink: 0; }
     .tag { font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; border: 1px solid var(--rule); padding: 3px 9px; color: var(--ink-faint); }
@@ -172,7 +174,7 @@
         const tags = [isNew?'<span class="tag new">New</span>':'', j.level==='internship'?'<span class="tag">Internship</span>':'', j.type==='remote'?'<span class="tag remote">Remote</span>':''].filter(Boolean).join('');
         return `<article class="job-row" role="listitem">
           <div class="job-co" aria-hidden="true">${getInitials(j.company)}</div>
-          <div class="job-info"><div class="job-title">${j.title}</div><div class="job-meta">${j.company} &middot; ${j.location}</div></div>
+          <div class="job-info"><a href="${j.url}" target="_blank" rel="noopener noreferrer" class="job-title">${j.title}</a><div class="job-meta">${j.company} &middot; ${j.location}</div></div>
           <div class="job-tags" aria-hidden="true">${tags}</div>
           <a href="${j.url}" target="_blank" rel="noopener noreferrer" class="apply-btn" aria-label="Apply for ${j.title} at ${j.company}">Apply &rarr;</a>
         </article>`;
