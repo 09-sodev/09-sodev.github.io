@@ -1,8 +1,8 @@
 {
   "metadata": {
-    "lastUpdated": "2026-06-09T13:00:00.000Z",
-    "generatedAt": "2026-06-09T13:00:00.000Z",
-    "totalJobs": 83
+    "lastUpdated": "2026-07-23T12:00:00.000Z",
+    "generatedAt": "2026-07-23T12:00:00.000Z",
+    "totalJobs": 111
   },
   "jobs": [
     {
@@ -228,7 +228,7 @@
     {
       "id": "mkt-002",
       "title": "Marketing Coordinator, Entry Level",
-      "company": "Est\u00e9e Lauder Companies",
+      "company": "Estée Lauder Companies",
       "location": "New York, NY",
       "type": "hybrid",
       "level": "entry",
@@ -272,7 +272,7 @@
     {
       "id": "mkt-006",
       "title": "Marketing Analytics Associate",
-      "company": "L'Or\u00e9al",
+      "company": "L'Oréal",
       "location": "New York, NY",
       "type": "hybrid",
       "level": "entry",
@@ -404,7 +404,7 @@
     {
       "id": "des-008",
       "title": "Graphic Design Intern",
-      "company": "Cond\u00e9 Nast",
+      "company": "Condé Nast",
       "location": "New York, NY",
       "type": "hybrid",
       "level": "internship",
@@ -917,6 +917,347 @@
       "category": "data",
       "posted": "2026-06-09T10:00:00Z",
       "url": "https://careers.wbd.com/"
+    },
+    {
+      "id": "tech-201",
+      "title": "Software Engineer, University Grad",
+      "company": "Meta",
+      "location": "Menlo Park, CA",
+      "type": "hybrid",
+      "level": "entry",
+      "category": "technology",
+      "posted": "2026-07-14T09:00:00Z",
+      "url": "https://www.metacareers.com/jobs?q=university+grad+software+engineer"
+    },
+    {
+      "id": "tech-202",
+      "title": "Software Engineer II, New Grad",
+      "company": "Microsoft",
+      "location": "Redmond, WA",
+      "type": "hybrid",
+      "level": "entry",
+      "category": "technology",
+      "posted": "2026-07-15T10:00:00Z",
+      "url": "https://jobs.careers.microsoft.com/global/en/search?q=software+engineer+new+grad"
+    },
+    {
+      "id": "tech-203",
+      "title": "Software Engineer, New Grad",
+      "company": "Stripe",
+      "location": "Remote (US)",
+      "type": "remote",
+      "level": "entry",
+      "category": "technology",
+      "posted": "2026-07-16T09:00:00Z",
+      "url": "https://stripe.com/jobs/search?query=new+grad+software+engineer"
+    },
+    {
+      "id": "tech-204",
+      "title": "Software Engineer, New Graduate",
+      "company": "Cloudflare",
+      "location": "Austin, TX",
+      "type": "hybrid",
+      "level": "entry",
+      "category": "technology",
+      "posted": "2026-07-17T08:00:00Z",
+      "url": "https://www.cloudflare.com/careers/jobs/?department=Engineering"
+    },
+    {
+      "id": "tech-205",
+      "title": "Associate Software Engineer",
+      "company": "Palantir",
+      "location": "New York, NY",
+      "type": "onsite",
+      "level": "entry",
+      "category": "technology",
+      "posted": "2026-07-18T09:00:00Z",
+      "url": "https://www.palantir.com/careers/students/"
+    },
+    {
+      "id": "tech-206",
+      "title": "Product Manager, New Grad",
+      "company": "Figma",
+      "location": "San Francisco, CA",
+      "type": "hybrid",
+      "level": "entry",
+      "category": "technology",
+      "posted": "2026-07-21T09:00:00Z",
+      "url": "https://www.figma.com/careers/#job-openings"
+    },
+    {
+      "id": "fin-201",
+      "title": "Financial Analyst, New Grad Program",
+      "company": "Morgan Stanley",
+      "location": "New York, NY",
+      "type": "hybrid",
+      "level": "entry",
+      "category": "finance",
+      "posted": "2026-07-14T09:00:00Z",
+      "url": "https://www.morganstanley.com/people-opportunities/students-graduates/programs"
+    },
+    {
+      "id": "fin-202",
+      "title": "Analyst, Asset Management",
+      "company": "Goldman Sachs",
+      "location": "New York, NY",
+      "type": "hybrid",
+      "level": "entry",
+      "category": "finance",
+      "posted": "2026-07-15T10:00:00Z",
+      "url": "https://www.goldmansachs.com/careers/students/programs/americas/"
+    },
+    {
+      "id": "fin-203",
+      "title": "Banking Analyst, Entry Level",
+      "company": "Citi",
+      "location": "New York, NY",
+      "type": "hybrid",
+      "level": "entry",
+      "category": "finance",
+      "posted": "2026-07-16T09:00:00Z",
+      "url": "https://jobs.citi.com/search-jobs/entry+level+analyst"
+    },
+    {
+      "id": "fin-204",
+      "title": "Treasury Analyst, New Grad",
+      "company": "Apple",
+      "location": "Cupertino, CA",
+      "type": "onsite",
+      "level": "entry",
+      "category": "finance",
+      "posted": "2026-07-21T08:00:00Z",
+      "url": "https://jobs.apple.com/en-us/search?team=finance-and-accounting-STDNT-FNAN"
+    },
+    {
+      "id": "mkt-201",
+      "title": "Marketing Associate, New Grad",
+      "company": "TikTok",
+      "location": "New York, NY",
+      "type": "hybrid",
+      "level": "entry",
+      "category": "marketing",
+      "posted": "2026-07-14T09:00:00Z",
+      "url": "https://careers.tiktok.com/position?keywords=marketing+associate&project=7247715416863048999"
+    },
+    {
+      "id": "mkt-202",
+      "title": "Brand Management Analyst",
+      "company": "Procter & Gamble",
+      "location": "Cincinnati, OH",
+      "type": "onsite",
+      "level": "entry",
+      "category": "marketing",
+      "posted": "2026-07-15T10:00:00Z",
+      "url": "https://us.pg.com/careers/students-and-recent-grads/"
+    },
+    {
+      "id": "mkt-203",
+      "title": "Marketing Coordinator",
+      "company": "Snap Inc.",
+      "location": "Los Angeles, CA",
+      "type": "hybrid",
+      "level": "entry",
+      "category": "marketing",
+      "posted": "2026-07-17T09:00:00Z",
+      "url": "https://careers.snap.com/jobs?type=Early+Career&team=Marketing"
+    },
+    {
+      "id": "mkt-204",
+      "title": "Consumer Insights Analyst, New Grad",
+      "company": "PepsiCo",
+      "location": "Purchase, NY",
+      "type": "hybrid",
+      "level": "entry",
+      "category": "marketing",
+      "posted": "2026-07-21T08:00:00Z",
+      "url": "https://www.pepsicojobs.com/main/jobs?keywords=consumer+insights+analyst&early_talent=true"
+    },
+    {
+      "id": "des-201",
+      "title": "Product Designer, New Grad",
+      "company": "Airbnb",
+      "location": "San Francisco, CA",
+      "type": "hybrid",
+      "level": "entry",
+      "category": "design",
+      "posted": "2026-07-15T09:00:00Z",
+      "url": "https://careers.airbnb.com/positions/?department=Design"
+    },
+    {
+      "id": "des-202",
+      "title": "Experience Designer, New Grad",
+      "company": "Adobe",
+      "location": "San Jose, CA",
+      "type": "hybrid",
+      "level": "entry",
+      "category": "design",
+      "posted": "2026-07-17T10:00:00Z",
+      "url": "https://www.adobe.com/careers.html"
+    },
+    {
+      "id": "des-203",
+      "title": "UX Designer, Entry Level",
+      "company": "Intuit",
+      "location": "Mountain View, CA",
+      "type": "hybrid",
+      "level": "entry",
+      "category": "design",
+      "posted": "2026-07-21T09:00:00Z",
+      "url": "https://jobs.intuit.com/search-jobs/UX+designer+entry+level"
+    },
+    {
+      "id": "con-201",
+      "title": "Associate, New Grad",
+      "company": "BCG",
+      "location": "Multiple Locations",
+      "type": "hybrid",
+      "level": "entry",
+      "category": "consulting",
+      "posted": "2026-07-14T09:00:00Z",
+      "url": "https://careers.bcg.com/entry-level"
+    },
+    {
+      "id": "con-202",
+      "title": "Advisory Consultant, Entry Level",
+      "company": "KPMG",
+      "location": "New York, NY",
+      "type": "hybrid",
+      "level": "entry",
+      "category": "consulting",
+      "posted": "2026-07-16T10:00:00Z",
+      "url": "https://www.kpmg.us/careers/your-path/advisory.html"
+    },
+    {
+      "id": "con-203",
+      "title": "Technology Consultant, New Grad",
+      "company": "IBM",
+      "location": "Multiple Locations",
+      "type": "hybrid",
+      "level": "entry",
+      "category": "consulting",
+      "posted": "2026-07-21T09:00:00Z",
+      "url": "https://www.ibm.com/careers/us-en/search/?q=consultant+entry+level+new+grad"
+    },
+    {
+      "id": "dat-201",
+      "title": "Data Analyst, New Grad",
+      "company": "Meta",
+      "location": "Menlo Park, CA",
+      "type": "hybrid",
+      "level": "entry",
+      "category": "data",
+      "posted": "2026-07-14T10:00:00Z",
+      "url": "https://www.metacareers.com/jobs?q=data+analyst+university+grad"
+    },
+    {
+      "id": "dat-202",
+      "title": "Data Analyst, New Grad",
+      "company": "Snowflake",
+      "location": "San Mateo, CA",
+      "type": "hybrid",
+      "level": "entry",
+      "category": "data",
+      "posted": "2026-07-15T09:00:00Z",
+      "url": "https://careers.snowflake.com/us/en/search-results?keywords=data+analyst+new+grad"
+    },
+    {
+      "id": "dat-203",
+      "title": "Data Analyst I",
+      "company": "Databricks",
+      "location": "San Francisco, CA",
+      "type": "hybrid",
+      "level": "entry",
+      "category": "data",
+      "posted": "2026-07-17T10:00:00Z",
+      "url": "https://www.databricks.com/company/careers/open-positions?department=Data+Science+%26+Analytics"
+    },
+    {
+      "id": "dat-204",
+      "title": "Business Intelligence Analyst, New Grad",
+      "company": "Twitch",
+      "location": "Seattle, WA",
+      "type": "hybrid",
+      "level": "entry",
+      "category": "data",
+      "posted": "2026-07-21T08:00:00Z",
+      "url": "https://www.twitch.tv/jobs/en/open-roles/?team=Analytics"
+    },
+    {
+      "id": "ops-201",
+      "title": "Operations Analyst, New Grad",
+      "company": "Apple",
+      "location": "Cupertino, CA",
+      "type": "onsite",
+      "level": "entry",
+      "category": "operations",
+      "posted": "2026-07-15T10:00:00Z",
+      "url": "https://jobs.apple.com/en-us/search?team=operations-STDNT-OPS"
+    },
+    {
+      "id": "ops-202",
+      "title": "Operations Associate, Entry Level",
+      "company": "Boeing",
+      "location": "Seattle, WA",
+      "type": "hybrid",
+      "level": "entry",
+      "category": "operations",
+      "posted": "2026-07-17T09:00:00Z",
+      "url": "https://jobs.boeing.com/search-jobs/operations+analyst+entry+level"
+    },
+    {
+      "id": "ops-203",
+      "title": "Program Coordinator, New Grad",
+      "company": "Uber",
+      "location": "San Francisco, CA",
+      "type": "hybrid",
+      "level": "entry",
+      "category": "operations",
+      "posted": "2026-07-21T09:00:00Z",
+      "url": "https://www.uber.com/us/en/careers/list/new-grad/"
+    },
+    {
+      "id": "sal-201",
+      "title": "Revenue Operations Associate",
+      "company": "Stripe",
+      "location": "Remote (US)",
+      "type": "remote",
+      "level": "entry",
+      "category": "sales",
+      "posted": "2026-07-14T09:00:00Z",
+      "url": "https://stripe.com/jobs/search?query=revenue+operations+associate"
+    },
+    {
+      "id": "sal-202",
+      "title": "Sales Development Representative",
+      "company": "Snowflake",
+      "location": "San Mateo, CA",
+      "type": "hybrid",
+      "level": "entry",
+      "category": "sales",
+      "posted": "2026-07-16T10:00:00Z",
+      "url": "https://careers.snowflake.com/us/en/search-results?keywords=sales+development+representative"
+    },
+    {
+      "id": "sal-203",
+      "title": "Business Development Representative",
+      "company": "Workday",
+      "location": "Pleasanton, CA",
+      "type": "hybrid",
+      "level": "entry",
+      "category": "sales",
+      "posted": "2026-07-18T09:00:00Z",
+      "url": "https://www.workday.com/en-us/company/careers/overview.html"
+    },
+    {
+      "id": "sal-204",
+      "title": "Account Development Representative, New Grad",
+      "company": "Zendesk",
+      "location": "San Francisco, CA",
+      "type": "hybrid",
+      "level": "entry",
+      "category": "sales",
+      "posted": "2026-07-21T08:00:00Z",
+      "url": "https://jobs.zendesk.com/us/en/search-results?keywords=account+development+representative"
     }
   ]
 }
