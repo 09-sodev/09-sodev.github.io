@@ -1,8 +1,8 @@
 {
   "metadata": {
-    "lastUpdated": "2026-07-23T17:00:00.000Z",
-    "generatedAt": "2026-07-23T17:00:00.000Z",
-    "totalJobs": 111
+    "lastUpdated": "2026-07-24T17:00:00.000Z",
+    "generatedAt": "2026-07-24T17:00:00.000Z",
+    "totalJobs": 128
   },
   "jobs": [
     {
@@ -228,7 +228,7 @@
     {
       "id": "mkt-002",
       "title": "Marketing Coordinator, Entry Level",
-      "company": "Estée Lauder Companies",
+      "company": "Est\u00e9e Lauder Companies",
       "location": "New York, NY",
       "type": "hybrid",
       "level": "entry",
@@ -272,7 +272,7 @@
     {
       "id": "mkt-006",
       "title": "Marketing Analytics Associate",
-      "company": "L'Oréal",
+      "company": "L'Or\u00e9al",
       "location": "New York, NY",
       "type": "hybrid",
       "level": "entry",
@@ -404,7 +404,7 @@
     {
       "id": "des-008",
       "title": "Graphic Design Intern",
-      "company": "Condé Nast",
+      "company": "Cond\u00e9 Nast",
       "location": "New York, NY",
       "type": "hybrid",
       "level": "internship",
@@ -917,6 +917,160 @@
       "category": "data",
       "posted": "2026-06-09T10:00:00Z",
       "url": "https://careers.wbd.com/"
+    },
+    {
+      "id": "tech-301",
+      "title": "Software Engineer, New Grad",
+      "company": "Apple",
+      "location": "Cupertino, CA",
+      "type": "onsite",
+      "level": "entry",
+      "category": "technology",
+      "posted": "2026-07-24T09:00:00Z",
+      "url": "https://jobs.apple.com/en-us/search?team=software-and-services-STDNT-SE"
+    },
+    {
+      "id": "tech-302",
+      "title": "Associate Software Engineer",
+      "company": "LinkedIn",
+      "location": "Sunnyvale, CA",
+      "type": "hybrid",
+      "level": "entry",
+      "category": "technology",
+      "posted": "2026-07-24T09:30:00Z",
+      "url": "https://careers.linkedin.com/pathways-programs/entry-level"
+    },
+    {
+      "id": "tech-303",
+      "title": "Software Engineer, New Graduate",
+      "company": "Nvidia",
+      "location": "Santa Clara, CA",
+      "type": "onsite",
+      "level": "entry",
+      "category": "technology",
+      "posted": "2026-07-24T10:00:00Z",
+      "url": "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite?q=new+grad+software+engineer"
+    },
+    {
+      "id": "fin-301",
+      "title": "Investment Analyst, New Grad",
+      "company": "Fidelity Investments",
+      "location": "Boston, MA",
+      "type": "hybrid",
+      "level": "entry",
+      "category": "finance",
+      "posted": "2026-07-24T09:00:00Z",
+      "url": "https://jobs.fidelity.com/search-results/?keyword=analyst+new+grad"
+    },
+    {
+      "id": "fin-302",
+      "title": "Associate, Wealth Management",
+      "company": "UBS",
+      "location": "New York, NY",
+      "type": "hybrid",
+      "level": "entry",
+      "category": "finance",
+      "posted": "2026-07-24T10:00:00Z",
+      "url": "https://www.ubs.com/global/en/careers/graduates.html"
+    },
+    {
+      "id": "mkt-301",
+      "title": "Brand Associate, New Grad",
+      "company": "Unilever",
+      "location": "Englewood Cliffs, NJ",
+      "type": "hybrid",
+      "level": "entry",
+      "category": "marketing",
+      "posted": "2026-07-24T09:00:00Z",
+      "url": "https://careers.unilever.com/early-careers"
+    },
+    {
+      "id": "mkt-302",
+      "title": "Marketing Coordinator, Entry Level",
+      "company": "Disney",
+      "location": "Burbank, CA",
+      "type": "hybrid",
+      "level": "entry",
+      "category": "marketing",
+      "posted": "2026-07-24T10:30:00Z",
+      "url": "https://jobs.disneycareers.com/search-jobs/marketing+coordinator+entry+level"
+    },
+    {
+      "id": "des-301",
+      "title": "UX Designer, New Grad",
+      "company": "Salesforce",
+      "location": "San Francisco, CA",
+      "type": "hybrid",
+      "level": "entry",
+      "category": "design",
+      "posted": "2026-07-24T09:00:00Z",
+      "url": "https://careers.salesforce.com/en/jobs/?search=UX+designer+new+grad"
+    },
+    {
+      "id": "con-301",
+      "title": "Analyst, Strategy Consulting",
+      "company": "Oliver Wyman",
+      "location": "New York, NY",
+      "type": "hybrid",
+      "level": "entry",
+      "category": "consulting",
+      "posted": "2026-07-24T09:00:00Z",
+      "url": "https://www.oliverwyman.com/careers/students.html"
+    },
+    {
+      "id": "dat-301",
+      "title": "Data Analyst, New Grad",
+      "company": "Airbnb",
+      "location": "San Francisco, CA",
+      "type": "hybrid",
+      "level": "entry",
+      "category": "data",
+      "posted": "2026-07-24T09:00:00Z",
+      "url": "https://careers.airbnb.com/positions/?department=Data+Science+%26+Analytics"
+    },
+    {
+      "id": "dat-302",
+      "title": "Business Analyst, New Grad",
+      "company": "Capital One",
+      "location": "McLean, VA",
+      "type": "hybrid",
+      "level": "entry",
+      "category": "data",
+      "posted": "2026-07-24T10:00:00Z",
+      "url": "https://www.capitalonecareers.com/search-jobs/business+analyst+entry+level"
+    },
+    {
+      "id": "ops-301",
+      "title": "Operations Analyst, New Grad",
+      "company": "Tesla",
+      "location": "Austin, TX",
+      "type": "onsite",
+      "level": "entry",
+      "category": "operations",
+      "posted": "2026-07-24T09:00:00Z",
+      "url": "https://www.tesla.com/careers/search/job/operations+analyst+entry+level"
+    },
+    {
+      "id": "sal-301",
+      "title": "Sales Development Representative",
+      "company": "Figma",
+      "location": "San Francisco, CA",
+      "type": "hybrid",
+      "level": "entry",
+      "category": "sales",
+      "posted": "2026-07-24T09:00:00Z",
+      "url": "https://www.figma.com/careers/#job-openings"
+    },
+    {
+      "id": "sal-302",
+      "title": "Account Development Representative",
+      "company": "Databricks",
+      "location": "Remote (US)",
+      "type": "remote",
+      "level": "entry",
+      "category": "sales",
+      "posted": "2026-07-24T10:00:00Z",
+      "url": "https://www.databricks.com/company/careers/open-positions?department=Sales"
     },
     {
       "id": "tech-201",
